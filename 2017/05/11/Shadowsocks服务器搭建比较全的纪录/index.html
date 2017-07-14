@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang=zh>
 <head>
     <!-- so meta -->
     <meta charset="utf-8">
@@ -10,24 +10,24 @@
 <meta name="keywords" content="杂">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shadowsocks服务器搭建比较全的纪录">
-<meta property="og:url" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/index.html">
+<meta property="og:site_name" content="Upside Down">
 <meta property="og:description" content="文章较长，先理理思路。首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的搭建以及优化，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。 ##Shadowsocks是什么？首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private netwo">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/3.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/4.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/7.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/3.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/4.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/7.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpg">
+<meta property="og:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpg">
 <meta property="og:updated_time" content="2017-07-14T13:07:18.723Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shadowsocks服务器搭建比较全的纪录">
 <meta name="twitter:description" content="文章较长，先理理思路。首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的搭建以及优化，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。 ##Shadowsocks是什么？首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private netwo">
-<meta name="twitter:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg">
+<meta name="twitter:image" content="https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg">
     
     
         
@@ -93,16 +93,16 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&text=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&is_video=false&description=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Shadowsocks服务器搭建比较全的纪录&body=Check out this article: http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&name=Shadowsocks服务器搭建比较全的纪录&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&text=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&is_video=false&description=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Shadowsocks服务器搭建比较全的纪录&body=Check out this article: https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&name=Shadowsocks服务器搭建比较全的纪录&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -126,7 +126,7 @@
 
     <div class="meta">
       <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Hexo</span>
+        <span itemprop="name">Upside Down</span>
       </span>
       
     <div class="postdate">
@@ -251,16 +251,16 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&text=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&is_video=false&description=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Shadowsocks服务器搭建比较全的纪录&body=Check out this article: http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&name=Shadowsocks服务器搭建比较全的纪录&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&text=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&is_video=false&description=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Shadowsocks服务器搭建比较全的纪录&body=Check out this article: https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&title=Shadowsocks服务器搭建比较全的纪录"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/&name=Shadowsocks服务器搭建比较全的纪录&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -280,7 +280,7 @@
     
     <footer id="footer">
   <div class="footer-left">
-    Copyright &copy; 2017 John Doe
+    Copyright &copy; 2017 KylinDC
   </div>
   <div class="footer-right">
     <nav>
