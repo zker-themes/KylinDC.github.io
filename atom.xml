@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-07-14T10:37:49.968Z</updated>
+  <updated>2017-07-14T12:54:35.596Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,104 +16,85 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/07/14/hello-world/"/>
-    <id>http://yoursite.com/2017/07/14/hello-world/</id>
-    <published>2017-07-14T10:37:49.968Z</published>
-    <updated>2017-07-14T10:37:49.968Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>Shadowsocks服务器搭建比较全的纪录</title>
     <link href="http://yoursite.com/2017/05/11/Shadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%AF%94%E8%BE%83%E5%85%A8%E7%9A%84%E7%BA%AA%E5%BD%95/"/>
     <id>http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/</id>
     <published>2017-05-11T08:19:31.000Z</published>
-    <updated>2017-07-14T11:31:51.559Z</updated>
+    <updated>2017-07-14T12:54:35.596Z</updated>
     
     <content type="html"><![CDATA[<p>文章较长，先理理思路。<br>首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的<strong>搭建</strong>以及<strong>优化</strong>，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。</p>
-<h2 id="Shadowsocks是什么？"><a href="#Shadowsocks是什么？" class="headerlink" title="Shadowsocks是什么？"></a>Shadowsocks是什么？</h2><p>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>开发一个开源代理加密协议，最常见的用途就是翻墙。<br>Shadowsocks的具体细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="external">写给非专业人士看的 Shadowsocks 简介</a>。</p>
+<p>##Shadowsocks是什么？<br>首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private network，虚拟专有网络）是用来翻墙的主要方式，但是随着GFW的不断升级，这种方式很容易被封，所以后来基本上没有人用这种技术方式来翻墙的了，但是’VPN’这个词就慢慢被指代为所有的翻墙方式。翻墙方式用很多种，不单单只有VPN一种，所以’VPN’这个词在不同的含义下有不同的意思。<br>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>开发的一个开源代理加密协议，有很多用途，当然最常见的还是拿来翻墙。事实上现在所有的商业的翻墙代理（云梯，多态等）底层都是Shadowsocks技术。<br>如果想要知道Shadowsocks的具体技术细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="external">写给非专业人士看的 Shadowsocks 简介</a>。</p>
 <blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg" alt="Shadowsocks工作流程"></p>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpeg" alt="Shadowsocks组件"></p>
 </blockquote>
-<p>上面那篇文章有一些名词看不懂也没关系，不过至少明白了使用Shadowsocks来翻墙至少需要</p>
+<p>根据上图我们可以明白使用Shadowsocks来翻墙至少需要</p>
 <ol>
 <li>运行在远程服务器的<strong>「服务器端」</strong>。</li>
 <li>运行在手机、PC等上的<strong>「客户端」</strong>。</li>
 </ol>
 <p>首先让我们开始Shadowsocks服务器端的搭建。</p>
-<h2 id="Shadowsocks服务器端搭建篇"><a href="#Shadowsocks服务器端搭建篇" class="headerlink" title="Shadowsocks服务器端搭建篇"></a>Shadowsocks服务器端搭建篇</h2><p>上面我们提到服务器端需要一个远程主机，远程主机可以简单理解为一台远程的电脑，这台电脑上的操作系统一般都是没有图形界面的Linux，然而真正的远程主机比较贵，一般我们都会选择使用一个虚拟专有服务器（Virtual private server，VPS），我们将在VPS上面搭建好Shadowsocks的服务器端。<br>VPS肯定都是要钱的，这也是搭建翻墙服务中唯一要花钱的地方。</p>
-<h3 id="选择VPS提供商"><a href="#选择VPS提供商" class="headerlink" title="选择VPS提供商"></a>选择VPS提供商</h3><p>常见的VPS提供商有Linode、Vultr、DigitalOcean、BandwagonHOST（俗称「搬瓦工」）。根据<a href="http://www.appinn.com/compare-linode-vs-digitalocean-vs-lightsail-vs-vultr/" title="四大 VPS 对比评测：Linode vs. DigitalOcean vs. Lightsail vs. Vultr" target="_blank" rel="external">小众软件网站翻译的测评</a>，在前三家提供商里的月付＄5最基本档里，Linode是最佳选择，Vultr与DigitalOcean不相伯仲，不过在2017年3月1号后，Vultr提供了月付＄2.5的基本档，这一价格更具吸引力。个人不是很推荐搬瓦工，虽然最便宜，但搬瓦工由于虚拟机架构原因，并不支持常见的Shadowsocks加速方案，速度一般。</p>
-<p>其中Linode虽支持PayPal（国外支付宝）支付但仅支持双币信用卡注册，所以没有双币信用卡、需要翻墙的设备少且对速度要求不是很高时不妨试试Vultr的月付＄2.5基本档。</p>
-<p>在注册之前，需要申请一个PayPal账户，方便的是，PayPal支持绑定国内储蓄卡进行支付。</p>
-<p><a href="https://www.linode.com/?r=2e3c6f6ce913e37f3167953581f6facaa93a729f" target="_blank" rel="external">Linode注册链接</a>注册Linode的时候不妨使用优惠码：<code>PodcastInIt2017</code>（新年优惠，截至2月28号有效）或者<code>DOCS10</code>（长期有效）<br>Linode在用邮箱注册好后会发一封确认邮件到邮箱，在点击确认链接后会要补充一些账单信息和信用卡信息，填好信息后会要一段时间进行审核，请耐心等待，之后会在信用卡里扣除＄5。</p>
-<p><a href="http://www.vultr.com/?ref=7124118" target="_blank" rel="external">Vultr注册链接</a>或者Vultr「充多少送多少」的<a href="https://www.vultr.com/match/" target="_blank" rel="external">活动链接</a></p>
-<blockquote>
-<p>各位大佬，实不相瞒上面的注册链接是我的邀请链接，辛辛苦苦写教程还不就是为了赚几个邀请码的钱，要是对你有帮助的话，利人利己吧。</p>
-</blockquote>
-<h3 id="搭建Shadowsocks服务器端"><a href="#搭建Shadowsocks服务器端" class="headerlink" title="搭建Shadowsocks服务器端"></a>搭建Shadowsocks服务器端</h3><p>在注册好VPS之后，就需要在VPS上搭建一个系统。</p>
+<h2 id="Shadowsocks服务器端搭建篇"><a href="#Shadowsocks服务器端搭建篇" class="headerlink" title="Shadowsocks服务器端搭建篇"></a>Shadowsocks服务器端搭建篇</h2><p>服务器端的Shadowsocks运行在位于墙外的远程主机上，远程主机可以简单理解为一台远程的电脑，这台电脑上的操作系统一般都是没有图形界面的Linux，然而真正的远程主机比较贵，所以一般我们都会选择使用一个虚拟专有服务器（Virtual private server，VPS），我们将在VPS上面搭建好Shadowsocks的服务器端。<br>VPS肯定都是要钱的，这也是搭建翻墙服务中唯一要花钱的地方。</p>
+<h3 id="选择VPS提供商"><a href="#选择VPS提供商" class="headerlink" title="选择VPS提供商"></a>选择VPS提供商</h3><p>常见的VPS提供商有Linode、Vultr、DigitalOcean、BandwagonHOST（俗称「搬瓦工」）。根据<a href="http://www.appinn.com/compare-linode-vs-digitalocean-vs-lightsail-vs-vultr/" title="四大 VPS 对比评测：Linode vs. DigitalOcean vs. Lightsail vs. Vultr" target="_blank" rel="external">小众软件网站翻译的测评</a>，在前三家提供商里的月付＄5最基本档里，Linode是最佳选择，Vultr与DigitalOcean不相伯仲，不过在2017年3月1号后，Vultr提供了月付＄2.5的基本档，这一价格更具吸引力。个人不是很推荐搬瓦工，虽然最便宜，但搬瓦工由于虚拟主机采用的架构原因，并不支持常见的Shadowsocks加速方案，导致最终的加速效果一般。</p>
+<p>其中Linode虽支持PayPal（国外支付宝，可绑定国内信用卡）支付但仅支持双币信用卡注册，所以没有双币信用卡、需要翻墙的设备教少且对速度要求不是很高时不妨试试Vultr的月付＄2.5基本档。</p>
+<p>可使用<a href="https://www.linode.com/?r=2e3c6f6ce913e37f3167953581f6facaa93a729f" target="_blank" rel="external">Linode注册链接</a>注册，注册Linode的时候不妨使用优惠码：<code>DOCS10</code>可获得$10的优惠券。<br>Linode在用邮箱注册好后会发一封确认邮件到邮箱，在点击确认链接后会要补充一些账单信息和信用卡信息，填好信息后会要一段时间进行审核，请耐心等待，之后会在信用卡里扣除＄5。</p>
+<p>可使用<a href="http://www.vultr.com/?ref=7124118" target="_blank" rel="external">Vultr注册链接</a>或者Vultr「充多少送多少」的<a href="https://www.vultr.com/match/" target="_blank" rel="external">活动链接</a>来注册Vultr，注册前记得注册好PayPal用以支付。</p>
+<p>实不相瞒上面的注册链接是我的邀请链接，写个教程要是还能赚几个邀请码的钱那就太好了，要是对你有帮助的话，利人利己吧。</p>
+<h3 id="搭建Shadowsocks服务器端"><a href="#搭建Shadowsocks服务器端" class="headerlink" title="搭建Shadowsocks服务器端"></a>搭建Shadowsocks服务器端</h3><p>在注册好VPS之后，就需要在VPS上搭建一个系统。<br>因为我用的Linode的主机，所以以下就是以Linode的界面为主，其他主机商的配置界面大同小异，触类旁通。</p>
 <h4 id="Linode主机设置"><a href="#Linode主机设置" class="headerlink" title="Linode主机设置"></a>Linode主机设置</h4><p>在开始新建系统之前，Linode的后台对新手不是很友好，建议看看<a href="https://www.linode.com/docs/getting-started/" title="Getting Started with Linode" target="_blank" rel="external">Linode官方开始教程</a>视频的前半部分。</p>
 <ul>
-<li>选择套餐<br>建议选择日本的机房，延迟会低一些</li>
-</ul>
-<p>选择好套餐后，你就可以看到你的主机IP（图示箭头处），记住这个IP地址，后面会要用</p>
-<ul>
-<li><p>选择<code>Delay an Image</code></p>
+<li>选择套餐<br>建议选择日本的机房，延迟会低一些，<blockquote>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2.jpeg" alt=""><br>选择好套餐后，你就可以看到你的主机IP（图示箭头处），记住这个IP地址，后面会要用<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/3.jpeg" alt=""></p>
+</blockquote>
 </li>
-<li><p>选择<code>Debian 8</code>作为系统</p>
+<li>选择<code>Delay an Image</code><blockquote>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/4.jpeg" alt=""></p>
+</blockquote>
 </li>
-<li><p><code>Swap Disk</code>项选择512MB</p>
-</li>
+<li>选择<code>Ubuntu 16.04 LTS</code>作为操作系统</li>
+<li><code>Swap Disk</code>项选择512MB</li>
 <li><code>Root Password</code>填好你自己的想对主机设置的密码，后面要用</li>
 <li>之后<code>Deploy</code>即可，记得配置好后要<code>Boot</code></li>
 </ul>
-<h3 id="Vultr主机设置"><a href="#Vultr主机设置" class="headerlink" title="Vultr主机设置"></a>Vultr主机设置</h3><p>相比Linode而言，Vultr设置就要直观美观的多。<br>选择日本机房，月付2.5＄的套餐，选择<code>Debian 8</code>作为系统，开启IPv6即可。</p>
-<h3 id="Shadowsocks服务器端搭建"><a href="#Shadowsocks服务器端搭建" class="headerlink" title="Shadowsocks服务器端搭建"></a>Shadowsocks服务器端搭建</h3><p>在将主机设置好后，我们就可以开始着手服务器的搭建了。<br>首先我们要使用一个软件——PuTTY，<a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" rel="external">点击即可下载<br>(64位)</a>，在下图红线处填入你主机的IP，端口保持默认即可，之后点击<code>Open</code>即可。</p>
-<p>之后就是黑乎乎的一片，不过不用担心，后面只要做一些简单的复制粘贴即可配置好了。<br>注意事项：</p>
+<h3 id="Vultr主机设置"><a href="#Vultr主机设置" class="headerlink" title="Vultr主机设置"></a>Vultr主机设置</h3><p>相比Linode而言，Vultr设置就要直观美观的多。<br>选择日本机房，月付$2.5的套餐，选择<code>Ubuntu 16.04 LTS</code>作为系统，开启IPv6即可。</p>
+<blockquote>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpeg" alt=""></p>
+</blockquote>
+<p>###Shadowsocks服务器端搭建</p>
+<p>在将主机设置好后，我们就可以开始着手服务器的搭建了。<br>首先我们要使用一个软件——PuTTY，<a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" rel="external">点击即可下载<br>(64位)</a>，在下图红线处填入你主机的IP，端口保持默认即可，之后点击<code>Open</code>即可。</p>
+<blockquote>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpeg" alt=""><br>之后就是黑乎乎的一片，不过不用担心，后面只要做一些简单的复制粘贴即可配置好了。<br>注意事项：</p>
+</blockquote>
 <ul>
 <li>使用PuTTY时一定要确保自己的输入法是在英文状态</li>
 <li>之后复制粘贴命令时确保一行一行复制粘贴，不建议多行复制</li>
 </ul>
 <p>默认的用户名是<code>root</code>，密码即是之前配置主机时设置的密码。<br>登陆成功后应该是这样</p>
-<p>接下来就基本上是复制粘贴了，在PuTTY中右键即可粘贴，记得一条一条复制粘贴，有请求确认的一律输入<code>y</code>进行确认。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get install curl</div><div class="line">curl <span class="string">'https://raw.githubusercontent.com/shadowsocks/stackscript/master/stackscript.sh?v=4'</span> &gt; /tmp/ss.sh &amp;&amp; bash /tmp/ss.sh &amp;&amp; rm /tmp/ss.sh</div></pre></td></tr></table></figure></p>
-<p>等指令运行完之后，Shadowsocks就已经装好了。上面主要参考了clowwindy（Shadowsocks的开发者）的<a href="https://github.com/shadowsocks/shadowsocks/wiki/%E5%9C%A8-Linode-%E4%B8%8A%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA-Shadowsocks" title="在 Linode 上快速搭建 Shadowsocks" target="_blank" rel="external">教程</a>。<br>安装完之后，还要做一些自定义的设置。<br>首先要准备一个多用户配置文件，建议事先准备好，类似模版如下：</p>
+<blockquote>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/7.jpeg" alt=""><br>（可能你的看起来跟我的看起来不一样，那是因为我已经修改了主题了，界面显示的文字是一样的）</p>
+</blockquote>
+<p>接下来就基本上是复制粘贴了，在PuTTY中右键即可粘贴，记得一条一条复制粘贴，有请求确认的一律输入<code>y</code>进行确认。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get update</div><div class="line">apt-get install python-gevent python-pip python-m2crypto python-wheel python-setuptools</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure></p>
+<p>等指令运行完之后，Shadowsocks就已经装好了,就是如此之快。<br>安装完之后，还要做一些自定义的设置。<br>首先要准备一个多用户配置文件，建议事先准备好，类似模版如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,    </div><div class="line"><span class="string">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</div><div class="line"><span class="string">"local_port"</span>:<span class="number">1080</span>,</div><div class="line"><span class="string">"port_password"</span>:&#123;</div><div class="line">    <span class="string">"6677"</span>:<span class="string">"password0"</span>,    <span class="comment">/* 你的Shadowsocks端口(1024~65536)和密码*/</span></div><div class="line">    <span class="string">"7788"</span>:<span class="string">"password1"</span>,</div><div class="line">    <span class="string">"8899"</span>:<span class="string">"password2"</span>     <span class="comment">/* 不够可以继续添加，注意行尾逗号*/</span></div><div class="line">&#125;,</div><div class="line"><span class="string">"timeout"</span>:<span class="number">600</span>,</div><div class="line"><span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>    <span class="comment">/* 你的Shadowsocks加密协议，*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>执行命令<br><code>apt-get install vim</code><br>安装Vim编辑器，执行命令<br><code>vi /etc/shadowsocks.json</code><br>进入Vim编辑器，按<code>i</code>进入编辑模式，此时PuTTY串口的左下角会出现 <code>-- INSERT --</code> 字样，用退格键讲原有文字全部删除，然后再右键粘贴上述Shadowsocks配置文档。之后按<code>Esc</code>进入命令模式，此时<code>-- INSERT --</code> 字样会消失，输入<code>:wq</code> 然后回车即可保存文档并退出Vim编辑器。更多Vim的操作可以查看<a href="http://pizn.github.io/2012/03/03/vim-commonly-used-command.html" title="Vim 常用命令总结" target="_blank" rel="external">此博客</a>。<br>然后执行命令<br><code>supervisorctl restart shadowsocks</code><br>重启Shadowsocks服务。<br>至此Shadowsocks的服务器端配置就全部完成了。</p>
-<h3 id="手机，电脑等客户端配置"><a href="#手机，电脑等客户端配置" class="headerlink" title="手机，电脑等客户端配置"></a>手机，电脑等客户端配置</h3><p>实在不想写了，不过电脑上一定要把各种浏览器如何跟代理相关的插件禁用，要是你IE能翻而Chrome或者Firefox翻不了，十有八九是你的扩展或者代理设置出了问题，改过host的记得还原。手机的话不妨重启试试？iOS平台代理应用的话，免费的有Wingy和6块钱的Wingy还有18块的Shadowrockwt可以用。</p>
-<h2 id="Shadowsocks优化篇"><a href="#Shadowsocks优化篇" class="headerlink" title="Shadowsocks优化篇"></a>Shadowsocks优化篇</h2><p>Shadowsocks加速优化流行的有很多方式，我进行尝试和比较之后，推荐大家使用BBR（一种TCP拥塞控制算法）加速，前面的安装很多选项也是基于方便开启BBR加速来的。<br>使用BBR加速需要服务器端主机完整的内核版本为4.9+的支持，下面一Linode主机为例进行设置。<br>首先Linode主机提供的内核版本虽然大于4.9，但是<a href="https://www.mxgw.info/t/linux-kernel-4-9-bbr.html" title="Linux Kernel 4.9 &amp; BBR" target="_blank" rel="external">内核却不完整</a>，并不包含BBR组件，无法直接开启。<br>所以我们要先安装完整内核（64位），32位可以参考<a href="https://doub.io/wlzy-15/" title="比锐速还强的 TCP拥塞控制技术 —— TCP-BBR 测试及开启教程" target="_blank" rel="external">这篇博客</a>。</p>
+<p>执行命令<br><code>apt-get install vim</code><br>安装Vim编辑器，执行命令<br><code>vi /etc/shadowsocks.json</code><br>进入Vim编辑器，按<code>i</code>进入编辑模式，此时注意PuTTY串口的左下角会出现 <code>-- INSERT --</code> 字样，用退格键将原有文字全部删除，然后再右键粘贴上述Shadowsocks全部配置文档。之后按<code>Esc</code>进入命令模式，此时<code>-- INSERT --</code> 字样会消失，输入<code>:wq</code> 然后回车即可保存文档并退出Vim编辑器。更多Vim的操作可以查看<a href="http://pizn.github.io/2012/03/03/vim-commonly-used-command.html" title="Vim 常用命令总结" target="_blank" rel="external">此博客</a>。<br>然后执行命令<br><code>supervisorctl restart shadowsocks</code><br>重启Shadowsocks服务。<br>至此Shadowsocks的服务器端配置就全部完成了。</p>
+<h2 id="Shadowsocks优化篇"><a href="#Shadowsocks优化篇" class="headerlink" title="Shadowsocks优化篇"></a>Shadowsocks优化篇</h2><p>Shadowsocks加速优化流行的有很多方式，我进行尝试和比较之后，推荐大家使用BBR（一种TCP拥塞控制算法）来加速。<br>使用BBR加速需要服务器端主机完整的内核版本为4.9+的支持，下面一Linode主机为例进行设置。<br>首先Linode主机提供的内核版本虽然大于4.9，但是<a href="https://www.mxgw.info/t/linux-kernel-4-9-bbr.html" title="Linux Kernel 4.9 &amp; BBR" target="_blank" rel="external">内核却不完整</a>，并不包含BBR组件，无法直接开启。<br>所以我们要先安装完整内核（64位），32位可以参考<a href="https://doub.io/wlzy-15/" title="比锐速还强的 TCP拥塞控制技术 —— TCP-BBR 测试及开启教程" target="_blank" rel="external">这篇博客</a>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -O linux-image-4.9.2-amd64.deb http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9.2/linux-image-4.9.2-040902-generic_4.9.2-040902.201701090331_amd64.deb</div></pre></td></tr></table></figure>
 <p>然后安装内核<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dpkg -i linux-image-4.9.2-amd64.deb</div></pre></td></tr></table></figure></p>
 <p>Shut down关机</p>
-<p>然后编辑主机</p>
-<p>此处内核选择GRUB 2</p>
-<p>保存后启动主机。<br>再用PuTTY登陆到VPS，执行<code>uname -r</code>看内核是否是4.9+<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"net.core.default_qdisc=fq"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line"><span class="built_in">echo</span> <span class="string">"net.ipv4.tcp_congestion_control=bbr"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line">sysctl -p</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpeg" alt=""><br>然后编辑主机<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpeg" alt=""><br>此处内核选择GRUB 2<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpeg" alt=""><br>保存后启动主机。<br>再用PuTTY登陆到VPS，执行<code>uname -r</code>看内核是否是4.9+<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"net.core.default_qdisc=fq"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line"><span class="built_in">echo</span> <span class="string">"net.ipv4.tcp_congestion_control=bbr"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line">sysctl -p</div></pre></td></tr></table></figure></p>
+</blockquote>
 <p>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sysctl net.ipv4.tcp_available_congestion_control</div><div class="line">sysctl net.ipv4.tcp_congestion_control</div></pre></td></tr></table></figure></p>
 <p>如果结果中都有<code>bbr</code>字样即显示，你已成功开启BBR。<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lsmod | grep bbr</div></pre></td></tr></table></figure></p>
-<p>如果结果中有<code>tcp_bbr</code>即说明BBR已成功启动运行。<br>然后将<code>lsmod | grep bbr</code>写入<code>\etc\rc.local</code>作为开机运行一次<br>最后重启Shadowsocks<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">supervisorctl restart shadowsocks</div></pre></td></tr></table></figure></p>
-<p>最后的最后已经没有最后了，至此完完全全的大功告成了，起飞~，我这10M联通小水管看YouTube 1080P还是完全没有问题的。<br>我的测试对比显示开启BBR能提示30%到50%的速度，这个加速还是很有必要的。</p>
-<h2 id="Shadowsocks使用篇"><a href="#Shadowsocks使用篇" class="headerlink" title="Shadowsocks使用篇"></a>Shadowsocks使用篇</h2><h3 id="PC桌面端"><a href="#PC桌面端" class="headerlink" title="PC桌面端"></a>PC桌面端</h3><p>PC客户端可到<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">shadowsocks-windows</a>下载，安装好填好你的服务器信息即可。</p>
+<p>如果结果中有<code>tcp_bbr</code>即说明BBR已成功启动运行。<br>然后将<code>lsmod | grep bbr</code>用Vim写入<code>\etc\rc.local</code>作为开机运行一次<br>最后重启Shadowsocks<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">supervisorctl restart shadowsocks</div></pre></td></tr></table></figure></p>
+<p>最后的最后已经没有最后了，至此完完全全的大功告成了，起飞~，我这60M联通看YouTube 1080P还是完全没有问题的。<br>我的测试对比显示开启BBR能提示30%到50%的速度，这个加速还是很有必要的。</p>
+<p>##Shadowsocks使用篇</p>
+<p>###PC桌面端<br>PC客户端可到<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">shadowsocks-windows</a>下载，安装好填好你的服务器信息即可。</p>
 <p>###Android客户端<br>Android客户端可到<a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="external">shadowsocks-android</a>安装下载。</p>
-<h3 id="iOS客户端"><a href="#iOS客户端" class="headerlink" title="iOS客户端"></a>iOS客户端</h3><p>iOS上可供选择的客户端比较多，免费的有Wingy(免费版，有推广信息），6元的有Wingy,18元的有Shadowrocket(功能比Wingy多），更贵的有Potatso 2以及著名的Surge。<br>安装好应用好后配置好就可以用了，建议加入到Widget,非常方便。<br>配置时可以扫电脑客户端生成的二维码。</p>
-<h3 id="使用小技巧"><a href="#使用小技巧" class="headerlink" title="使用小技巧"></a>使用小技巧</h3><p>代理的模式一般分为两种，一种是全局代理，一种是跟据配置文件来代理，虽然叫法上不同，PC上叫「pac代理」，iOS上叫「配置代理」，Android上有点不同，称为「绕过局域网及中国大陆地址」。<br>所以，可能你开了代理，有些网站但是还是打不开，不妨试试开全局代理，全局代理有效的话，可以把该域名加入到你的配置文件，以后该域名就会走代理。</p>
-<h2 id="不常见的问题（主要是关于上面一些技术的选择，跳过完全没有问题）"><a href="#不常见的问题（主要是关于上面一些技术的选择，跳过完全没有问题）" class="headerlink" title="不常见的问题（主要是关于上面一些技术的选择，跳过完全没有问题）"></a>不常见的问题（主要是关于上面一些技术的选择，跳过完全没有问题）</h2><ol>
+<p>###iOS客户端<br>iOS上可供选择的客户端比较多，免费的有Wingy(免费版，有推广信息），6元的有Wingy,18元的有Shadowrocket(功能比Wingy多），更贵的有Potatso 2以及著名的Surge。<br>安装好应用好后配置好就可以用了，建议加入到Widget,非常方便。<br>配置时可以扫电脑客户端生成的二维码。</p>
+<p>###使用小技巧</p>
+<p>###手机，电脑等客户端配置<br>记得把电脑上各种浏览器跟代理相关的插件禁用，要是你IE能翻而Chrome或者Firefox翻不了，十有八九是你的扩展或者代理设置出了问题，改过host的记得还原。手机的话不妨重启试试？iOS平台代理应用的话，免费的有Wingy和6块钱的Wingy还有18块的Shadowrockwt可以用。<br>代理的模式一般分为两种，一种是全局代理，一种是跟据配置文件来代理，虽然叫法上不同，PC上叫「pac代理」，iOS上叫「配置代理」，Android上有点不同，称为「绕过局域网及中国大陆地址」。<br>所以，可能你开了代理，有些网站但是还是打不开，不妨试试开全局代理，全局代理有效的话，可以把该域名加入到你的配置文件，以后该域名就会走代理。</p>
+<p>##不常见的问题（主要是关于上面一些技术的选择，跳过完全没有问题）</p>
+<ol>
 <li><p>服务器地址的选择？<br>一般来说日本的机房延迟(Ping)低，速度快，但是有些情况会遇到版权问题，比如说 YouTube 视频锁区了，就没法看了。<br>美国的机房相对于日本机房会比较慢一些。<br>如果你的 VPS 提供商有新加坡或者香港的机房可选择，不妨试试，说不定翻墙效果比日本的机房还要好。</p>
 </li>
 <li><p>关于 Shadowsocks 服务器端的选择？<br>Shadowsocks 服务器端一般有 Python, libev, Go, Nodejs 等版本。Python 版最成熟，文档最多，但是也是很久没更新了。其他版本各有优点，可自行选择。<br>还有一个根据 Shadowsocks 原版协议修改而来的 ShadowsocksR， 但是这个需要专用的客户端，以及有些第三方应用有些支持其特有的特性，有些不支持，所以就不采用这个了。</p>
@@ -130,7 +111,8 @@
 <li>多账户配置</li>
 <li>Web网页配置</li>
 </ol>
-<h2 id="感谢及版权声明"><a href="#感谢及版权声明" class="headerlink" title="感谢及版权声明"></a>感谢及版权声明</h2><p>反正我对的技术的了解也几乎小白，都是拿Google搜出来的别人的博客，一个一个试，试过有很多不同的方案，各种主机系统，各种加速方案，对比斟酌出这样一个最好最快的解决方案。感谢各位博主给出的方案和操作步骤，对我参考比较大的都又在文章里附了链接。</p>
+<p>##感谢及版权声明</p>
+<p>反正我对的技术的了解也几乎小白，都是拿Google搜出来的别人的博客，一个一个试，试过有很多不同的方案，各种主机系统，各种加速方案，对比斟酌出这样一个最好最快的解决方案。感谢各位博主给出的方案和操作步骤，对我参考比较大的都又在文章里附了链接。</p>
 <p>不接受，不署名、不带原始链接、修改原文以及全文转载的形式转载。</p>
 ]]></content>
     
