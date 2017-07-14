@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpg">
-<meta property="og:updated_time" content="2017-07-14T12:58:22.137Z">
+<meta property="og:updated_time" content="2017-07-14T13:01:14.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shadowsocks服务器搭建比较全的纪录">
 <meta name="twitter:description" content="文章较长，先理理思路。首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的搭建以及优化，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。 ##Shadowsocks是什么？首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private netwo">
@@ -164,36 +164,21 @@
 <h3 id="搭建Shadowsocks服务器端"><a href="#搭建Shadowsocks服务器端" class="headerlink" title="搭建Shadowsocks服务器端"></a>搭建Shadowsocks服务器端</h3><p>在注册好VPS之后，就需要在VPS上搭建一个系统。<br>因为我用的Linode的主机，所以以下就是以Linode的界面为主，其他主机商的配置界面大同小异，触类旁通。</p>
 <h4 id="Linode主机设置"><a href="#Linode主机设置" class="headerlink" title="Linode主机设置"></a>Linode主机设置</h4><p>在开始新建系统之前，Linode的后台对新手不是很友好，建议看看<a href="https://www.linode.com/docs/getting-started/" title="Getting Started with Linode" target="_blank" rel="external">Linode官方开始教程</a>视频的前半部分。</p>
 <ul>
-<li>选择套餐<br>建议选择日本的机房，延迟会低一些，<blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2.jpg" alt=""><br>选择好套餐后，你就可以看到你的主机IP（图示箭头处），记住这个IP地址，后面会要用<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/3.jpg" alt=""></p>
-</blockquote>
-</li>
-<li>选择<code>Delay an Image</code><blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/4.jpg" alt=""></p>
-</blockquote>
-</li>
+<li>选择套餐<br>建议选择日本的机房，延迟会低一些，<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2.jpg" alt=""><br>选择好套餐后，你就可以看到你的主机IP（图示箭头处），记住这个IP地址，后面会要用<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/3.jpg" alt=""></li>
+<li>选择<code>Delay an Image</code><br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/4.jpg" alt=""></li>
 <li>选择<code>Ubuntu 16.04 LTS</code>作为操作系统</li>
 <li><code>Swap Disk</code>项选择512MB</li>
 <li><code>Root Password</code>填好你自己的想对主机设置的密码，后面要用</li>
 <li>之后<code>Deploy</code>即可，记得配置好后要<code>Boot</code></li>
 </ul>
-<h3 id="Vultr主机设置"><a href="#Vultr主机设置" class="headerlink" title="Vultr主机设置"></a>Vultr主机设置</h3><p>相比Linode而言，Vultr设置就要直观美观的多。<br>选择日本机房，月付$2.5的套餐，选择<code>Ubuntu 16.04 LTS</code>作为系统，开启IPv6即可。</p>
-<blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpg" alt=""></p>
-</blockquote>
+<h3 id="Vultr主机设置"><a href="#Vultr主机设置" class="headerlink" title="Vultr主机设置"></a>Vultr主机设置</h3><p>相比Linode而言，Vultr设置就要直观美观的多。<br>选择日本机房，月付$2.5的套餐，选择<code>Ubuntu 16.04 LTS</code>作为系统，开启IPv6即可。<br> <img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpg" alt=""></p>
 <p>###Shadowsocks服务器端搭建</p>
-<p>在将主机设置好后，我们就可以开始着手服务器的搭建了。<br>首先我们要使用一个软件——PuTTY，<a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" rel="external">点击即可下载<br>(64位)</a>，在下图红线处填入你主机的IP，端口保持默认即可，之后点击<code>Open</code>即可。</p>
-<blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpg" alt=""><br>之后就是黑乎乎的一片，不过不用担心，后面只要做一些简单的复制粘贴即可配置好了。<br>注意事项：</p>
-</blockquote>
+<p>在将主机设置好后，我们就可以开始着手服务器的搭建了。<br>首先我们要使用一个软件——PuTTY，<a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" rel="external">点击即可下载<br>(64位)</a>，在下图红线处填入你主机的IP，端口保持默认即可，之后点击<code>Open</code>即可。<br> <img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpg" alt=""><br>之后就是黑乎乎的一片，不过不用担心，后面只要做一些简单的复制粘贴即可配置好了。<br>注意事项：</p>
 <ul>
 <li>使用PuTTY时一定要确保自己的输入法是在英文状态</li>
 <li>之后复制粘贴命令时确保一行一行复制粘贴，不建议多行复制</li>
 </ul>
-<p>默认的用户名是<code>root</code>，密码即是之前配置主机时设置的密码。<br>登陆成功后应该是这样</p>
-<blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/7.jpg" alt=""><br>（可能你的看起来跟我的看起来不一样，那是因为我已经修改了主题了，界面显示的文字是一样的）</p>
-</blockquote>
+<p>默认的用户名是<code>root</code>，密码即是之前配置主机时设置的密码。<br>登陆成功后应该是这样<br> <img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/7.jpg" alt=""><br>（可能你的看起来跟我的看起来不一样，那是因为我已经修改了主题了，界面显示的文字是一样的）</p>
 <p>接下来就基本上是复制粘贴了，在PuTTY中右键即可粘贴，记得一条一条复制粘贴，有请求确认的一律输入<code>y</code>进行确认。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get update</div><div class="line">apt-get install python-gevent python-pip python-m2crypto python-wheel python-setuptools</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure></p>
 <p>等指令运行完之后，Shadowsocks就已经装好了,就是如此之快。<br>安装完之后，还要做一些自定义的设置。<br>首先要准备一个多用户配置文件，建议事先准备好，类似模版如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="string">"server"</span>:<span class="string">"0.0.0.0"</span>,    </div><div class="line"><span class="string">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</div><div class="line"><span class="string">"local_port"</span>:<span class="number">1080</span>,</div><div class="line"><span class="string">"port_password"</span>:&#123;</div><div class="line">    <span class="string">"6677"</span>:<span class="string">"password0"</span>,    <span class="comment">/* 你的Shadowsocks端口(1024~65536)和密码*/</span></div><div class="line">    <span class="string">"7788"</span>:<span class="string">"password1"</span>,</div><div class="line">    <span class="string">"8899"</span>:<span class="string">"password2"</span>     <span class="comment">/* 不够可以继续添加，注意行尾逗号*/</span></div><div class="line">&#125;,</div><div class="line"><span class="string">"timeout"</span>:<span class="number">600</span>,</div><div class="line"><span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span>    <span class="comment">/* 你的Shadowsocks加密协议，*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -201,10 +186,7 @@
 <h2 id="Shadowsocks优化篇"><a href="#Shadowsocks优化篇" class="headerlink" title="Shadowsocks优化篇"></a>Shadowsocks优化篇</h2><p>Shadowsocks加速优化流行的有很多方式，我进行尝试和比较之后，推荐大家使用BBR（一种TCP拥塞控制算法）来加速。<br>使用BBR加速需要服务器端主机完整的内核版本为4.9+的支持，下面一Linode主机为例进行设置。<br>首先Linode主机提供的内核版本虽然大于4.9，但是<a href="https://www.mxgw.info/t/linux-kernel-4-9-bbr.html" title="Linux Kernel 4.9 &amp; BBR" target="_blank" rel="external">内核却不完整</a>，并不包含BBR组件，无法直接开启。<br>所以我们要先安装完整内核（64位），32位可以参考<a href="https://doub.io/wlzy-15/" title="比锐速还强的 TCP拥塞控制技术 —— TCP-BBR 测试及开启教程" target="_blank" rel="external">这篇博客</a>。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wget -O linux-image-4.9.2-amd64.deb http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9.2/linux-image-4.9.2-040902-generic_4.9.2-040902.201701090331_amd64.deb</div></pre></td></tr></table></figure>
 <p>然后安装内核<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dpkg -i linux-image-4.9.2-amd64.deb</div></pre></td></tr></table></figure></p>
-<p>Shut down关机</p>
-<blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpg" alt=""><br>然后编辑主机<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpg" alt=""><br>此处内核选择GRUB 2<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpg" alt=""><br>保存后启动主机。<br>再用PuTTY登陆到VPS，执行<code>uname -r</code>看内核是否是4.9+<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"net.core.default_qdisc=fq"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line"><span class="built_in">echo</span> <span class="string">"net.ipv4.tcp_congestion_control=bbr"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line">sysctl -p</div></pre></td></tr></table></figure></p>
-</blockquote>
+<p>Shut down关机<br> <img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpg" alt=""><br>然后编辑主机<br> <img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpg" alt=""><br>此处内核选择GRUB 2<br> <img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpg" alt=""><br>保存后启动主机。<br>再用PuTTY登陆到VPS，执行<code>uname -r</code>看内核是否是4.9+<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"net.core.default_qdisc=fq"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line"><span class="built_in">echo</span> <span class="string">"net.ipv4.tcp_congestion_control=bbr"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line">sysctl -p</div></pre></td></tr></table></figure></p>
 <p>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sysctl net.ipv4.tcp_available_congestion_control</div><div class="line">sysctl net.ipv4.tcp_congestion_control</div></pre></td></tr></table></figure></p>
 <p>如果结果中都有<code>bbr</code>字样即显示，你已成功开启BBR。<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lsmod | grep bbr</div></pre></td></tr></table></figure></p>
 <p>如果结果中有<code>tcp_bbr</code>即说明BBR已成功启动运行。<br>然后将<code>lsmod | grep bbr</code>用Vim写入<code>\etc\rc.local</code>作为开机运行一次<br>最后重启Shadowsocks<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">supervisorctl restart shadowsocks</div></pre></td></tr></table></figure></p>
