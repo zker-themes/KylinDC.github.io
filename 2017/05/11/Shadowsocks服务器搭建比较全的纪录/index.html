@@ -13,21 +13,21 @@
 <meta property="og:url" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="文章较长，先理理思路。首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的搭建以及优化，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。 ##Shadowsocks是什么？首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private netwo">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpeg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2.jpeg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/3.jpeg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/4.jpeg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpeg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpeg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/7.jpeg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpeg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpeg">
-<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpeg">
-<meta property="og:updated_time" content="2017-07-14T12:54:35.596Z">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/3.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/4.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/7.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpg">
+<meta property="og:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpg">
+<meta property="og:updated_time" content="2017-07-14T12:58:22.137Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shadowsocks服务器搭建比较全的纪录">
 <meta name="twitter:description" content="文章较长，先理理思路。首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的搭建以及优化，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。 ##Shadowsocks是什么？首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private netwo">
-<meta name="twitter:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpeg">
+<meta name="twitter:image" content="http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg">
     
     
         
@@ -147,7 +147,7 @@
     <p>文章较长，先理理思路。<br>首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的<strong>搭建</strong>以及<strong>优化</strong>，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。</p>
 <p>##Shadowsocks是什么？<br>首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private network，虚拟专有网络）是用来翻墙的主要方式，但是随着GFW的不断升级，这种方式很容易被封，所以后来基本上没有人用这种技术方式来翻墙的了，但是’VPN’这个词就慢慢被指代为所有的翻墙方式。翻墙方式用很多种，不单单只有VPN一种，所以’VPN’这个词在不同的含义下有不同的意思。<br>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>开发的一个开源代理加密协议，有很多用途，当然最常见的还是拿来翻墙。事实上现在所有的商业的翻墙代理（云梯，多态等）底层都是Shadowsocks技术。<br>如果想要知道Shadowsocks的具体技术细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="external">写给非专业人士看的 Shadowsocks 简介</a>。</p>
 <blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpeg" alt="Shadowsocks组件"></p>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg" alt="Shadowsocks组件"></p>
 </blockquote>
 <p>根据上图我们可以明白使用Shadowsocks来翻墙至少需要</p>
 <ol>
@@ -165,11 +165,11 @@
 <h4 id="Linode主机设置"><a href="#Linode主机设置" class="headerlink" title="Linode主机设置"></a>Linode主机设置</h4><p>在开始新建系统之前，Linode的后台对新手不是很友好，建议看看<a href="https://www.linode.com/docs/getting-started/" title="Getting Started with Linode" target="_blank" rel="external">Linode官方开始教程</a>视频的前半部分。</p>
 <ul>
 <li>选择套餐<br>建议选择日本的机房，延迟会低一些，<blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2.jpeg" alt=""><br>选择好套餐后，你就可以看到你的主机IP（图示箭头处），记住这个IP地址，后面会要用<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/3.jpeg" alt=""></p>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2.jpg" alt=""><br>选择好套餐后，你就可以看到你的主机IP（图示箭头处），记住这个IP地址，后面会要用<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/3.jpg" alt=""></p>
 </blockquote>
 </li>
 <li>选择<code>Delay an Image</code><blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/4.jpeg" alt=""></p>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/4.jpg" alt=""></p>
 </blockquote>
 </li>
 <li>选择<code>Ubuntu 16.04 LTS</code>作为操作系统</li>
@@ -179,12 +179,12 @@
 </ul>
 <h3 id="Vultr主机设置"><a href="#Vultr主机设置" class="headerlink" title="Vultr主机设置"></a>Vultr主机设置</h3><p>相比Linode而言，Vultr设置就要直观美观的多。<br>选择日本机房，月付$2.5的套餐，选择<code>Ubuntu 16.04 LTS</code>作为系统，开启IPv6即可。</p>
 <blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpeg" alt=""></p>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpg" alt=""></p>
 </blockquote>
 <p>###Shadowsocks服务器端搭建</p>
 <p>在将主机设置好后，我们就可以开始着手服务器的搭建了。<br>首先我们要使用一个软件——PuTTY，<a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" rel="external">点击即可下载<br>(64位)</a>，在下图红线处填入你主机的IP，端口保持默认即可，之后点击<code>Open</code>即可。</p>
 <blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpeg" alt=""><br>之后就是黑乎乎的一片，不过不用担心，后面只要做一些简单的复制粘贴即可配置好了。<br>注意事项：</p>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpg" alt=""><br>之后就是黑乎乎的一片，不过不用担心，后面只要做一些简单的复制粘贴即可配置好了。<br>注意事项：</p>
 </blockquote>
 <ul>
 <li>使用PuTTY时一定要确保自己的输入法是在英文状态</li>
@@ -192,7 +192,7 @@
 </ul>
 <p>默认的用户名是<code>root</code>，密码即是之前配置主机时设置的密码。<br>登陆成功后应该是这样</p>
 <blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/7.jpeg" alt=""><br>（可能你的看起来跟我的看起来不一样，那是因为我已经修改了主题了，界面显示的文字是一样的）</p>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/7.jpg" alt=""><br>（可能你的看起来跟我的看起来不一样，那是因为我已经修改了主题了，界面显示的文字是一样的）</p>
 </blockquote>
 <p>接下来就基本上是复制粘贴了，在PuTTY中右键即可粘贴，记得一条一条复制粘贴，有请求确认的一律输入<code>y</code>进行确认。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get update</div><div class="line">apt-get install python-gevent python-pip python-m2crypto python-wheel python-setuptools</div><div class="line">pip install shadowsocks</div></pre></td></tr></table></figure></p>
 <p>等指令运行完之后，Shadowsocks就已经装好了,就是如此之快。<br>安装完之后，还要做一些自定义的设置。<br>首先要准备一个多用户配置文件，建议事先准备好，类似模版如下：</p>
@@ -203,7 +203,7 @@
 <p>然后安装内核<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dpkg -i linux-image-4.9.2-amd64.deb</div></pre></td></tr></table></figure></p>
 <p>Shut down关机</p>
 <blockquote>
-<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpeg" alt=""><br>然后编辑主机<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpeg" alt=""><br>此处内核选择GRUB 2<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpeg" alt=""><br>保存后启动主机。<br>再用PuTTY登陆到VPS，执行<code>uname -r</code>看内核是否是4.9+<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"net.core.default_qdisc=fq"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line"><span class="built_in">echo</span> <span class="string">"net.ipv4.tcp_congestion_control=bbr"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line">sysctl -p</div></pre></td></tr></table></figure></p>
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/8.jpg" alt=""><br>然后编辑主机<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/9.jpg" alt=""><br>此处内核选择GRUB 2<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/10.jpg" alt=""><br>保存后启动主机。<br>再用PuTTY登陆到VPS，执行<code>uname -r</code>看内核是否是4.9+<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="string">"net.core.default_qdisc=fq"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line"><span class="built_in">echo</span> <span class="string">"net.ipv4.tcp_congestion_control=bbr"</span> &gt;&gt; /etc/sysctl.conf</div><div class="line">sysctl -p</div></pre></td></tr></table></figure></p>
 </blockquote>
 <p>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sysctl net.ipv4.tcp_available_congestion_control</div><div class="line">sysctl net.ipv4.tcp_congestion_control</div></pre></td></tr></table></figure></p>
 <p>如果结果中都有<code>bbr</code>字样即显示，你已成功开启BBR。<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lsmod | grep bbr</div></pre></td></tr></table></figure></p>
