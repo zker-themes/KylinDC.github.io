@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2017-07-14T13:28:20.164Z</updated>
+  <updated>2017-07-14T13:29:39.918Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://kylindc.github.io/2017/05/11/Shadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%AF%94%E8%BE%83%E5%85%A8%E7%9A%84%E7%BA%AA%E5%BD%95/"/>
     <id>https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/</id>
     <published>2017-05-11T08:19:31.000Z</published>
-    <updated>2017-07-14T13:28:20.164Z</updated>
+    <updated>2017-07-14T13:29:39.918Z</updated>
     
     <content type="html"><![CDATA[<p>文章较长，先理理思路。<br>首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的<strong>搭建</strong>以及<strong>优化</strong>，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。</p>
 <p>##Shadowsocks是什么？<br>首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private network，虚拟专有网络）是用来翻墙的主要方式，但是随着GFW的不断升级，这种方式很容易被封，所以后来基本上没有人用这种技术方式来翻墙的了，但是’VPN’这个词就慢慢被指代为所有的翻墙方式。翻墙方式用很多种，不单单只有VPN一种，所以’VPN’这个词在不同的含义下有不同的意思。<br>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>开发的一个开源代理加密协议，有很多用途，当然最常见的还是拿来翻墙。事实上现在所有的商业的翻墙代理（云梯，多态等）底层都是Shadowsocks技术。<br>如果想要知道Shadowsocks的具体技术细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="external">写给非专业人士看的 Shadowsocks 简介</a>。</p>
@@ -90,7 +90,7 @@
 </li>
 </ol>
 <p>如果你在自己搭建的过程中遇到什么问题也可以来联系我。</p>
-<p>走国走年很乱，大家各自珍重。</p>
+<p>走国走年很乱，大家保重。</p>
 <h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ol>
 <li>多账户配置</li>
 <li>Web网页配置</li>
