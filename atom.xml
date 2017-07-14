@@ -47,12 +47,12 @@
     <link href="http://yoursite.com/2017/05/11/Shadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%AF%94%E8%BE%83%E5%85%A8%E7%9A%84%E7%BA%AA%E5%BD%95/"/>
     <id>http://yoursite.com/2017/05/11/Shadowsocks服务器搭建比较全的纪录/</id>
     <published>2017-05-11T08:19:31.000Z</published>
-    <updated>2017-07-14T11:29:36.582Z</updated>
+    <updated>2017-07-14T11:31:51.559Z</updated>
     
     <content type="html"><![CDATA[<p>文章较长，先理理思路。<br>首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的<strong>搭建</strong>以及<strong>优化</strong>，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。</p>
-<h2 id="Shadowsocks是什么？"><a href="#Shadowsocks是什么？" class="headerlink" title="Shadowsocks是什么？"></a>Shadowsocks是什么？</h2><p>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>开发一个开源代理加密协议，最常见的用途就是翻墙。<br>Shadowsocks的具体细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="external">写给非专业人士看的 Shadowsocks 简介</a>。<br><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg" alt="Shadowsocks工作流程"></p>
+<h2 id="Shadowsocks是什么？"><a href="#Shadowsocks是什么？" class="headerlink" title="Shadowsocks是什么？"></a>Shadowsocks是什么？</h2><p>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>开发一个开源代理加密协议，最常见的用途就是翻墙。<br>Shadowsocks的具体细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="external">写给非专业人士看的 Shadowsocks 简介</a>。</p>
 <blockquote>
-<img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg" alt="Shadowsocks工作流程" title="Shadowsocks工作流程">
+<p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg" alt="Shadowsocks工作流程"></p>
 </blockquote>
 <p>上面那篇文章有一些名词看不懂也没关系，不过至少明白了使用Shadowsocks来翻墙至少需要</p>
 <ol>
