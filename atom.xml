@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2017-07-14T13:29:39.918Z</updated>
+  <updated>2017-07-15T14:48:21.676Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Python笔记</title>
+    <link href="https://kylindc.github.io/2017/07/15/Python%E7%AC%94%E8%AE%B0/"/>
+    <id>https://kylindc.github.io/2017/07/15/Python笔记/</id>
+    <published>2017-07-15T14:41:33.000Z</published>
+    <updated>2017-07-15T14:48:21.676Z</updated>
+    
+    <content type="html"><![CDATA[<p>#文件操作</p>
+<p>你好</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#文件操作&lt;/p&gt;
+&lt;p&gt;你好&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="Python" scheme="https://kylindc.github.io/tags/Python/"/>
+    
+      <category term="编程" scheme="https://kylindc.github.io/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Shadowsocks服务器搭建比较全的纪录</title>
