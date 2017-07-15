@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2017-07-15T14:48:21.676Z</updated>
+  <updated>2017-07-15T15:35:28.559Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -20,17 +20,23 @@
     <link href="https://kylindc.github.io/2017/07/15/Python%E7%AC%94%E8%AE%B0/"/>
     <id>https://kylindc.github.io/2017/07/15/Python笔记/</id>
     <published>2017-07-15T14:41:33.000Z</published>
-    <updated>2017-07-15T14:48:21.676Z</updated>
+    <updated>2017-07-15T15:35:28.559Z</updated>
     
-    <content type="html"><![CDATA[<p>#文件操作</p>
-<p>你好</p>
+    <content type="html"><![CDATA[<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="2017-7-15"><a href="#2017-7-15" class="headerlink" title="2017/7/15"></a>2017/7/15</h3><p>今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。</p>
+<p>网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答<a href="https://zhidao.baidu.com/question/583049390.html" target="_blank" rel="external">python怎么删除txt文本里面的第一行？</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fin=open(<span class="string">'a.txt'</span>)</div><div class="line">a=fin.readlines()</div><div class="line">fout=open(<span class="string">'newa.txt'</span>,<span class="string">'w'</span>)</div><div class="line">b=<span class="string">''</span>.join(a[<span class="number">1</span>:])</div><div class="line">fout.write(b)</div><div class="line">fin.close()</div><div class="line">fout.close()</div></pre></td></tr></table></figure>
+<p>思路倒也是不复杂，不过可以写得更Pythonic一些。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(file, <span class="string">'r+'</span>) <span class="keyword">as</span> fin:</div><div class="line">    a = fin.readlines()</div><div class="line">    <span class="keyword">with</span> open(file, <span class="string">'w'</span>) <span class="keyword">as</span> fout:</div><div class="line">        fout.writelines(a[<span class="number">23</span>:])    <span class="comment">#这里是删除前23行</span></div></pre></td></tr></table></figure>
+<p>注意到这种方法并没有像前面用的那样新建一个文件，直接打开写入的还是源文件，我也是偶然发现的，居然这样也行。没出现什么问题我也就没有去深究了。</p>
+<p>再在前面加上一些系统目录相关的就能批量操作同Python文件文件夹里所有的文件了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line">path = os.getcwd()    <span class="comment"># 读取当前目录</span></div><div class="line">files = os.listdir(path)    <span class="comment"># 读取当前目录文件夹所有文件</span></div></pre></td></tr></table></figure>
+<p>TODO: 没有想出一个好办法来判断求出要删除的行</p>
+<h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><h3 id="2017-7-15-1"><a href="#2017-7-15-1" class="headerlink" title="2017/7/15"></a>2017/7/15</h3><p>TODO: 根据CSV文件画出的图，自动在图上标记出最大值点以及最大值。</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;#文件操作&lt;/p&gt;
-&lt;p&gt;你好&lt;/p&gt;
-
+      &lt;h2 id=&quot;文件操作&quot;&gt;&lt;a href=&quot;#文件操作&quot; class=&quot;headerlink&quot; title=&quot;文件操作&quot;&gt;&lt;/a&gt;文件操作&lt;/h2&gt;&lt;h3 id=&quot;2017-7-15&quot;&gt;&lt;a href=&quot;#2017-7-15&quot; class=&quot;headerlink&quot; title=
     
     </summary>
     
@@ -46,10 +52,10 @@
     <link href="https://kylindc.github.io/2017/05/11/Shadowsocks%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA%E6%AF%94%E8%BE%83%E5%85%A8%E7%9A%84%E7%BA%AA%E5%BD%95/"/>
     <id>https://kylindc.github.io/2017/05/11/Shadowsocks服务器搭建比较全的纪录/</id>
     <published>2017-05-11T08:19:31.000Z</published>
-    <updated>2017-07-14T13:29:39.918Z</updated>
+    <updated>2017-07-15T15:09:49.178Z</updated>
     
     <content type="html"><![CDATA[<p>文章较长，先理理思路。<br>首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的<strong>搭建</strong>以及<strong>优化</strong>，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。</p>
-<p>##Shadowsocks是什么？<br>首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private network，虚拟专有网络）是用来翻墙的主要方式，但是随着GFW的不断升级，这种方式很容易被封，所以后来基本上没有人用这种技术方式来翻墙的了，但是’VPN’这个词就慢慢被指代为所有的翻墙方式。翻墙方式用很多种，不单单只有VPN一种，所以’VPN’这个词在不同的含义下有不同的意思。<br>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>开发的一个开源代理加密协议，有很多用途，当然最常见的还是拿来翻墙。事实上现在所有的商业的翻墙代理（云梯，多态等）底层都是Shadowsocks技术。<br>如果想要知道Shadowsocks的具体技术细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="external">写给非专业人士看的 Shadowsocks 简介</a>。</p>
+<h2 id="Shadowsocks是什么？"><a href="#Shadowsocks是什么？" class="headerlink" title="Shadowsocks是什么？"></a>Shadowsocks是什么？</h2><p>首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private network，虚拟专有网络）是用来翻墙的主要方式，但是随着GFW的不断升级，这种方式很容易被封，所以后来基本上没有人用这种技术方式来翻墙的了，但是’VPN’这个词就慢慢被指代为所有的翻墙方式。翻墙方式用很多种，不单单只有VPN一种，所以’VPN’这个词在不同的含义下有不同的意思。<br>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>开发的一个开源代理加密协议，有很多用途，当然最常见的还是拿来翻墙。事实上现在所有的商业的翻墙代理（云梯，多态等）底层都是Shadowsocks技术。<br>如果想要知道Shadowsocks的具体技术细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="external">写给非专业人士看的 Shadowsocks 简介</a>。</p>
 <blockquote>
 <p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg" alt="Shadowsocks组件"></p>
 </blockquote>
@@ -76,8 +82,7 @@
 <li>之后<code>Deploy</code>即可，记得配置好后要<code>Boot</code></li>
 </ul>
 <h3 id="Vultr主机设置"><a href="#Vultr主机设置" class="headerlink" title="Vultr主机设置"></a>Vultr主机设置</h3><p>相比Linode而言，Vultr设置就要直观美观的多。<br>选择日本机房，月付$2.5的套餐，选择<code>Ubuntu 16.04 LTS</code>作为系统，开启IPv6即可。<br> <img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/5.jpg" alt=""></p>
-<p>###Shadowsocks服务器端搭建</p>
-<p>在将主机设置好后，我们就可以开始着手服务器的搭建了。<br>首先我们要使用一个软件——PuTTY，<a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" rel="external">点击即可下载<br>(64位)</a>，在下图红线处填入你主机的IP，端口保持默认即可，之后点击<code>Open</code>即可。<br> <img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpg" alt=""><br>之后就是黑乎乎的一片，不过不用担心，后面只要做一些简单的复制粘贴即可配置好了。<br>注意事项：</p>
+<h3 id="Shadowsocks服务器端搭建"><a href="#Shadowsocks服务器端搭建" class="headerlink" title="Shadowsocks服务器端搭建"></a>Shadowsocks服务器端搭建</h3><p>在将主机设置好后，我们就可以开始着手服务器的搭建了。<br>首先我们要使用一个软件——PuTTY，<a href="https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe" target="_blank" rel="external">点击即可下载<br>(64位)</a>，在下图红线处填入你主机的IP，端口保持默认即可，之后点击<code>Open</code>即可。<br> <img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/6.jpg" alt=""><br>之后就是黑乎乎的一片，不过不用担心，后面只要做一些简单的复制粘贴即可配置好了。<br>注意事项：</p>
 <ul>
 <li>使用PuTTY时一定要确保自己的输入法是在英文状态</li>
 <li>之后复制粘贴命令时确保一行一行复制粘贴，不建议多行复制</li>
@@ -95,12 +100,10 @@
 <p>如果结果中都有<code>bbr</code>字样即显示，你已成功开启BBR。<br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lsmod | grep bbr</div></pre></td></tr></table></figure></p>
 <p>如果结果中有<code>tcp_bbr</code>即说明BBR已成功启动运行。<br>然后将<code>lsmod | grep bbr</code>用Vim写入<code>\etc\rc.local</code>作为开机运行一次<br>最后重启Shadowsocks<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">supervisorctl restart shadowsocks</div></pre></td></tr></table></figure></p>
 <p>最后的最后已经没有最后了，至此完完全全的大功告成了，起飞~，我这60M联通看YouTube 1080P还是完全没有问题的。<br>我的测试对比显示开启BBR能提示30%到50%的速度，这个加速还是很有必要的。</p>
-<p>##Shadowsocks使用篇</p>
-<p>###PC桌面端<br>PC客户端可到<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">shadowsocks-windows</a>下载，安装好填好你的服务器信息即可。</p>
-<p>###Android客户端<br>Android客户端可到<a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="external">shadowsocks-android</a>安装下载。</p>
-<p>###iOS客户端<br>iOS上可供选择的客户端比较多，免费的有Wingy(免费版，有推广信息），6元的有Wingy,18元的有Shadowrocket(功能比Wingy多），更贵的有Potatso 2以及著名的Surge。<br>安装好应用好后配置好就可以用了，建议加入到Widget,非常方便。<br>配置时可以扫电脑客户端生成的二维码。</p>
-<p>###使用小技巧</p>
-<p>###手机，电脑等客户端配置<br>记得把电脑上各种浏览器跟代理相关的插件禁用，要是你IE能翻而Chrome或者Firefox翻不了，十有八九是你的扩展或者代理设置出了问题，改过host的记得还原。手机的话不妨重启试试？iOS平台代理应用的话，免费的有Wingy和6块钱的Wingy还有18块的Shadowrockwt可以用。<br>代理的模式一般分为两种，一种是全局代理，一种是跟据配置文件来代理，虽然叫法上不同，PC上叫「pac代理」，iOS上叫「配置代理」，Android上有点不同，称为「绕过局域网及中国大陆地址」。<br>所以，可能你开了代理，有些网站但是还是打不开，不妨试试开全局代理，全局代理有效的话，可以把该域名加入到你的配置文件，以后该域名就会走代理。</p>
+<h2 id="Shadowsocks使用篇"><a href="#Shadowsocks使用篇" class="headerlink" title="Shadowsocks使用篇"></a>Shadowsocks使用篇</h2><h3 id="PC桌面端"><a href="#PC桌面端" class="headerlink" title="PC桌面端"></a>PC桌面端</h3><p>PC客户端可到<a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">shadowsocks-windows</a>下载，安装好填好你的服务器信息即可。</p>
+<h3 id="Android客户端"><a href="#Android客户端" class="headerlink" title="Android客户端"></a>Android客户端</h3><p>Android客户端可到<a href="https://github.com/shadowsocks/shadowsocks-android/releases" target="_blank" rel="external">shadowsocks-android</a>安装下载。</p>
+<h3 id="iOS客户端"><a href="#iOS客户端" class="headerlink" title="iOS客户端"></a>iOS客户端</h3><p>iOS上可供选择的客户端比较多，免费的有Wingy(免费版，有推广信息），6元的有Wingy,18元的有Shadowrocket(功能比Wingy多），更贵的有Potatso 2以及著名的Surge。<br>安装好应用好后配置好就可以用了，建议加入到Widget,非常方便。<br>配置时可以扫电脑客户端生成的二维码。</p>
+<h3 id="使用小技巧"><a href="#使用小技巧" class="headerlink" title="使用小技巧"></a>使用小技巧</h3><h3 id="手机，电脑等客户端配置"><a href="#手机，电脑等客户端配置" class="headerlink" title="手机，电脑等客户端配置"></a>手机，电脑等客户端配置</h3><p>记得把电脑上各种浏览器跟代理相关的插件禁用，要是你IE能翻而Chrome或者Firefox翻不了，十有八九是你的扩展或者代理设置出了问题，改过host的记得还原。手机的话不妨重启试试？iOS平台代理应用的话，免费的有Wingy和6块钱的Wingy还有18块的Shadowrockwt可以用。<br>代理的模式一般分为两种，一种是全局代理，一种是跟据配置文件来代理，虽然叫法上不同，PC上叫「pac代理」，iOS上叫「配置代理」，Android上有点不同，称为「绕过局域网及中国大陆地址」。<br>所以，可能你开了代理，有些网站但是还是打不开，不妨试试开全局代理，全局代理有效的话，可以把该域名加入到你的配置文件，以后该域名就会走代理。</p>
 <p>##不常见的问题（主要是关于上面一些技术的选择，跳过完全没有问题）</p>
 <ol>
 <li><p>服务器地址的选择？<br>一般来说日本的机房延迟(Ping)低，速度快，但是有些情况会遇到版权问题，比如说 YouTube 视频锁区了，就没法看了。<br>美国的机房相对于日本机房会比较慢一些。<br>如果你的 VPS 提供商有新加坡或者香港的机房可选择，不妨试试，说不定翻墙效果比日本的机房还要好。</p>
@@ -142,27 +145,24 @@
     <link href="https://kylindc.github.io/2016/06/29/%E5%85%B3%E4%BA%8E%E7%99%BD%E5%A4%9C%E8%A1%8C%E4%B8%AD%E6%9F%90%E4%BA%9B%E9%9A%90%E8%97%8F%E5%89%A7%E6%83%85%E7%9A%84%E6%8E%A8%E6%96%AD/"/>
     <id>https://kylindc.github.io/2016/06/29/关于白夜行中某些隐藏剧情的推断/</id>
     <published>2016-06-29T02:14:00.000Z</published>
-    <updated>2017-07-14T13:15:33.334Z</updated>
+    <updated>2017-07-15T14:52:58.001Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><strong>本文严重剧透以及长难句预警</strong><br><strong>内容相当相当粗俗，小孩子还请自觉回避</strong></p>
 </blockquote>
 <p><img src="/2016/06/29/关于白夜行中某些隐藏剧情的推断/白夜行.jpg" alt=""></p>
-<p>##亮司不能射精的原因</p>
-<p>一开始我还以为是亮司答应帮助友彦洗脱嫌疑，强行与尸体发生性关系后被恶心到了，留下了心理阴影所以性功能出现障碍，心想这亮司也不是铁板一块啊。后来觉得这个时间点不对，还可以提前。引起我注意的是那晚奈美江（后来成为亮司公司的会计）回去拿手表时亮司做出的疯狂举动：亮司被嘲讽做爱时间短后显得非常暴躁并做出了性暴露狂的行为，这并不能简单的理解为青春期少年对性事的敏感和冲动，亮司一直以来就是一个冷静且缺乏情绪流露的一个人，这次的反应如此之大，只能归因于奈美江无意中碰到了亮司的痛点：亮司不是做爱时间短，而是时间太长（不能射精）。性暴露的行为也可以作为一个佐证，很多暴露狂都因为在性行为上存在一定程度上的心理或者生理障碍而变得性格畸形，急于想证明自己。（看美剧瞎猜的理论）后来再次翻书得到了印证，书中原文：「有本事就让它射啊！」。</p>
+<h2 id="亮司不能射精的原因"><a href="#亮司不能射精的原因" class="headerlink" title="亮司不能射精的原因"></a>亮司不能射精的原因</h2><p>一开始我还以为是亮司答应帮助友彦洗脱嫌疑，强行与尸体发生性关系后被恶心到了，留下了心理阴影所以性功能出现障碍，心想这亮司也不是铁板一块啊。后来觉得这个时间点不对，还可以提前。引起我注意的是那晚奈美江（后来成为亮司公司的会计）回去拿手表时亮司做出的疯狂举动：亮司被嘲讽做爱时间短后显得非常暴躁并做出了性暴露狂的行为，这并不能简单的理解为青春期少年对性事的敏感和冲动，亮司一直以来就是一个冷静且缺乏情绪流露的一个人，这次的反应如此之大，只能归因于奈美江无意中碰到了亮司的痛点：亮司不是做爱时间短，而是时间太长（不能射精）。性暴露的行为也可以作为一个佐证，很多暴露狂都因为在性行为上存在一定程度上的心理或者生理障碍而变得性格畸形，急于想证明自己。（看美剧瞎猜的理论）后来再次翻书得到了印证，书中原文：「有本事就让它射啊！」。</p>
 <p>那么在这个时候，亮司焦虑的原因是什么？没意识到自己不能射精的原因？但是在答应帮忙友彦的时候又显得非常有计划，他应该是知道有个人是能让他射精的，当然这个人就是雪穗。我的一个不负责任的猜测是说不定亮司这时候对雪穗是存在抵触甚至反抗情绪，但是为了救友彦，他还是屈服了。当然可能还有其他猜测，我的猜测也算不上是合理。</p>
 <p>这样的话，尸体里面的精液毫无疑问是雪穗帮了忙，后面亮司的情人典子（药剂师）的猜测也呼应了这一点。典子用手的那一次亮司心里想的说不定还是雪穗帮他的那一次，为什么这一次的印象这么深刻呢？亮司与雪穗之间的性行为其实并不频繁？（我自己也觉得这个猜测挺牵强的）</p>
 <p>亮司可能从一开始就存在性功能障碍，心理创伤来自于小时候目睹的暴行，想必是多么的残忍。</p>
-<p>##雪穗的第三次「偷走他人的灵魂」</p>
-<p>「偷走他人的灵魂」这种行为当然指的就是亮司对他人实施性侵犯，然后雪穗做第一个目击者，以共同保守秘密为由，来达到自己的目的。总共有三次，第一次在雪穗初中时，为的是封口；第二次在大学时，为的是嫉妒；第三次的受害者是雪穗第二任丈夫的女儿，为的是获得亲密关系。第三次与前两次最大的不同在于第三次的强奸过程发生了插入过程，而前两次并没有，书中给了足够的暗示（「下腹部残留的闷痛」）来暗示第三次与前两次的不同。为什么第三次要如此的伤害一个不相干的人，（当然前两次也是很大的伤害，但这一次的伤害更无情）从目的和结果来看完全没必要，我能想到的有以下两种解释：</p>
+<h2 id="雪穗的第三次「偷走他人的灵魂」"><a href="#雪穗的第三次「偷走他人的灵魂」" class="headerlink" title="雪穗的第三次「偷走他人的灵魂」"></a>雪穗的第三次「偷走他人的灵魂」</h2><p>「偷走他人的灵魂」这种行为当然指的就是亮司对他人实施性侵犯，然后雪穗做第一个目击者，以共同保守秘密为由，来达到自己的目的。总共有三次，第一次在雪穗初中时，为的是封口；第二次在大学时，为的是嫉妒；第三次的受害者是雪穗第二任丈夫的女儿，为的是获得亲密关系。第三次与前两次最大的不同在于第三次的强奸过程发生了插入过程，而前两次并没有，书中给了足够的暗示（「下腹部残留的闷痛」）来暗示第三次与前两次的不同。为什么第三次要如此的伤害一个不相干的人，（当然前两次也是很大的伤害，但这一次的伤害更无情）从目的和结果来看完全没必要，我能想到的有以下两种解释：</p>
 <ul>
 <li><p>第三次的施暴人并不是亮司，而是另一个更残暴或不受控制的一个人。但我觉得这种解释的可能性极小。</p>
 </li>
 <li><p>雪穗这一次如此残暴的原因是来自她心理的畸变：她已不能再生育。书里给了足够的暗示：雪穗第一任丈夫的第二任妻子已经怀孕。不能生育的原因来自她小时候遭受到的暴行，雪穗也意识到了这一点。处于嫉妒或者纯粹变态，她在知道自己所做的事情可能导致的永久伤害的情况下，还是施加了暴行，怎么讲，这个人已经没法洗白了。</p>
 </li>
 </ul>
-<p>##推理的焦点</p>
-<p>《白夜行》在叙事方式上很反常规，给了足够的配角POV描写，唯独缺乏主角的第一视角描写。我们对主角的所有印象都是来自于其他人的视角。事实上，我们对主角知之甚少。随着故事的不断发展，也能猜到凶手是谁，作为一个推理小说，推理的结果已经知道了，完成凶案过程推理的关键要素也到故事的后半部分才浮出水面，似乎没剩下多少推理的乐趣。</p>
+<h2 id="推理的焦点"><a href="#推理的焦点" class="headerlink" title="推理的焦点"></a>推理的焦点</h2><p>《白夜行》在叙事方式上很反常规，给了足够的配角POV描写，唯独缺乏主角的第一视角描写。我们对主角的所有印象都是来自于其他人的视角。事实上，我们对主角知之甚少。随着故事的不断发展，也能猜到凶手是谁，作为一个推理小说，推理的结果已经知道了，完成凶案过程推理的关键要素也到故事的后半部分才浮出水面，似乎没剩下多少推理的乐趣。</p>
 <p>但如果把推理的焦点从犯罪本身转移到人身上，在蛛丝马迹中追随主角的脚步，推导主角所经历的一切以及心境的变化，想想就觉得刺激。不过能够推理的材料也不多，男女主除了在点题环节有过直接的情感表露之外，还有一两次的情绪失控，很难从中窥伺出内心所想。</p>
 <p>其中最难把握的就是男女主角之间的关系了，除了像老警察所说的那样「共生」之外，还有更深层次的关系吗？不要被点题环节的情感流露所迷惑，他俩之间的关系似乎显得残酷的多。究竟这之间经历了怎样的变化？</p>
 <p>值得注意的一点是，我们所有的这些颅内猫鼠游戏的全部材料来源都只是那本书，只是文本，而不是什么客观事实、犯罪现场。所以，文本作者的意图的显得非常重要，我们都是在作者的不断强调和暗示下，追逐着那跳动的影子。想想作者想告诉我们什么，揣摩作者的思路，说不定会有一些发现。</p>
@@ -286,17 +286,15 @@
     <link href="https://kylindc.github.io/2015/01/07/%E5%85%B3%E4%BA%8E%E3%80%8A%E6%9F%AFP%E6%96%B0%E6%94%BF%E3%80%8B/"/>
     <id>https://kylindc.github.io/2015/01/07/关于《柯P新政》/</id>
     <published>2015-01-06T16:45:00.000Z</published>
-    <updated>2016-07-03T14:38:38.000Z</updated>
+    <updated>2017-07-15T14:52:45.476Z</updated>
     
     <content type="html"><![CDATA[<p>前几天台湾的九合一选举在大陆火了一把，特别是国民党的溃败更使得其话题性大大增加，新浪新闻也做了好几个专题来介绍这次的「华人地区最大的选举」，其中的台北市长选举最为受人瞩目，在这之间，国民党的「官二代」连胜文与以「超越蓝绿」为口号的无党派柯文哲之间的竞争最为激烈。</p>
 <p>昨天刚在推特上有人转发了GitBook上的柯文哲的施政计划书——《柯P新政》。听起来有点意思，于是就在上面下载了PDF文件阅读，一点想法，权当读后感记下来好了。</p>
-<p>###何为GitBook？</p>
-<p>了解GitBook之前不得不了解何为Git，<a href="http://zh.wikipedia.org/wiki/Git" target="_blank" rel="external">Git</a>原为一种代码版本控制工具，是为更好的管理Linux内核开发而设计。依据Git理念建立的在线代码托管网站<a href="www.github.com">GitHub</a>也是程序员最喜欢的开源代码交流平台。</p>
+<h3 id="何为GitBook？"><a href="#何为GitBook？" class="headerlink" title="何为GitBook？"></a>何为GitBook？</h3><p>了解GitBook之前不得不了解何为Git，<a href="http://zh.wikipedia.org/wiki/Git" target="_blank" rel="external">Git</a>原为一种代码版本控制工具，是为更好的管理Linux内核开发而设计。依据Git理念建立的在线代码托管网站<a href="www.github.com">GitHub</a>也是程序员最喜欢的开源代码交流平台。</p>
 <p>顾名思义，GitBook是将编程界的Git理念运用于写作。不同于传统的写作模式，GitBook上的书的创作过程中就全部公开，读者在见证书的创作过程中也可以评论，作者可以很好的收到读者的反馈来调整书的写作。同时由于借鉴了版本控制的理念，创作模式上的改变也对多人协同创作提供了更为方便的管理。</p>
 <p>将施政纲领放到GitBook上也是一个很新的尝试。施政纲领阐述了对现阶段的社会状况的认识，指出社会症结所在，提出未来的解决办法，是对参选人参政理念一个完整的阐述。所以，在传统的认识上，这是一类比较严谨的文件。但从效果上来看，这是一个很不错的尝试，每一章节的阅读页面下有很多人的积极参与评论，有赞同，也有指出不足的，好的建议会被大家<strong>「赞」</strong>起来让更多人看到，这对普及施政理念，提高网民参与政治的积极性也是一件很好的举措。</p>
 <p>花了一个晚上的时间通读了整个的《柯P新政》，提取出几个关键词来以我的方式来解读一下，算是开始正式的读后感。</p>
-<p>###关键词一：拥抱技术</p>
-<p>互联网的发展，特别是近几年的社交网络，新媒体及移动互联网的发展，深刻的改变着信息流通的方式，如果反应不够及时，不能正确的适应好新浪潮下的姿态，就很容易处于不利的地位。推荐一篇<a href="http://www.hungry.tw/2014/11/2008-2014.html" target="_blank" rel="external">文章</a>，可以看看台湾人关于Fcebook对马英九的政治影响的观点。</p>
+<h3 id="关键词一：拥抱技术"><a href="#关键词一：拥抱技术" class="headerlink" title="关键词一：拥抱技术"></a>关键词一：拥抱技术</h3><p>互联网的发展，特别是近几年的社交网络，新媒体及移动互联网的发展，深刻的改变着信息流通的方式，如果反应不够及时，不能正确的适应好新浪潮下的姿态，就很容易处于不利的地位。推荐一篇<a href="http://www.hungry.tw/2014/11/2008-2014.html" target="_blank" rel="external">文章</a>，可以看看台湾人关于Fcebook对马英九的政治影响的观点。</p>
 <p>同时争取「年轻的一代」是选举中经常出现的一个政策，而社交网络和移动互联网正是年轻人甚至是当代社会一个很明显的特征。</p>
 <p>很让人兴奋的是，从《柯P新政》中可以看出，柯文哲团队对「时代特征」是持相当拥抱的程度。新的I-Voting计划，旨在将选举站搬到手机上，在手机上就可以投票，同时透过手机可直接参与对政府官员的年终的考核，不让选举成为一个一次性的事情。</p>
 <p>在发展台北旅游业的「ABC」计划的「A」指的就是App，开发出专用的旅游移动App来指导自助游，鼓励自助游积极探索台北。</p>
@@ -305,14 +303,12 @@
 <p>还有对移动支付的支持，柯文哲承诺未来的台北，公交，购物都将支持手机支付。<br>之前一直在《IT公论》中经常听到关于这些新技术的动态和讨论，但是一直以为这只是未来而已，但现在看到一个竞选者这麽积极的推动新技术的实践，未来正在慢慢的成为现实，想想就有点小激动。</p>
 <p>都说柯文哲是一个中年人，但是代表着年轻人。毫不客气的讲，看到这种对技术的热衷，有一种很亲切的感觉。这是一个数字空间的原住民所希望的生活的城市。</p>
 <p>当然从技术概念到实践是困难重重的，也祝福台北能取得很好的成绩。</p>
-<p>###关键词二：政府的责任</p>
-<p>在李总理上台的时候，就一直在强调政府改革，其中的一个方向就是「小政府」，虽然现在也不知道实行得怎么样了。大陆的政府也经常被批评管的太多以至于臃肿不堪，要求政府放手来让市场「看不见的手」来调节的声音一直不绝于耳。但是这次在台北却有着不一样的声音，《柯P新政》里经常强调的一点就是政府要承担起政府的责任。</p>
+<h3 id="关键词二：政府的责任"><a href="#关键词二：政府的责任" class="headerlink" title="关键词二：政府的责任"></a>关键词二：政府的责任</h3><p>在李总理上台的时候，就一直在强调政府改革，其中的一个方向就是「小政府」，虽然现在也不知道实行得怎么样了。大陆的政府也经常被批评管的太多以至于臃肿不堪，要求政府放手来让市场「看不见的手」来调节的声音一直不绝于耳。但是这次在台北却有着不一样的声音，《柯P新政》里经常强调的一点就是政府要承担起政府的责任。</p>
 <p>大政府也有大政府的好，政府有能力来集中力量来做大事。比如说新建公共住宅来缓解住宅的问题，通过政府征地，政府向银行借贷，甚至事后物业也是政府来包办。</p>
 <p>还有一点就是加强政府对市场的干预，关于台北地区的路不平的问题，原因在于建设需要，道路经常反复挖掘，而各个建设公司又没有同一的协调。新政策的解决办法就是对需要对道路改造时需要一个统一的时间来改造，减少挖掘的次数。</p>
 <p>大政府与小政府的矛盾体验同样体现在都市更新上。台北旧的都市更新政策把都市更新任务完全交给了住户和建商，政策失败之处就是过于相信市场，而市场自由其软弱之处，有时候需要政府的干预才能推动事情的发展。柯文哲主张政府应该出面拟定统一的计划来逐步进行都市更新，政府的获得的公共用地则用来新建公共设施和保障贫困户的居住，政府还可以与开发商进行协调，提供给住户不同的建房选择，是旧屋改建抑或是易地更换新屋。</p>
 <p>這就是一直强调的政府的责任。</p>
-<p>###关键词三：塑造城市的权利</p>
-<blockquote>
+<h3 id="关键词三：塑造城市的权利"><a href="#关键词三：塑造城市的权利" class="headerlink" title="关键词三：塑造城市的权利"></a>关键词三：塑造城市的权利</h3><blockquote>
 <p>享受城市的權利不僅僅是在城市中獲得生活所需的空間， 還包括參與城市生活的權利、 平等使用城市的權利、 塑造城市的權利。</p>
 </blockquote>
 <p>塑造城市的权利，这是一个很棒的观点，看一下柯文哲的主张是如何体现這一理念的。</p>

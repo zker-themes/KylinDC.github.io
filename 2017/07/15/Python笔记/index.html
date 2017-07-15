@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="#文件操作 你好">
+    <meta name="description" content="文件操作2017/7/15今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。 网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答python怎么删除txt文本里面的第一行？ 1234567fin=open(&apos;a.txt&apos;)a=fin.readl">
 <meta name="keywords" content="Python,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python笔记">
 <meta property="og:url" content="https://kylindc.github.io/2017/07/15/Python笔记/index.html">
 <meta property="og:site_name" content="Upside Down">
-<meta property="og:description" content="#文件操作 你好">
-<meta property="og:updated_time" content="2017-07-15T14:48:21.676Z">
+<meta property="og:description" content="文件操作2017/7/15今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。 网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答python怎么删除txt文本里面的第一行？ 1234567fin=open(&apos;a.txt&apos;)a=fin.readl">
+<meta property="og:updated_time" content="2017-07-15T15:35:28.559Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python笔记">
-<meta name="twitter:description" content="#文件操作 你好">
+<meta name="twitter:description" content="文件操作2017/7/15今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。 网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答python怎么删除txt文本里面的第一行？ 1234567fin=open(&apos;a.txt&apos;)a=fin.readl">
     
     
         
@@ -96,7 +96,7 @@
 
     </div>
     <div id="toc">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件操作"><span class="toc-number">1.</span> <span class="toc-text">文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2017-7-15"><span class="toc-number">1.1.</span> <span class="toc-text">2017/7/15</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绘图"><span class="toc-number">2.</span> <span class="toc-text">绘图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2017-7-15-1"><span class="toc-number">2.1.</span> <span class="toc-text">2017/7/15</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -135,8 +135,16 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>#文件操作</p>
-<p>你好</p>
+    <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="2017-7-15"><a href="#2017-7-15" class="headerlink" title="2017/7/15"></a>2017/7/15</h3><p>今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。</p>
+<p>网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答<a href="https://zhidao.baidu.com/question/583049390.html" target="_blank" rel="external">python怎么删除txt文本里面的第一行？</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fin=open(<span class="string">'a.txt'</span>)</div><div class="line">a=fin.readlines()</div><div class="line">fout=open(<span class="string">'newa.txt'</span>,<span class="string">'w'</span>)</div><div class="line">b=<span class="string">''</span>.join(a[<span class="number">1</span>:])</div><div class="line">fout.write(b)</div><div class="line">fin.close()</div><div class="line">fout.close()</div></pre></td></tr></table></figure>
+<p>思路倒也是不复杂，不过可以写得更Pythonic一些。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(file, <span class="string">'r+'</span>) <span class="keyword">as</span> fin:</div><div class="line">    a = fin.readlines()</div><div class="line">    <span class="keyword">with</span> open(file, <span class="string">'w'</span>) <span class="keyword">as</span> fout:</div><div class="line">        fout.writelines(a[<span class="number">23</span>:])    <span class="comment">#这里是删除前23行</span></div></pre></td></tr></table></figure>
+<p>注意到这种方法并没有像前面用的那样新建一个文件，直接打开写入的还是源文件，我也是偶然发现的，居然这样也行。没出现什么问题我也就没有去深究了。</p>
+<p>再在前面加上一些系统目录相关的就能批量操作同Python文件文件夹里所有的文件了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line">path = os.getcwd()    <span class="comment"># 读取当前目录</span></div><div class="line">files = os.listdir(path)    <span class="comment"># 读取当前目录文件夹所有文件</span></div></pre></td></tr></table></figure>
+<p>TODO: 没有想出一个好办法来判断求出要删除的行</p>
+<h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><h3 id="2017-7-15-1"><a href="#2017-7-15-1" class="headerlink" title="2017/7/15"></a>2017/7/15</h3><p>TODO: 根据CSV文件画出的图，自动在图上标记出最大值点以及最大值。</p>
 
   </div>
 </article>
@@ -163,7 +171,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件操作"><span class="toc-number">1.</span> <span class="toc-text">文件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2017-7-15"><span class="toc-number">1.1.</span> <span class="toc-text">2017/7/15</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绘图"><span class="toc-number">2.</span> <span class="toc-text">绘图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2017-7-15-1"><span class="toc-number">2.1.</span> <span class="toc-text">2017/7/15</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
