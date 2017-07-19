@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2017-07-15T15:35:28.559Z</updated>
+  <updated>2017-07-19T16:28:04.006Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="https://kylindc.github.io/2017/07/15/Python%E7%AC%94%E8%AE%B0/"/>
     <id>https://kylindc.github.io/2017/07/15/Python笔记/</id>
     <published>2017-07-15T14:41:33.000Z</published>
-    <updated>2017-07-15T15:35:28.559Z</updated>
+    <updated>2017-07-19T16:28:04.006Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="2017-7-15"><a href="#2017-7-15" class="headerlink" title="2017/7/15"></a>2017/7/15</h3><p>今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。</p>
+    <content type="html"><![CDATA[<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="批量操作文件夹内文本文件"><a href="#批量操作文件夹内文本文件" class="headerlink" title="批量操作文件夹内文本文件"></a>批量操作文件夹内文本文件</h3><p>今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。</p>
 <p>网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答<a href="https://zhidao.baidu.com/question/583049390.html" target="_blank" rel="external">python怎么删除txt文本里面的第一行？</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fin=open(<span class="string">'a.txt'</span>)</div><div class="line">a=fin.readlines()</div><div class="line">fout=open(<span class="string">'newa.txt'</span>,<span class="string">'w'</span>)</div><div class="line">b=<span class="string">''</span>.join(a[<span class="number">1</span>:])</div><div class="line">fout.write(b)</div><div class="line">fin.close()</div><div class="line">fout.close()</div></pre></td></tr></table></figure>
 <p>思路倒也是不复杂，不过可以写得更Pythonic一些。</p>
@@ -31,12 +31,23 @@
 <p>再在前面加上一些系统目录相关的就能批量操作同Python文件文件夹里所有的文件了。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line"></div><div class="line">path = os.getcwd()    <span class="comment"># 读取当前目录</span></div><div class="line">files = os.listdir(path)    <span class="comment"># 读取当前目录文件夹所有文件</span></div></pre></td></tr></table></figure>
 <p>TODO: 没有想出一个好办法来判断求出要删除的行</p>
-<h2 id="绘图"><a href="#绘图" class="headerlink" title="绘图"></a>绘图</h2><h3 id="2017-7-15-1"><a href="#2017-7-15-1" class="headerlink" title="2017/7/15"></a>2017/7/15</h3><p>TODO: 根据CSV文件画出的图，自动在图上标记出最大值点以及最大值。</p>
+<p>2017/7/15</p>
+<h3 id="将字典写入CSV文件"><a href="#将字典写入CSV文件" class="headerlink" title="将字典写入CSV文件"></a>将字典写入CSV文件</h3><p>在网上搜出来写入CSV文件真的是很麻烦，用引用好多个不同的变量，而且经常出错，在StackOverFlow看到一个清晰易懂的解决办法，特测记录下来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">with</span> open(Filename, <span class="string">'w'</span>, newline=<span class="string">''</span>) <span class="keyword">as</span> csvFile:</div><div class="line">	writer = csv.writer(csvFile)</div><div class="line">	<span class="keyword">for</span> key, value <span class="keyword">in</span> Data.items():</div><div class="line">		writer.writerow([key, value])</div></pre></td></tr></table></figure>
+<p>真是感受到了Python的哲学，简单，可读性高</p>
+<p>2017/7/19</p>
+<h2 id="数据可视化"><a href="#数据可视化" class="headerlink" title="数据可视化"></a>数据可视化</h2><h3 id="绘图标记点"><a href="#绘图标记点" class="headerlink" title="绘图标记点"></a>绘图标记点</h3><p>TODO: 根据CSV文件画出的图，自动在图上标记出最大值点以及最大值。</p>
+<p>2017/7/15</p>
+<h3 id="正常显示matplotlib中文"><a href="#正常显示matplotlib中文" class="headerlink" title="正常显示matplotlib中文"></a>正常显示matplotlib中文</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"></div><div class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'SimHei'</span>]  <span class="comment"># 用来正常显示中文标签</span></div><div class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="keyword">False</span>  <span class="comment"># 用来正常显示负号</span></div></pre></td></tr></table></figure>
+<h3 id="带误差棒的图片绘制"><a href="#带误差棒的图片绘制" class="headerlink" title="带误差棒的图片绘制"></a>带误差棒的图片绘制</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.errorbar(x, y, yerr)</div></pre></td></tr></table></figure>
+<h3 id="散点图绘制"><a href="#散点图绘制" class="headerlink" title="散点图绘制"></a>散点图绘制</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.scatter(c, b[i], label=str(t) + <span class="string">' N'</span>)</div></pre></td></tr></table></figure>
+<p>2017/7/19</p>
+<h2 id="Numpy-amp-Pandas"><a href="#Numpy-amp-Pandas" class="headerlink" title="Numpy &amp; Pandas"></a>Numpy &amp; Pandas</h2><p>2017/7/19</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;文件操作&quot;&gt;&lt;a href=&quot;#文件操作&quot; class=&quot;headerlink&quot; title=&quot;文件操作&quot;&gt;&lt;/a&gt;文件操作&lt;/h2&gt;&lt;h3 id=&quot;2017-7-15&quot;&gt;&lt;a href=&quot;#2017-7-15&quot; class=&quot;headerlink&quot; title=
+      &lt;h2 id=&quot;文件操作&quot;&gt;&lt;a href=&quot;#文件操作&quot; class=&quot;headerlink&quot; title=&quot;文件操作&quot;&gt;&lt;/a&gt;文件操作&lt;/h2&gt;&lt;h3 id=&quot;批量操作文件夹内文本文件&quot;&gt;&lt;a href=&quot;#批量操作文件夹内文本文件&quot; class=&quot;headerlink&quot; 
     
     </summary>
     
