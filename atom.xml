@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2017-07-22T06:27:17.335Z</updated>
+  <updated>2017-08-06T03:50:23.114Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://kylindc.github.io/2017/07/15/Python%E7%AC%94%E8%AE%B0/"/>
     <id>https://kylindc.github.io/2017/07/15/Python笔记/</id>
     <published>2017-07-15T14:41:33.000Z</published>
-    <updated>2017-07-22T06:27:17.335Z</updated>
+    <updated>2017-08-06T03:50:23.114Z</updated>
     
     <content type="html"><![CDATA[<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="批量操作文件夹内文本文件"><a href="#批量操作文件夹内文本文件" class="headerlink" title="批量操作文件夹内文本文件"></a>批量操作文件夹内文本文件</h3><p>今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。</p>
 <p>网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答<a href="https://zhidao.baidu.com/question/583049390.html" target="_blank" rel="external">python怎么删除txt文本里面的第一行？</a></p>
@@ -43,6 +43,32 @@
 <h3 id="散点图绘制"><a href="#散点图绘制" class="headerlink" title="散点图绘制"></a>散点图绘制</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">plt.scatter(c, b[i], label=str(t) + <span class="string">' N'</span>)</div></pre></td></tr></table></figure>
 <p>2017/7/19</p>
 <h2 id="Numpy-amp-Pandas"><a href="#Numpy-amp-Pandas" class="headerlink" title="Numpy &amp; Pandas"></a>Numpy &amp; Pandas</h2><p>2017/7/19</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">日本原画师派系</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Web系</td>
+<td style="text-align:left">山下清悟</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">ryotimo</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left">沓名健</td>
+</tr>
+</tbody>
+</table>
 ]]></content>
     
     <summary type="html">
