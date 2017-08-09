@@ -44,7 +44,7 @@
     <published>2017-07-15T14:41:33.000Z</published>
     <updated>2017-08-06T03:53:46.195Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="批量操作文件夹内文本文件"><a href="#批量操作文件夹内文本文件" class="headerlink" title="批量操作文件夹内文本文件"></a>批量操作文件夹内文本文件</h3><p>今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="批量操作文件夹内文本文件"><a href="#批量操作文件夹内文本文件" class="headerlink" title="批量操作文件夹内文本文件"></a>批量操作文件夹内文本文件</h3><p>今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。</p>
 <p>网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答<a href="https://zhidao.baidu.com/question/583049390.html" target="_blank" rel="external">python怎么删除txt文本里面的第一行？</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fin=open(<span class="string">'a.txt'</span>)</div><div class="line">a=fin.readlines()</div><div class="line">fout=open(<span class="string">'newa.txt'</span>,<span class="string">'w'</span>)</div><div class="line">b=<span class="string">''</span>.join(a[<span class="number">1</span>:])</div><div class="line">fout.write(b)</div><div class="line">fin.close()</div><div class="line">fout.close()</div></pre></td></tr></table></figure>
 <p>思路倒也是不复杂，不过可以写得更Pythonic一些。</p>
@@ -69,7 +69,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;文件操作&quot;&gt;&lt;a href=&quot;#文件操作&quot; class=&quot;headerlink&quot; title=&quot;文件操作&quot;&gt;&lt;/a&gt;文件操作&lt;/h2&gt;&lt;h3 id=&quot;批量操作文件夹内文本文件&quot;&gt;&lt;a href=&quot;#批量操作文件夹内文本文件&quot; class=&quot;headerlink&quot; 
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;h2 id=&quot;文件操作&quot;&gt;&lt;a
     
     </summary>
     
@@ -87,7 +87,7 @@
     <published>2017-05-11T08:19:31.000Z</published>
     <updated>2017-08-09T10:03:50.767Z</updated>
     
-    <content type="html"><![CDATA[<p>文章较长，先理理思路。<br>首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的<strong>搭建</strong>以及<strong>优化</strong>，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>文章较长，先理理思路。<br>首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的<strong>搭建</strong>以及<strong>优化</strong>，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。</p>
 <h2 id="Shadowsocks是什么？"><a href="#Shadowsocks是什么？" class="headerlink" title="Shadowsocks是什么？"></a>Shadowsocks是什么？</h2><p>首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private network，虚拟专有网络）是用来翻墙的主要方式，但是随着GFW的不断升级，这种方式很容易被封，所以后来基本上没有人用这种技术方式来翻墙的了，但是’VPN’这个词就慢慢被指代为所有的翻墙方式。翻墙方式用很多种，不单单只有VPN一种，所以’VPN’这个词在不同的含义下有不同的意思。<br>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>开发的一个开源代理加密协议，有很多用途，当然最常见的还是拿来翻墙。事实上现在所有的商业的翻墙代理（云梯，多态等）底层都是Shadowsocks技术。<br>如果想要知道Shadowsocks的具体技术细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="external">写给非专业人士看的 Shadowsocks 简介</a>。</p>
 <blockquote>
 <p><img src="/2017/05/11/Shadowsocks服务器搭建比较全的纪录/1.jpg" alt="Shadowsocks组件"></p>
@@ -180,7 +180,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;文章较长，先理理思路。&lt;br&gt;首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的&lt;strong&gt;搭建&lt;/strong&gt;以及&lt;strong&gt;优化&lt;/strong&gt;，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;文章较长，先理理思路。&lt;b
     
     </summary>
     
@@ -196,7 +196,7 @@
     <published>2016-06-29T02:14:00.000Z</published>
     <updated>2017-07-15T14:52:58.001Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><blockquote>
 <p><strong>本文严重剧透以及长难句预警</strong><br><strong>内容相当相当粗俗，小孩子还请自觉回避</strong></p>
 </blockquote>
 <p><img src="/2016/06/29/关于白夜行中某些隐藏剧情的推断/白夜行.jpg" alt=""></p>
@@ -220,10 +220,8 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;本文严重剧透以及长难句预警&lt;/strong&gt;&lt;br&gt;&lt;strong&gt;内容相当相当粗俗，小孩子还请自觉回避&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;/2016/06/29/关于白夜行中某些隐藏剧
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;blockquote&gt;
+&lt;p&gt;
     
     </summary>
     
@@ -239,7 +237,7 @@
     <published>2015-09-29T15:48:00.000Z</published>
     <updated>2017-07-19T16:33:09.692Z</updated>
     
-    <content type="html"><![CDATA[<p>想要拜读大咕咕咕鸡的魔幻主义大作而又没有系统的收录比较全的文集，恰好自己有闲时，就做了这么一个开创性工作。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>想要拜读大咕咕咕鸡的魔幻主义大作而又没有系统的收录比较全的文集，恰好自己有闲时，就做了这么一个开创性工作。</p>
 <p>根据豆瓣<a href="http://www.douban.com/group/mindfucking/" target="_blank" rel="external">人间动物园</a>小组里各位锤粉的搬运和<a href="http://readlists.com/" target="_blank" rel="external">Readlists</a>的自动抓取，epub打包下载。然后自己手动统一格式，做目录，就做出了这么一个张大锤文集出来，大概有一百篇左右吧，长文、短诗都有。</p>
 <p>有需要的人自取吧，链接:<a href="http://pan.baidu.com/s/1jGH5Ah4" target="_blank" rel="external">百度云</a> 密码:vwpm</p>
 <p>希望分享的人尽量低调一些吧，尽量私下分享，毕竟我以前在微博上公开分享被豆瓣阅读的人盯上了，说他们已经买了版权了，可大半年了，官方的文集也没出来。</p>
@@ -250,8 +248,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;想要拜读大咕咕咕鸡的魔幻主义大作而又没有系统的收录比较全的文集，恰好自己有闲时，就做了这么一个开创性工作。&lt;/p&gt;
-&lt;p&gt;根据豆瓣&lt;a href=&quot;http://www.douban.com/group/mindfucking/&quot; target=&quot;_blank&quot; rel=&quot;
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;想要拜读大咕咕咕鸡的魔幻主
     
     </summary>
     
@@ -267,7 +264,7 @@
     <published>2015-07-09T15:51:00.000Z</published>
     <updated>2016-07-03T14:38:50.000Z</updated>
     
-    <content type="html"><![CDATA[<p>日本民间流传着一种蛤蟆，外表奇丑，平时自己察觉不到，但人把镜子放到它面前后，蛤蟆看到自己丑陋的外表之后吓出一身油，这种油是一种治疗烫伤的珍贵药材。当黑泽明将自己的内心剖析给大家看的时候，于是就有了这本书。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>日本民间流传着一种蛤蟆，外表奇丑，平时自己察觉不到，但人把镜子放到它面前后，蛤蟆看到自己丑陋的外表之后吓出一身油，这种油是一种治疗烫伤的珍贵药材。当黑泽明将自己的内心剖析给大家看的时候，于是就有了这本书。</p>
 <p>老头子真是一个真诚而有趣的人啊，前三章是在讲黑泽明在当导演之前的生活经历，后三章讲的是正式步入电影行业之后，从副导演一直攀爬高山，直到导演了罗生门之后的事。文章写得很有趣，有些地方看的会让人忍俊不禁，导演也是个真性情的人，是看的不多的极其有趣轻松的书。</p>
 <p>提到黑泽明在一生中遇到的几位及其重要的导师的时候他都是及其尊敬的，尤其是对于他在电影事业上有非常重要的帮助的山本嘉次郎导演。提到他和他基友合作的作品上映后小学老师与他们的重逢，这股人亲味是让我最为感动的。他那位初中老师对于操行分的看法也是搞笑的。</p>
 <p>与基友植草圭之助之间的「爱恨情仇」也是贯穿黑泽明生命的。在「人非强者」一节中，人称「电影天皇」的黑泽明也诚恳的说自己是一个为了抵抗人的苦恼而戴上强者面的弱者呢。哈哈，可惜书只写到拍《罗生门》，真是想看看黑泽明对于之后他与三船敏郎之间的恩怨大八卦呢。</p>
@@ -278,8 +275,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;日本民间流传着一种蛤蟆，外表奇丑，平时自己察觉不到，但人把镜子放到它面前后，蛤蟆看到自己丑陋的外表之后吓出一身油，这种油是一种治疗烫伤的珍贵药材。当黑泽明将自己的内心剖析给大家看的时候，于是就有了这本书。&lt;/p&gt;
-&lt;p&gt;老头子真是一个真诚而有趣的人啊，前三章是在讲黑泽明在当
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;日本民间流传着一种蛤蟆，外
     
     </summary>
     
@@ -295,7 +291,7 @@
     <published>2015-03-07T15:01:00.000Z</published>
     <updated>2017-07-14T13:13:46.123Z</updated>
     
-    <content type="html"><![CDATA[<p>我觉得《無次元》既然是一个有关于声音的，又带有强烈的实验艺术特征的博客，我们不妨把关键词放到「艺术」二字上。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>我觉得《無次元》既然是一个有关于声音的，又带有强烈的实验艺术特征的博客，我们不妨把关键词放到「艺术」二字上。</p>
 <p>最近重新看了一遍《谈美》，有一些话让我印象很深。一直在脑海里回响的是这样一句话：</p>
 <blockquote>
 <p>美感经验是直觉的而不是反省的。</p>
@@ -324,10 +320,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;我觉得《無次元》既然是一个有关于声音的，又带有强烈的实验艺术特征的博客，我们不妨把关键词放到「艺术」二字上。&lt;/p&gt;
-&lt;p&gt;最近重新看了一遍《谈美》，有一些话让我印象很深。一直在脑海里回响的是这样一句话：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;美感经验是直觉的而不是反省的
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;我觉得《無次元》既然是一个
     
     </summary>
     
@@ -343,7 +336,7 @@
     <published>2015-01-06T16:45:00.000Z</published>
     <updated>2017-07-15T14:52:45.476Z</updated>
     
-    <content type="html"><![CDATA[<p>前几天台湾的九合一选举在大陆火了一把，特别是国民党的溃败更使得其话题性大大增加，新浪新闻也做了好几个专题来介绍这次的「华人地区最大的选举」，其中的台北市长选举最为受人瞩目，在这之间，国民党的「官二代」连胜文与以「超越蓝绿」为口号的无党派柯文哲之间的竞争最为激烈。</p>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>前几天台湾的九合一选举在大陆火了一把，特别是国民党的溃败更使得其话题性大大增加，新浪新闻也做了好几个专题来介绍这次的「华人地区最大的选举」，其中的台北市长选举最为受人瞩目，在这之间，国民党的「官二代」连胜文与以「超越蓝绿」为口号的无党派柯文哲之间的竞争最为激烈。</p>
 <p>昨天刚在推特上有人转发了GitBook上的柯文哲的施政计划书——《柯P新政》。听起来有点意思，于是就在上面下载了PDF文件阅读，一点想法，权当读后感记下来好了。</p>
 <h3 id="何为GitBook？"><a href="#何为GitBook？" class="headerlink" title="何为GitBook？"></a>何为GitBook？</h3><p>了解GitBook之前不得不了解何为Git，<a href="http://zh.wikipedia.org/wiki/Git" target="_blank" rel="external">Git</a>原为一种代码版本控制工具，是为更好的管理Linux内核开发而设计。依据Git理念建立的在线代码托管网站<a href="www.github.com">GitHub</a>也是程序员最喜欢的开源代码交流平台。</p>
 <p>顾名思义，GitBook是将编程界的Git理念运用于写作。不同于传统的写作模式，GitBook上的书的创作过程中就全部公开，读者在见证书的创作过程中也可以评论，作者可以很好的收到读者的反馈来调整书的写作。同时由于借鉴了版本控制的理念，创作模式上的改变也对多人协同创作提供了更为方便的管理。</p>
@@ -388,8 +381,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;前几天台湾的九合一选举在大陆火了一把，特别是国民党的溃败更使得其话题性大大增加，新浪新闻也做了好几个专题来介绍这次的「华人地区最大的选举」，其中的台北市长选举最为受人瞩目，在这之间，国民党的「官二代」连胜文与以「超越蓝绿」为口号的无党派柯文哲之间的竞争最为激烈。&lt;/p&gt;
-&lt;
+      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;p&gt;前几天台湾的九合一选举在大
     
     </summary>
     
