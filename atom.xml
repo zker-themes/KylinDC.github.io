@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2017-08-09T14:25:21.946Z</updated>
+  <updated>2017-08-09T14:31:57.821Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="https://kylindc.github.io/2017/08/09/Hexo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E3%80%81%E8%A7%86%E9%A2%91%E6%80%BB%E7%BB%93/"/>
     <id>https://kylindc.github.io/2017/08/09/Hexo博客插入图片、视频总结/</id>
     <published>2017-08-09T14:24:59.000Z</published>
-    <updated>2017-08-09T14:25:21.946Z</updated>
+    <updated>2017-08-09T14:31:57.821Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p><a href="https://xu42.github.io/blog/2017/06/27/Bilibili-HTML5-Embedded/" target="_blank" rel="external">https://xu42.github.io/blog/2017/06/27/Bilibili-HTML5-Embedded/</a></p>
+<p><a href="http://www.weibo.com/ttarticle/p/show?id=2309404078707609315556" target="_blank" rel="external">http://www.weibo.com/ttarticle/p/show?id=2309404078707609315556</a></p>
 ]]></content>
     
     <summary type="html">
@@ -39,10 +40,10 @@
     <link href="https://kylindc.github.io/2017/08/09/%E8%A7%86%E9%A2%91%E4%B8%8A%E4%BC%A0%E6%B5%8B%E8%AF%95/"/>
     <id>https://kylindc.github.io/2017/08/09/视频上传测试/</id>
     <published>2017-08-09T10:07:07.000Z</published>
-    <updated>2017-08-09T14:26:29.326Z</updated>
+    <updated>2017-08-09T14:48:39.644Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>你好</p>
-<iframe src="https://www.bilibili.com/html/html5player.html?aid=3886154&cid=6249959&as_wide=1" width="100%" height="410" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+<iframe src="https://www.bilibili.com/html/html5player.html?aid=3886154&cid=6249959&as_wide=1" width="480" height="410" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
 
 <iframe width="100%" height="320" src="https://www.youtube.com/embed/u32HzkBilrA?start=300" frameborder="0" allowfullscreen></iframe>
 
