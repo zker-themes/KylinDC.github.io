@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2017-08-09T12:16:24.015Z</updated>
+  <updated>2017-08-09T12:23:29.759Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -20,12 +20,12 @@
     <link href="https://kylindc.github.io/2017/08/09/%E8%A7%86%E9%A2%91%E4%B8%8A%E4%BC%A0%E6%B5%8B%E8%AF%95/"/>
     <id>https://kylindc.github.io/2017/08/09/视频上传测试/</id>
     <published>2017-08-09T10:07:07.000Z</published>
-    <updated>2017-08-09T12:16:24.015Z</updated>
+    <updated>2017-08-09T12:23:29.759Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><p>你好</p>
-<iframe src="https://www.bilibili.com/html/html5player.html?aid=3886154&cid=6249959" width="360" height="480" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
+<iframe src="//www.bilibili.com/html/html5player.html?aid=3886154&cid=6249959" width="360" height="480" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen></iframe>
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/u32HzkBilrA?start=300" frameborder="0" allowfullscreen></iframe>
+<iframe width="100%" height="320" src="https://www.youtube.com/embed/u32HzkBilrA?start=300" frameborder="0" allowfullscreen></iframe>
 
 <div id="dplayer0" class="dplayer" style="margin-bottom: 20px;"></div><script>var dplayer0 = new DPlayer({"element":document.getElementById("dplayer0"),"video":{"url":"1.mp4"}});</script>]]></content>
     
