@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="文件操作批量操作文件夹内文本文件今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。 网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答python怎么删除txt文本里面的第一行？ 1234567fin=open(&apos;a.txt&apos;)a=fin.re">
+    <meta name="description" content="文件操作批量操作文件夹内文本文件今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。 网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答python怎么删除txt文本里面的第一行？ 1234567fin=open(&apos;a.txt&apos;)a=fin.r">
 <meta name="keywords" content="Python,编程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python笔记">
 <meta property="og:url" content="https://kylindc.github.io/2017/07/15/Python笔记/index.html">
 <meta property="og:site_name" content="Upside Down">
-<meta property="og:description" content="文件操作批量操作文件夹内文本文件今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。 网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答python怎么删除txt文本里面的第一行？ 1234567fin=open(&apos;a.txt&apos;)a=fin.re">
+<meta property="og:description" content="文件操作批量操作文件夹内文本文件今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。 网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答python怎么删除txt文本里面的第一行？ 1234567fin=open(&apos;a.txt&apos;)a=fin.r">
 <meta property="og:updated_time" content="2017-08-06T03:53:46.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python笔记">
-<meta name="twitter:description" content="文件操作批量操作文件夹内文本文件今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。 网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答python怎么删除txt文本里面的第一行？ 1234567fin=open(&apos;a.txt&apos;)a=fin.re">
+<meta name="twitter:description" content="文件操作批量操作文件夹内文本文件今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。 网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答python怎么删除txt文本里面的第一行？ 1234567fin=open(&apos;a.txt&apos;)a=fin.r">
     
     
         
@@ -137,7 +137,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="批量操作文件夹内文本文件"><a href="#批量操作文件夹内文本文件" class="headerlink" title="批量操作文件夹内文本文件"></a>批量操作文件夹内文本文件</h3><p>今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。</p>
+    <link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="批量操作文件夹内文本文件"><a href="#批量操作文件夹内文本文件" class="headerlink" title="批量操作文件夹内文本文件"></a>批量操作文件夹内文本文件</h3><p>今天是像拿实验数据练手，来试一试Python的操作。关于文件处理的主要的一个需求是要批量删除CSV文件中的特定行。</p>
 <p>网上搜索了一下，对于我的实验数据这类小文件，大致的一个思路就是将文件读取为list，然后再切片操作，然后再写入新的文件。比如百度知道的这个回答<a href="https://zhidao.baidu.com/question/583049390.html" target="_blank" rel="external">python怎么删除txt文本里面的第一行？</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fin=open(<span class="string">'a.txt'</span>)</div><div class="line">a=fin.readlines()</div><div class="line">fout=open(<span class="string">'newa.txt'</span>,<span class="string">'w'</span>)</div><div class="line">b=<span class="string">''</span>.join(a[<span class="number">1</span>:])</div><div class="line">fout.write(b)</div><div class="line">fin.close()</div><div class="line">fout.close()</div></pre></td></tr></table></figure>
 <p>思路倒也是不复杂，不过可以写得更Pythonic一些。</p>
