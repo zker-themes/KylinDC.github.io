@@ -1,0 +1,11 @@
+#hexo robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+
+Sitemap: https://kylindc.github.io/sitemap.xml
+Sitemap: https://kylindc.github.io/baidusitemap.xml
