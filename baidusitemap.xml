@@ -4,7 +4,26 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/6919/</loc>
+    <loc>https://kylindc.github.io/post/37189/</loc>
+    <lastmod>2017-08-13T09:26:36.696Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 折腾手记其一：使用 Adobe Typekit 云字体 (Web Font)</title>
+        <pubTime>2017-08-12T10:00:32.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>字体</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://kylindc.github.io/post/6919/</loc>
     <lastmod>2017-08-12T15:22:55.930Z</lastmod>
     <data>
         <display>
@@ -23,7 +42,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/56037/</loc>
+    <loc>https://kylindc.github.io/post/56037/</loc>
     <lastmod>2017-08-12T15:22:49.582Z</lastmod>
     <data>
         <display>
@@ -42,7 +61,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/31648/</loc>
+    <loc>https://kylindc.github.io/post/31648/</loc>
     <lastmod>2017-08-12T15:20:54.441Z</lastmod>
     <data>
         <display>
@@ -61,7 +80,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/63201/</loc>
+    <loc>https://kylindc.github.io/post/63201/</loc>
     <lastmod>2017-08-12T15:20:53.469Z</lastmod>
     <data>
         <display>
@@ -76,7 +95,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/16014/</loc>
+    <loc>https://kylindc.github.io/post/16014/</loc>
     <lastmod>2017-08-12T15:00:35.453Z</lastmod>
     <data>
         <display>
@@ -95,7 +114,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/46471/</loc>
+    <loc>https://kylindc.github.io/post/46471/</loc>
     <lastmod>2017-08-12T14:51:44.039Z</lastmod>
     <data>
         <display>
@@ -114,7 +133,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/31930/</loc>
+    <loc>https://kylindc.github.io/post/31930/</loc>
     <lastmod>2017-08-12T13:10:10.512Z</lastmod>
     <data>
         <display>
@@ -131,7 +150,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/53723/</loc>
+    <loc>https://kylindc.github.io/post/53723/</loc>
     <lastmod>2017-08-12T12:59:36.732Z</lastmod>
     <data>
         <display>
@@ -148,7 +167,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/31171/</loc>
+    <loc>https://kylindc.github.io/post/31171/</loc>
     <lastmod>2017-08-12T12:22:00.038Z</lastmod>
     <data>
         <display>
@@ -165,7 +184,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/54430/</loc>
+    <loc>https://kylindc.github.io/post/54430/</loc>
     <lastmod>2017-08-12T12:22:00.022Z</lastmod>
     <data>
         <display>
@@ -182,7 +201,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/37332/</loc>
+    <loc>https://kylindc.github.io/post/37332/</loc>
     <lastmod>2017-08-12T12:22:00.006Z</lastmod>
     <data>
         <display>
@@ -199,7 +218,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/11378/</loc>
+    <loc>https://kylindc.github.io/post/11378/</loc>
     <lastmod>2017-08-12T12:21:59.991Z</lastmod>
     <data>
         <display>
@@ -216,7 +235,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/32259/</loc>
+    <loc>https://kylindc.github.io/post/32259/</loc>
     <lastmod>2017-08-12T12:21:59.960Z</lastmod>
     <data>
         <display>
@@ -233,7 +252,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/4183/</loc>
+    <loc>https://kylindc.github.io/post/4183/</loc>
     <lastmod>2017-08-12T12:21:59.944Z</lastmod>
     <data>
         <display>
@@ -252,7 +271,7 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/p/63883/</loc>
+    <loc>https://kylindc.github.io/post/63883/</loc>
     <lastmod>2017-08-12T12:21:59.928Z</lastmod>
     <data>
         <display>
@@ -260,25 +279,6 @@
         <pubTime>2017-05-11T08:19:31.000Z</pubTime>
         
         <tag>杂</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kylindc.github.io/p/37189/</loc>
-    <lastmod>2017-08-12T12:20:49.726Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 折腾手记其一：使用 Adobe Typekit 云字体</title>
-        <pubTime>2017-08-12T10:00:32.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>字体</tag>
          
          
            
