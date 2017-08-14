@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kylindc.github.io/about/index.html</loc>
+    
+    <lastmod>2017-08-13T13:25:15.466Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kylindc.github.io/post/53723/</loc>
     
     <lastmod>2017-08-13T13:02:23.057Z</lastmod>
@@ -110,13 +117,6 @@
     <loc>https://kylindc.github.io/post/63883/</loc>
     
     <lastmod>2017-08-12T12:21:59.928Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kylindc.github.io/about/index.html</loc>
-    
-    <lastmod>2017-07-30T11:28:19.075Z</lastmod>
     
   </url>
   
