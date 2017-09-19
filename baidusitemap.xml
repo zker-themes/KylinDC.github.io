@@ -4,16 +4,16 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/post/37763/</loc>
-    <lastmod>2017-09-01T10:42:22.776Z</lastmod>
+    <loc>https://kylindc.github.io/post/4183/</loc>
+    <lastmod>2017-09-19T07:48:45.208Z</lastmod>
     <data>
         <display>
-        <title>点亮你的 PPT 封面</title>
-        <pubTime>2017-09-01T09:37:10.000Z</pubTime>
+        <title>Python笔记</title>
+        <pubTime>2017-07-15T14:41:33.000Z</pubTime>
         
-        <tag>设计</tag>
+        <tag>Python</tag>
          
-        <tag>PPT</tag>
+        <tag>编程</tag>
          
          
            
@@ -24,7 +24,7 @@
     
   <url>
     <loc>https://kylindc.github.io/post/42892/</loc>
-    <lastmod>2017-09-01T09:38:22.880Z</lastmod>
+    <lastmod>2017-09-10T07:56:26.362Z</lastmod>
     <data>
         <display>
         <title>关于《西文排版》</title>
@@ -35,6 +35,25 @@
         <tag>书</tag>
          
         <tag>设计</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://kylindc.github.io/post/37763/</loc>
+    <lastmod>2017-09-01T10:42:22.776Z</lastmod>
+    <data>
+        <display>
+        <title>点亮你的 PPT 封面</title>
+        <pubTime>2017-09-01T09:37:10.000Z</pubTime>
+        
+        <tag>设计</tag>
+         
+        <tag>PPT</tag>
          
          
            
@@ -301,25 +320,6 @@
         <pubTime>2015-07-09T15:51:00.000Z</pubTime>
         
         <tag>书</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kylindc.github.io/post/4183/</loc>
-    <lastmod>2017-08-12T12:21:59.944Z</lastmod>
-    <data>
-        <display>
-        <title>Python笔记</title>
-        <pubTime>2017-07-15T14:41:33.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>编程</tag>
          
          
            
