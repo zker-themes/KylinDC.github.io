@@ -4,16 +4,29 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/post/4183/</loc>
-    <lastmod>2017-09-19T08:00:02.038Z</lastmod>
+    <loc>https://kylindc.github.io/post/63795/</loc>
+    <lastmod>2017-09-27T04:30:39.915Z</lastmod>
     <data>
         <display>
-        <title>Python笔记</title>
-        <pubTime>2017-07-15T14:41:33.000Z</pubTime>
+        <title>求全排列中次大数的算法及 Python 实现</title>
+        <pubTime>2017-09-27T04:30:39.000Z</pubTime>
         
-        <tag>Python</tag>
          
-        <tag>编程</tag>
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://kylindc.github.io/post/63883/</loc>
+    <lastmod>2017-09-26T10:20:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>Shadowsocks 服务器搭建比较全的纪录</title>
+        <pubTime>2017-05-11T08:19:31.000Z</pubTime>
+        
+        <tag>杂</tag>
          
          
            
@@ -24,7 +37,7 @@
     
   <url>
     <loc>https://kylindc.github.io/post/42892/</loc>
-    <lastmod>2017-09-10T07:56:26.362Z</lastmod>
+    <lastmod>2017-09-20T07:59:06.000Z</lastmod>
     <data>
         <display>
         <title>关于《西文排版》</title>
@@ -35,6 +48,25 @@
         <tag>书</tag>
          
         <tag>设计</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://kylindc.github.io/post/4183/</loc>
+    <lastmod>2017-09-19T08:00:02.038Z</lastmod>
+    <data>
+        <display>
+        <title>Python笔记</title>
+        <pubTime>2017-07-15T14:41:33.000Z</pubTime>
+        
+        <tag>Python</tag>
+         
+        <tag>编程</tag>
          
          
            
@@ -158,23 +190,6 @@
         <tag>动画</tag>
          
         <tag>作画</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kylindc.github.io/post/63883/</loc>
-    <lastmod>2017-08-14T15:07:19.044Z</lastmod>
-    <data>
-        <display>
-        <title>Shadowsocks 服务器搭建比较全的纪录</title>
-        <pubTime>2017-05-11T08:19:31.000Z</pubTime>
-        
-        <tag>杂</tag>
          
          
            
