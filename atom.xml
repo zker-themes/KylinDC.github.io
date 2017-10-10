@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2017-10-10T09:25:12.062Z</updated>
+  <updated>2017-10-10T09:31:06.580Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -20,16 +20,18 @@
     <link href="https://kylindc.github.io/post/51724/"/>
     <id>https://kylindc.github.io/post/51724/</id>
     <published>2017-10-10T09:01:40.000Z</published>
-    <updated>2017-10-10T09:25:12.062Z</updated>
+    <updated>2017-10-10T09:31:06.580Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>从昨天开始，搭载着 SS 的 VPS IP 大规模被 GFW 封锁，昨天换了一个 IP 以后还是能够继续使用。</p><p>不过今天（2017.10.10），GFW 再次升级，不只是单纯的封禁 IP，而是能够在保证不封锁 IP 的情况下，将 SS 流量封锁，不论何种加密方式。所以 VPS 上的 SS 已经全部都挂掉了。</p><p>幸好的是 SSR 暂时还能用，不过谁知道好日子还能延续多久呢。</p><p>为防止 SSR 也遭遇封锁，所以服务器上已经搭建好了 plan B - GFW.Press。</p><p>所以大家就先去<a href="https://gfw.press/download.php" target="_blank" rel="external">GFW.Press</a>下载好客户端，以备不时之需。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">以前连接的密码, a 开头</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"/> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> U2FsdGVkX19hXckYL8u9Zn5jGHBFkXAnEimutcYX9jGjv/5R6N/bizzGXxq/7Ey2bzUdJ8JLTb+u3ajJxp6AR44BAcl9vyqJgDA0v+8nw8GZ0bgWlznfri92CXjRM/CqWVIQanXi9z3VBgCoky6zdXMAFf7BJcDVNCoXu8vZvAt0AZOPNMFYQqYm6nTnJpP0EvWNHoj+UoXIHrivA+izxb87IQm3g8P765q7wWxXL9tUjd9pTl+3Bg0wD/2Xt2YqCLX0q7TIwVzl8I2Dt/Jj4PBQ/XF7mmKOT8i+80o9p/qvObjY+cdgDx++cwFngQM+m5yANhe5gj2Wkxflc2Y6rT5sMQQi9BK7i5giIEJl3vB4i6IblI+4vCNplXDdY+dPb40niIKmsi6fH+aEkRxOQwqGWX79zDFRes8jLTyyRYFsY2bz4zkGY/78OK30kZYsTNlK1V9wDehhnq2yt/69ImKYRAYdmxHiq5V3eRIXFqisVy8tSP556MWtU9TuDCyU6WlY/8DQybfIYkic9VaE3mouu+atxkezzrS2KYdB6fFVW8jHgmPEIRB5CQe7LPyc5CzWefUo4f8YLcXPz0kTlWKAV72yN/j4nuwcyjbbyFMsrmeV8TTC/1iFWiEONrmF6fAy8c9CH18cuFPcZI0c6Hscc7/FWMqnzLw9hM3rG4UNvPKdQnqqtNWkzJ6FMyzpsEI6uR2qxaJ/qM7ci1HQ+2HBQlwh0/KcWa6BHPErbfGs5k6ITEugiJSdHkZWAVeHljWvl7crQztOtuKegX4TLxeCclLLG/mU5HoGP1c54os9mtHW7L4FunsKYefb6yh6uifWfq3bWRKabjd2kiDkwsHkASkdeGmsDXhl26I3096ktc3Ef8E3TY0K3CPvdbe7LL/RbkzK05GygAzMGd60dhape+6g7TnbpMS9nLC28URSM7flT5hoOMokTTuaTfSdZEVKLlM5Vi3dmuBBhku5+30u56iFWm568zK9R/UwKKQB2CSHcwSwZ8UUOClPJ6FBCeaRIdKRpu/1UE1kZdhUTIHoNCupAR0xhSmKesI4yh0yipGiuuLtS+t4SQfYd+FOgL6rwU8mcnB3dFn5PV/YoeRxMBSKDYo8hqkTBnTtT22sa02lNJgqvvp874kAHm9Gu18z18uobmuOkI0JGVRhxYrwbdaOBhkg0VkJ8l3ZjOxHWaL6gQW9sxETXLXMK9UK6d+mmzML7OZx8D3j922ZXEVl2lGoLZeVooB7oXoAT62ulsr6RCUyjWhBbZAuVcb7LwJPhPNBE2lyeRicRpCWTo7QoZZdp8lhdyVZsKidGltw4vxmAGjfIT4dhkgX4EdFaUxpDQJnTnO5vGwQRkxqacZEWy9/qUQJurwCDSL37KMEJwzcetp90L5WRo3RTL5fWmOZJbEB3WE9dT3iGJZa2kLe8hXNKh8Y/y91981ZkMtt73AG+7Ib9aUsYgdeEglV1o2a0S5sK1CFT8P+eOhsWUL5XHAyfs/cAHVt9ihYAstemYWyH7xD+CR7eAQN5CwRBaCsZD6HHHFaRUIUAnlF9S+l35FH/hNfcoSSgYdT1eHYdLYrAlzz5Ekz/qdxKk4J+yXgKJmSURmurRMRRDpizRiyQvvnppE+pbFD1dxHSRDgzfzPU3zt03VIgSaGVxODuoLxMiQ9/ZzzYbNMg3wvhuB3tZR5Ss06Y7cSnNcR5D22HZm4BtyeUTCHDKnnuYGPHbe0jk4LNz9GwBf4J7lPg5kj/h/omEXLnnqzSxUcdGVf5KSzNKt9eVAldadJflF0DCVDWxL8YyGfM2vtQm1ltCOiA2p+gO5mMZ+C/z+8uTU0sdZ16h7v10lVdOVyoL40SYybVpcYqwREYwsY4GQfyEuQL6EWKmlfapNPqHXvW7D0IPMA9rKGNAKav2ZEDhk4LZrWDXRGj0qfYuehkFbItqMylwkDIVt+G2Wctj6ruE+tWJT4NKqCz97kmJvPSfsQPrs8Ze226zlFyXRvmNfbOAYCjIMYcjb/DDCiq8Zgju3vRrQM0nxo6AKH29n+lXtyhVuPS/sR2JHD1eQEkNamBZdehC419nk8BQraPPUNYHK3t7n1JgPWmhAA6HBfjNjUlwB/GDyfy5vuVPDedh0QfvIbRgSKZEM+S6X0Ar7aSH2kRXEGFq+DM/m3nqjjU+InfebNY2u6q1EGMsd4xV2x24eKeddjYK6MP2fHV4jgVXl70rplsPV90riHf+YXw2LV3GjlEagvhH1XXyLadYPtz+EEdA7jZ2rnw45Tr6PxovpZLLleWu3S/2sUrxIJGMQvlisBDdrneQmsw7jn4U3fVMNZpqQHvrdMdoV23QvPN/HRXCxVCUtxYkHaDftMZfblPSm/Eg/tT0d+csfNcBhpRSTni5Rw48SnyznphoPhvrg= </div>]]></content>
     
     <summary type="html">
     
-      &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;/assets/css/DPlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/DPlayer.min.js&quot;&gt; &lt;/script&gt;&lt;script src=&quot;/as
+      关于 plan B
     
     </summary>
     
+    
+      <category term="杂" scheme="https://kylindc.github.io/tags/%E6%9D%82/"/>
     
   </entry>
   
