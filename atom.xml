@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2017-10-10T09:12:30.937Z</updated>
+  <updated>2017-10-10T09:19:14.981Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="https://kylindc.github.io/post/51724/"/>
     <id>https://kylindc.github.io/post/51724/</id>
     <published>2017-10-10T09:01:40.000Z</published>
-    <updated>2017-10-10T09:12:30.937Z</updated>
+    <updated>2017-10-10T09:19:14.981Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>从昨天开始，搭载着 SS 的 VPS IP 大规模被 GFW 封锁，昨天换了一个 IP 以后还是能够继续使用。</p><p>不过今天（2017.10.10），GFW 再次升级，不只是单纯的封禁 IP，而是能够在保证不封锁 IP 的情况下，将 SS 流量封锁，不论何种加密方式。所以 VPS 上的 SS 已经全部都挂掉了。</p><p>幸好的是 SSR 暂时还能用，不过谁知道好日子能不能延续下去呢。</p><p>为防止 SSR 也遭遇封锁，所以服务器上已经搭建好了 plan B——GFW.Press。</p><p>所以大家就先去<a href="https://gfw.press/download.php" target="_blank" rel="external">GFW.Press</a>下载好客户端，以备不时之需。</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" type="text/css" href="/assets/css/DPlayer.min.css"><script src="/assets/js/DPlayer.min.js"> </script><script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>从昨天开始，搭载着 SS 的 VPS IP 大规模被 GFW 封锁，昨天换了一个 IP 以后还是能够继续使用。</p><p>不过今天（2017.10.10），GFW 再次升级，不只是单纯的封禁 IP，而是能够在保证不封锁 IP 的情况下，将 SS 流量封锁，不论何种加密方式。所以 VPS 上的 SS 已经全部都挂掉了。</p><p>幸好的是 SSR 暂时还能用，不过谁知道好日子还能延续多久呢。</p><p>为防止 SSR 也遭遇封锁，所以服务器上已经搭建好了 plan B——GFW.Press。</p><p>所以大家就先去<a href="https://gfw.press/download.php" target="_blank" rel="external">GFW.Press</a>下载好客户端，以备不时之需。</p>]]></content>
     
     <summary type="html">
     
