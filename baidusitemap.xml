@@ -4,12 +4,29 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/post/51724/</loc>
-    <lastmod>2017-10-25T04:29:08.206Z</lastmod>
+    <loc>https://kylindc.github.io/post/18448/</loc>
+    <lastmod>2018-01-26T04:42:47.127Z</lastmod>
     <data>
         <display>
-        <title>plan B</title>
-        <pubTime>2017-10-10T09:01:40.000Z</pubTime>
+        <title>羽毛球学习笔记</title>
+        <pubTime>2018-01-25T04:31:26.000Z</pubTime>
+        
+        <tag>羽毛球</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://kylindc.github.io/post/63883/</loc>
+    <lastmod>2018-01-25T11:35:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>Shadowsocks 服务器搭建比较全的纪录</title>
+        <pubTime>2017-05-11T08:19:31.000Z</pubTime>
         
         <tag>杂</tag>
          
@@ -21,12 +38,29 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/post/63883/</loc>
-    <lastmod>2017-10-23T05:00:47.702Z</lastmod>
+    <loc>https://kylindc.github.io/post/54430/</loc>
+    <lastmod>2017-11-03T13:58:11.864Z</lastmod>
     <data>
         <display>
-        <title>Shadowsocks 服务器搭建比较全的纪录</title>
-        <pubTime>2017-05-11T08:19:31.000Z</pubTime>
+        <title>特师文集</title>
+        <pubTime>2015-09-29T15:48:00.000Z</pubTime>
+        
+        <tag>杂</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://kylindc.github.io/post/51724/</loc>
+    <lastmod>2017-10-25T04:29:08.206Z</lastmod>
+    <data>
+        <display>
+        <title>plan B</title>
+        <pubTime>2017-10-10T09:01:40.000Z</pubTime>
         
         <tag>杂</tag>
          
@@ -181,23 +215,6 @@
         <pubTime>2017-08-12T10:05:21.000Z</pubTime>
         
         <tag>Hexo</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kylindc.github.io/post/54430/</loc>
-    <lastmod>2017-08-28T14:36:06.425Z</lastmod>
-    <data>
-        <display>
-        <title>特师文集</title>
-        <pubTime>2015-09-29T15:48:00.000Z</pubTime>
-        
-        <tag>杂</tag>
          
          
            
