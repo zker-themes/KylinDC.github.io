@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://kylindc.github.io/post/51724/</loc>
-    <lastmod>2018-10-30T07:17:26.795Z</lastmod>
+    <lastmod>2018-10-30T07:17:26.000Z</lastmod>
     <data>
         <display>
         <title>plan B</title>
@@ -13,21 +13,6 @@
         
         <tag>杂</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kylindc.github.io/post/29821/</loc>
-    <lastmod>2018-10-25T12:34:50.000Z</lastmod>
-    <data>
-        <display>
-        <title>UBC CS 61A 学习笔记</title>
-        <pubTime>2018-10-25T11:57:31.000Z</pubTime>
-        
          
            
         </display>
@@ -142,44 +127,6 @@
 
     
   <url>
-    <loc>https://kylindc.github.io/post/63795/</loc>
-    <lastmod>2017-09-27T15:33:22.186Z</lastmod>
-    <data>
-        <display>
-        <title>求全排列中次大数的算法及 Python 实现</title>
-        <pubTime>2017-09-27T04:30:39.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>编程</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://kylindc.github.io/post/4183/</loc>
-    <lastmod>2017-09-27T04:34:21.433Z</lastmod>
-    <data>
-        <display>
-        <title>Python 笔记</title>
-        <pubTime>2017-07-15T14:41:33.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>编程</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://kylindc.github.io/post/42892/</loc>
     <lastmod>2017-09-20T07:59:06.000Z</lastmod>
     <data>
@@ -189,9 +136,9 @@
         
         <tag>字体</tag>
          
-        <tag>设计</tag>
-         
         <tag>书</tag>
+         
+        <tag>设计</tag>
          
          
            
