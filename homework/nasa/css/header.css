@@ -1,0 +1,131 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background: black;
+  position: fixed;
+  z-index: 1;
+}
+
+.header_left {
+  flex-grow: 1;
+}
+
+.header_left img {
+  width: 120px;
+  height: 92px;
+  margin: 20px;
+}
+
+.header_center {
+  flex-grow: 4;
+  position: relative;
+  justify-content: center;
+}
+
+.header_right {
+  flex-grow: 1;
+}
+
+.navigation_bar {
+  width: 100%;
+  height: 100%;
+}
+
+.upper_navigation_bar {
+  text-align: center;
+}
+
+.upper_navigation_bar ul {
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.upper_navigation_bar li {
+  padding: 15px 5px;
+  display: inline-block;
+  border-right: 2px solid rgb(136, 136, 136);
+}
+
+.upper_navigation_bar a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.47em;
+}
+
+.upper_navigation_bar li:hover {
+  background: rgb(23, 65, 139);
+}
+
+.lower_navigation_bar {
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 50px;
+  right: 50px;
+}
+
+.lower_navigation_bar ul {
+  margin: 0px;
+  padding: 0px;
+  background: rgb(85, 85, 85);
+}
+
+.lower_navigation_bar li {
+  text-align: center;
+  padding: 10px 10px;
+  margin: 0px;
+  display: inline-block;
+  border-right: 2px solid rgb(136, 136, 136);
+}
+
+.lower_navigation_bar a {
+  font-size: 14px;
+  text-decoration: none;
+  color: rgb(225, 225, 225);
+}
+
+.lower_navigation_bar li:hover {
+  background: rgb(136, 136, 136);
+}
+
+.header_right {
+  position: relative;
+}
+
+.share button {
+  width: 42px;
+  height: 42px;
+  background: rgba(0, 0, 0, 0);
+  float: right;
+  border: none;
+  margin: 20px 0px;
+  padding: 0;
+}
+
+.search_bar {
+  background: rgb(51, 51, 51);
+  width: 100%;
+}
+
+.search_bar input {
+  box-sizing: border-box;
+  background: rgb(51, 51, 51);
+  height: 42px;
+  width: 120px;
+  border: none;
+  float: right;
+  margin: 20px 0px;
+  padding: 10px;
+}
+
+.search_bar button {
+  width: 42px;
+  height: 42px;
+  background: rgb(51, 51, 51);
+  float: right;
+  border: none;
+  margin: 20px 0px;
+  padding: 0;
+}

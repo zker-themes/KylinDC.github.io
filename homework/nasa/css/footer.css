@@ -1,0 +1,45 @@
+.footer {
+  border: 2px solid black;
+  width: 100%;
+  background: black;
+  display: inline-block;
+  position: relative;
+}
+
+.logo {
+  float: left;
+}
+
+.footer_info {
+  float: left;
+  color: white;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 0.95em;
+  margin: 0;
+}
+
+.footer_links {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  display: inline-block;
+}
+
+.footer_links li {
+  display: inline-block;
+  padding-right: 30px;
+  width: auto;
+}
+
+.footer_links a {
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  color: rgba(93, 127, 185, 1);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.footer_links a:hover {
+  text-decoration: underline;
+}

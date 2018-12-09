@@ -1,0 +1,10 @@
+@import "header.css";
+@import "main.css";
+@import "footer.css";
+@import "https://fonts.googleapis.com/css?family=Titillium+Web:400,600";
+body {
+  font-family: "Titillium Web", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  background: black;
+  margin: auto;
+  max-width: 95%;
+}
