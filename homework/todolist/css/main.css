@@ -124,6 +124,12 @@ body {
   color: rgb(226, 128, 128);
   background: white;
   border: none;
+  margin: auto 10px;
+  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+}
+
+.clear_button button {
+  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
 }
 
 .view_buttons {
