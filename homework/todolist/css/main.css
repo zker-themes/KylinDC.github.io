@@ -4,34 +4,34 @@ body {
 }
 
 .container {
-  padding: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", PingFangSC-Regular, sans-serif;
+  display: flex;
+  flex-direction: column;
   width: 375px;
   height: 667px;
   margin: 40px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  padding: 0px;
   border: 1px solid rgb(0, 0, 0);
-  font-family: "Gill Sans", "Gill Sans MT", PingFangSC-Regular, sans-serif;
+  align-items: stretch;
 }
 
 .header {
+  display: flex;
   width: 100%;
   height: 56px;
   background: rgb(226, 128, 128);
-  display: flex;
 }
 
 .title {
-  color: rgb(255, 255, 255);
-  margin: auto;
   font-size: 26px;
+  margin: auto;
+  color: rgb(255, 255, 255);
 }
 
 .add_todo {
+  display: flex;
   width: 100%;
   height: 52px;
-  display: flex;
   background: rgb(255, 192, 203);
 }
 
@@ -44,9 +44,9 @@ body {
   width: 100%;
   height: 28px;
   margin: auto;
-  border-radius: 16px;
-  border: none;
   padding: 0px 10px;
+  border: none;
+  border-radius: 16px;
 }
 
 input:focus {
@@ -54,20 +54,20 @@ input:focus {
 }
 
 .todo_lists {
+  overflow-y: auto;
   width: 100%;
   height: 70%;
   margin: 0px;
   padding: 0px;
-  overflow-y: auto;
 }
 
 .todo_item {
   font-size: 18px;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   height: 36px;
   margin: 10px 0;
-  display: flex;
-  flex-direction: row;
 }
 
 .todo_item:hover .delete_icon {
@@ -77,17 +77,19 @@ input:focus {
 .uncheck_icon {
   width: 18px;
   height: 18px;
-  background-image: url("../images/uncheck.png");
-  background-size: 18px;
   margin: auto;
+  background-image: url("../images/uncheck.png");
+  background-repeat: no-repeat;
+  background-size: 18px;
 }
 
 .checked_icon {
   width: 18px;
   height: 18px;
-  background-image: url("../images/checked.png");
-  background-size: 18px;
   margin: auto;
+  background-image: url("../images/checked.png");
+  background-repeat: no-repeat;
+  background-size: 18px;
 }
 
 .todo_content {
@@ -97,26 +99,26 @@ input:focus {
 }
 
 .done_content {
-  color: rgba(0, 0, 0, 0.5);
   text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .delete_icon {
   width: 22px;
   height: 22px;
-  background: white;
-  background-image: url("../images/delete.png");
-  background-size: 22px;
-  background-repeat: no-repeat;
   margin: auto;
   border: none;
+  background: white;
+  background-image: url("../images/delete.png");
+  background-repeat: no-repeat;
+  background-size: 22px;
 }
 
 .footer {
-  width: 100%;
-  height: 68px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 68px;
 }
 
 .items_info {
@@ -132,12 +134,12 @@ input:focus {
 }
 
 .clear_button {
-  color: rgb(226, 128, 128);
-  background: rgb(255, 255, 255);
-  border: none;
-  margin: auto 10px;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+  margin: auto 10px;
+  color: rgb(226, 128, 128);
+  border: none;
   outline: none;
+  background: rgb(255, 255, 255);
 }
 
 .clear_button button {
@@ -156,16 +158,16 @@ input:focus {
 .view_buttons button {
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
   font-size: 16px;
-  padding: 5px;
-  border-radius: 16px;
-  border: none;
   width: 100px;
+  padding: 5px;
+  border: none;
+  border-radius: 16px;
   outline: none;
 }
 
 .selected_button {
+  color: rgb(255, 255, 255);
   background: rgb(226, 128, 128);
-  color: white;
 }
 
 .hidden {
