@@ -1,6 +1,20 @@
-let a = new Date();
-let b = new Date();
-console.log(a);
+let todoList = document.getElementById("todo_lists");
 
-console.log(b);
-setTimeout(() => {}, 3000);
+let todoTemplate = document.getElementById("uncompleted_item_template");
+
+let content = todoTemplate.content.querySelector(".todo_content");
+
+content.textContent = "ji";
+
+let clone = document.importNode(todoTemplate.content, true);
+
+todoList.appendChild(clone);
+
+content.textContent = "kk";
+
+clone = document.importNode(todoTemplate.content, true);
+
+todoList.appendChild(clone);
+
+let a = todoList.querySelector(".todo_item");
+console.log(a.querySelector(".todo_content").classList[0]);

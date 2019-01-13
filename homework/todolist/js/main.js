@@ -1,49 +1,15 @@
-let itemStorage = new ItemStorage();
-
-let todoList = document.getElementById("todo_lists");
+let todoItems = new TodoItems();
 
 let viewStateArr = ["all", "active", "completed"];
 let viewState = viewStateArr[0];
 
 window.onload = () => {
-  refreshView();
+  showAllItem();
+  showItemsInfo();
 };
 
-function refreshView() {
-  showTodoList();
-  showItemsInfo();
-}
-
-function showTodoList() {
-  let todoListHTML = "";
-  switch (viewState) {
-    case "all":
-      todoListHTML = itemStorage.generateAllItemsHTML();
-      todoList.innerHTML = todoListHTML;
-      break;
-    case "active":
-      todoListHTML = itemStorage.generateActiveItemsHTML();
-      todoList.innerHTML = todoListHTML;
-      break;
-    case "completed":
-      todoListHTML = itemStorage.generateCompletedItemsHTML();
-      todoList.innerHTML = todoListHTML;
-      break;
-    default:
-      break;
-  }
-}
-
-function showItemsInfo() {
-  let leftCounter = document.getElementById("left_counter");
-  let clearButton = document.getElementById("clear_button");
-  let counter = itemStorage.getLeftCount();
-  leftCounter.innerText = counter;
-  if (counter > 0) {
-    clearButton.classList.remove("hidden");
-  } else {
-    clearButton.classList.add("hidden");
-  }
+function showAllItem() {
+  todoItems.getAllItem().forEach(e => renderItem(e));
 }
 
 function submitTodo(event) {
@@ -57,73 +23,69 @@ function submitTodo(event) {
 
 function addTodo(todoContent) {
   let todoItem = new TodoItem(todoContent);
-  itemStorage.addItem(todoItem);
-  refreshView();
+  todoItems.addItem(todoItem);
+  renderItem(todoItem);
+  showItemsByViewState();
+  showItemsInfo();
 }
 
 function deleteTodoItem(event) {
   let parentNode = event.target.parentNode;
   let contentNode = parentNode.getElementsByClassName("todo_content")[0];
-  let todoItem = itemStorage.getItemByContent(contentNode.innerText);
+  let todoItem = todoItems.getItemByContent(contentNode.innerText);
   todoItem.isDeleted = true;
-  itemStorage.addItem(todoItem);
-  itemStorage.removeDeletedItem();
-  refreshView();
+  todoItems.addItem(todoItem);
+  todoItems.removeDeletedItem();
+  renderDeletedItem(parentNode);
+  showItemsInfo();
 }
 
 function setTodoItemCompleted(event) {
   let todoItemNode = event.target;
-  let todoItem = itemStorage.getItemByContent(todoItemNode.innerText);
+  let todoItem = todoItems.getItemByContent(todoItemNode.innerText);
   todoItem.isCompleted = true;
-  itemStorage.addItem(todoItem);
-  refreshView();
+  todoItems.addItem(todoItem);
+  renderSetCompletedItem(todoItemNode);
+  showItemsInfo();
+}
+
+function setTodoItemActive(event) {
+  let todoItemNode = event.target;
+  let todoItem = todoItems.getItemByContent(todoItemNode.innerText);
+  todoItem.isCompleted = false;
+  todoItems.addItem(todoItem);
+  renderUndoCompletedItem(todoItemNode);
+  showItemsInfo();
+}
+
+function refreshView() {
+  showItemsByViewState();
+  showItemsInfo();
 }
 
 function clearCompleted() {
-  itemStorage.removeDoneItem();
+  todoItems.removeDoneItem();
+  renderClearCompletedItem();
   refreshView();
 }
 
 function showAllTodoList() {
   viewState = viewStateArr[0];
   changeButtonState();
-  showTodoList();
+  showItemsByViewState();
+  showItemsInfo();
 }
 
 function showActiveTodoList() {
   viewState = viewStateArr[1];
   changeButtonState();
-  showTodoList();
+  showItemsByViewState();
+  showItemsInfo();
 }
 
 function showCompletedTodoList() {
   viewState = viewStateArr[2];
   changeButtonState();
-  showTodoList();
-}
-
-function changeButtonState() {
-  let allButton = document.getElementById("all_button");
-  let activeButton = document.getElementById("active_button");
-  let completedButton = document.getElementById("completed_button");
-
-  switch (viewState) {
-    case "all":
-      allButton.classList.add("selected_button");
-      activeButton.classList.remove("selected_button");
-      completedButton.classList.remove("selected_button");
-      break;
-    case "active":
-      allButton.classList.remove("selected_button");
-      activeButton.classList.add("selected_button");
-      completedButton.classList.remove("selected_button");
-      break;
-    case "completed":
-      allButton.classList.remove("selected_button");
-      activeButton.classList.remove("selected_button");
-      completedButton.classList.add("selected_button");
-      break;
-    default:
-      break;
-  }
+  showItemsByViewState();
+  showItemsInfo();
 }

@@ -16,10 +16,36 @@
             id="todo_input"
             placeholder="请输入要添加的事项，按回车添加…"
             onkeypress="submitTodo(event)"
+            autofocus="autofocus"
           />
         </div>
       </div>
-      <div class="todo_lists" id="todo_lists"></div>
+      <ul class="todo_lists" id="todo_lists">
+        <template id="active_item_template">
+          <li class="todo_item">
+            <div class="uncheck_icon"></div>
+            <span
+              class="todo_content"
+              onclick="setTodoItemCompleted(event)"
+            ></span>
+            <button
+              class="delete_icon hidden"
+              onclick="deleteTodoItem(event)"
+            ></button></li
+        ></template>
+        <template id="completed_item_template">
+          <li class="todo_item done_item">
+            <div class="checked_icon"></div>
+            <span
+              class="todo_content done_content"
+              onclick="setTodoItemActive(event)"
+            ></span>
+            <button
+              class="delete_icon hidden"
+              onclick="deleteTodoItem(event)"
+            ></button></li
+        ></template>
+      </ul>
       <div class="footer">
         <div class="items_info">
           <div class="todo_counter">
@@ -59,7 +85,8 @@
       </div>
     </div>
     <script type="text/javascript" src="../js/todo_item.js"></script>
-    <script type="text/javascript" src="../js/item_storage.js"></script>
+    <script type="text/javascript" src="../js/todo_items.js"></script>
+    <script type="text/javascript" src="../js/view.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 body {
   width: 100%;
-  margin: 0;
+  margin: 0px;
 }
 
 .container {
@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   align-items: stretch;
   border: 1px solid rgb(0, 0, 0);
-  font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", PingFangSC-Regular, sans-serif;
 }
 
 .header {
@@ -32,7 +32,7 @@ body {
   width: 100%;
   height: 52px;
   display: flex;
-  background: pink;
+  background: rgb(255, 192, 203);
 }
 
 .todo_input {
@@ -49,12 +49,20 @@ body {
   padding: 0px 10px;
 }
 
+input:focus {
+  outline: 0;
+}
+
 .todo_lists {
   width: 100%;
   height: 70%;
+  margin: 0px;
+  padding: 0px;
+  overflow-y: auto;
 }
 
 .todo_item {
+  font-size: 18px;
   width: 100%;
   height: 36px;
   margin: 10px 0;
@@ -94,11 +102,14 @@ body {
 }
 
 .delete_icon {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
+  background: white;
   background-image: url("../images/delete.png");
-  background-size: 18px;
+  background-size: 22px;
+  background-repeat: no-repeat;
   margin: auto;
+  border: none;
 }
 
 .footer {
@@ -122,10 +133,11 @@ body {
 
 .clear_button {
   color: rgb(226, 128, 128);
-  background: white;
+  background: rgb(255, 255, 255);
   border: none;
   margin: auto 10px;
   font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+  outline: none;
 }
 
 .clear_button button {
@@ -148,6 +160,7 @@ body {
   border-radius: 16px;
   border: none;
   width: 100px;
+  outline: none;
 }
 
 .selected_button {
@@ -157,4 +170,8 @@ body {
 
 .hidden {
   visibility: hidden;
+}
+
+.conceal {
+  display: none;
 }
