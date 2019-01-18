@@ -8,6 +8,7 @@ body {
   grid-template-columns: 300px auto;
   grid-template-rows: 80px auto;
   grid-template-areas: "navigation navigation" "sidebar content";
+  background: #fcfcfc;
 }
 
 .navigation {
@@ -86,7 +87,6 @@ body {
 .content {
   grid-area: content;
   padding: 30px 0px;
-  background: #fcfcfc;
   overflow-y: scroll;
 }
 
@@ -107,4 +107,26 @@ body {
   font-size: 20px;
   color: #888;
   margin: 40px;
+}
+
+.load_more {
+  font-size: 14px;
+  color: #444;
+  background: #fff;
+  width: 160px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0px 1px 4px 1px #aaa;
+  margin: 30px auto;
+}
+
+.load_more:hover {
+  cursor: pointer;
+  background: #efefef;
+}
+
+.hide {
+  opacity: 0;
 }

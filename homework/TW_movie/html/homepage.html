@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="../css/homepage.css"
+    />
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon" />
+    <script src="../js/libs/papaparse/4.6.0/papaparse.min.js"></script>
+    <script src="../js/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>思沃影院</title>
+  </head>
+
+  <body>
+    <div class="navigation">
+      <div class="logo" onclick="main()">
+        <img src="../images/logo_with_text.png" alt="" />
+      </div>
+      <div class="search">
+        <input
+          id="search_input"
+          class="search_bar"
+          type="search"
+          name="search"
+          placeholder="请输入想要搜索的电影，回车即可搜索…"
+          autofocus="autofocus"
+          onkeypress="showMoviesBySearch(event)"
+        />
+        <button class="search_btn" onclick="showMoviesBySearch(event)">
+          <div class="btn_icon"><img src="../images/search.svg" alt="" /></div>
+        </button>
+      </div>
+    </div>
+    <div class="sidebar">
+      <ul class="guide_section">
+        <li class="active">
+          <div class="guide_item" id="guide_item_main" onclick="main()">
+            <div class="guide_icon">
+              <img src="../images/homepage.svg" alt="" />
+            </div>
+            <div class="guide_title">首页</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showTopMovies(event)">
+            <div class="guide_icon">
+              <img src="../images/trophy.png" alt="" />
+            </div>
+            <div class="guide_title">Top 250</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showRandomMovies(event)">
+            <div class="guide_icon">
+              <img src="../images/recommendation.svg" alt="" />
+            </div>
+            <div class="guide_title">特别推荐</div>
+          </div>
+        </li>
+      </ul>
+      <ul class="guide_section" id="genres">
+        <li>
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
+            <div class="guide_icon">
+              <img src="../images/movie.png" alt="" />
+            </div>
+            <div class="guide_title">剧情</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
+            <div class="guide_icon"><img src="../images/spy.png" alt="" /></div>
+            <div class="guide_title">悬疑</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
+            <div class="guide_icon"><img src="../images/ufo.png" alt="" /></div>
+            <div class="guide_title">科幻</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
+            <div class="guide_icon"><img src="../images/gun.png" alt="" /></div>
+            <div class="guide_title">动作</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
+            <div class="guide_icon">
+              <img src="../images/animation.png" alt="" />
+            </div>
+            <div class="guide_title">动画</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
+            <div class="guide_icon">
+              <img src="../images/comedy.png" alt="" />
+            </div>
+            <div class="guide_title">喜剧</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
+            <div class="guide_icon">
+              <img src="../images/love.png" alt="" />
+            </div>
+            <div class="guide_title">爱情</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
+            <div class="guide_icon">
+              <img src="../images/ghost.png" alt="" />
+            </div>
+            <div class="guide_title">恐怖</div>
+          </div>
+        </li>
+        <li>
+          <div class="guide_item" onclick="showMoviesByGenre(event)">
+            <div class="guide_icon">
+              <img src="../images/family.png" alt="" />
+            </div>
+            <div class="guide_title">家庭</div>
+          </div>
+        </li>
+      </ul>
+      <ul class="guide_section" id="copyright_info">
+        <li><div class="copyright">© 2019 TW MOVIE THEATER, LLC</div></li>
+      </ul>
+    </div>
+    <div class="content" id="content">
+      <div class="poster_wall" id="poster_wall">
+        <template id="movie_card">
+          <div class="movie" movie_id="">
+            <a
+              href="./details_page.html"
+              onclick="storageSelectedMovieId(event)"
+            >
+              <div class="poster">
+                <img
+                  id="poster"
+                  src=""
+                  onerror="this.src='../images/image_load_error.png'"
+                  alt=""
+                />
+              </div>
+              <div class="movie_basic_infor">
+                <div class="movie_title" id="title"></div>
+                <div class="rating">评分：<span id="rating"></span></div>
+              </div>
+            </a>
+          </div>
+        </template>
+      </div>
+      <template id="message">
+        <div class="error_message" id="error_message"></div>
+      </template>
+      <div class="load_more" id="load_more" onclick="showMoreMovies(this)">
+        查看更多电影
+      </div>
+    </div>
+    <script type="text/javascript" src="../js/load.js"></script>
+    <script type="text/javascript" src="../js/service.js"></script>
+    <script type="text/javascript" src="../js/view.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,53 +1,70 @@
 if (localStorage.moviesStorage) {
   main();
 } else {
-  load.loadMoviesToStorage("../resources/movies.csv", main);
+  loadMoviesToStorage("../resources/movies.csv", main);
 }
 
 function main() {
-  showMoviesByRange(0, 23);
+  if (localStorage.searchContent) {
+    showMoviesBySearch(event);
+  } else {
+    showMoviesByRange(0, 23);
+  }
   renderMainGuideItemActive();
+  $("#load_more").removeClass("hide");
 }
 
 function showMoviesByRange(firstNum, secondNum) {
   let movies = getMoviesByRange(firstNum, secondNum);
-  renderNewMovieCards(movies);
+  renderMovieCards(movies);
 }
 
 function showTopMovies(event) {
   showMoviesByRange(100, 147);
   renderGuideItemActive(event.target);
+  $("#load_more").addClass("hide");
 }
 
 function showRandomMovies(event, count = 12) {
   let movies = getRandomMovies(count);
-  renderNewMovieCards(movies);
+  renderMovieCards(movies);
   renderGuideItemActive(event.target);
+  $("#load_more").addClass("hide");
 }
 
 function showMoviesByGenre(event) {
   let parentNode = event.target.parentNode;
   let genre = parentNode.querySelector(".guide_title").innerText;
   let movies = getMoviesInfoByGenre(genre);
-  renderNewMovieCards(movies);
+  renderMovieCards(movies);
   renderGuideItemActive(event.target);
+  $("#load_more").addClass("hide");
 }
 
 function showMoviesBySearch(event) {
   let searchInput = document.getElementById("search_input");
-  let searchKey = searchInput.value;
 
-  if (
-    searchKey &&
+  if (localStorage.searchContent) {
+    let searchKey = localStorage.searchContent;
+    let result = searchMovies(searchKey);
+    result
+      ? renderMovieCards(result)
+      : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
+    localStorage.searchContent = "";
+  } else if (
+    searchInput.value &&
     (event.type === "click" ||
       (event.type === "keypress" && event.keyCode === 13))
   ) {
+    let searchKey = searchInput.value;
     let result = searchMovies(searchKey);
     result
-      ? renderNewMovieCards(result)
+      ? renderMovieCards(result)
       : renderErrorMessage("对不起，无法找到你想要的电影，请重新搜索...");
     searchInput.value = "";
   }
+
+  $("#load_more").addClass("hide");
 }
 
 function storageSelectedMovieId(event) {
@@ -56,4 +73,16 @@ function storageSelectedMovieId(event) {
     parentNode = parentNode.parentNode;
   }
   localStorage.selectedMovie = parentNode.getAttribute("movie_id");
+}
+
+function showMoreMovies(element) {
+  let posterWall = document.getElementById("poster_wall");
+  let movieCardsNum = posterWall.querySelectorAll(".movie").length;
+
+  let movies = getMoviesByRange(movieCardsNum, movieCardsNum + 47);
+  if (movies.length) {
+    renderMovieCards(movies, false);
+  } else {
+    $(element).text("所有电影都已经加载啦");
+  }
 }

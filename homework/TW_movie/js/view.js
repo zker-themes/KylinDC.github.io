@@ -15,8 +15,11 @@ function renderMovieCard(movie) {
   posterWall.append(movieClone);
 }
 
-function renderNewMovieCards(movies) {
-  cleanContent();
+function renderMovieCards(movies, isRenderNew = true) {
+  if (isRenderNew) {
+    cleanContent();
+  }
+
   if (Array.isArray(movies)) {
     movies.forEach(movie => {
       renderMovieCard(movie);

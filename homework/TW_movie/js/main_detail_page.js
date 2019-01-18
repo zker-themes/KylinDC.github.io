@@ -1,7 +1,7 @@
 if (localStorage.moviesStorage) {
   showMovieDetailPage();
 } else {
-  load.loadMoviesToStorage("../resources/movies.csv", showMovieDetailPage);
+  loadMoviesToStorage("../resources/movies.csv", showMovieDetailPage);
 }
 
 function showMovieDetailPage() {
@@ -42,5 +42,20 @@ function expendReview(element) {
     $(element)
       .prevAll("#review_content")
       .addClass("hide");
+  }
+}
+
+function saveSearchKey(event) {
+  let searchInput = document.getElementById("search_input");
+  let searchKey = searchInput.value;
+
+  if (
+    searchKey &&
+    (event.type === "click" ||
+      (event.type === "keypress" && event.keyCode === 13))
+  ) {
+    localStorage.searchContent = searchKey;
+    window.location.href = "./homepage.html";
+    searchInput.value = "";
   }
 }
