@@ -29,6 +29,7 @@ span {
 .movie_detail_title {
   font-size: 25px;
   font-weight: bold;
+  width: 85%;
 }
 
 .translated_title,

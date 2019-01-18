@@ -9,9 +9,9 @@ function main() {
     showMoviesBySearch(event);
   } else {
     showMoviesByRange(0, 23);
+    $("#load_more").removeClass("hide");
   }
   renderMainGuideItemActive();
-  $("#load_more").removeClass("hide");
 }
 
 function showMoviesByRange(firstNum, secondNum) {
