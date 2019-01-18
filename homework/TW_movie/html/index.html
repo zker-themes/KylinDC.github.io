@@ -12,11 +12,8 @@
     />
     <link rel="icon" href="../images/logo.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon" />
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script
-      src="../js/libs/requirejs/2.3.6/require.min.js"
-      data-main="../js/main.js"
-    ></script>
+    <script src="../js/libs/papaparse/4.6.0/papaparse.min.js"></script>
+    <script src="../js/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>思沃影院</title>
   </head>
 
@@ -166,7 +163,11 @@
       <template id="message">
         <div class="error_message" id="error_message"></div>
       </template>
+      <div class="load_more" id="load_more" onclick="showMoreMovies(this)">
+        查看更多电影
+      </div>
     </div>
+    <script type="text/javascript" src="../js/load.js"></script>
     <script type="text/javascript" src="../js/service.js"></script>
     <script type="text/javascript" src="../js/view.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
