@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="screen"
-      href="../css/details_page.css"
-    />
-    <link rel="icon" href="../images/logo.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/details_page.css"/>
+    <link rel="icon" href="../images/logo.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon"/>
     <script src="../js/libs/papaparse/4.6.0/papaparse.min.js"></script>
     <script src="../js/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>电影详情</title>
@@ -19,29 +14,23 @@
   <body>
     <div class="navigation">
       <div class="logo">
-        <a href="./homepage.html">
-          <img src="../images/logo_with_text.png" alt=""
-        /></a>
+        <a href="./index.html">
+          <img src="../images/logo_with_text.png" alt=""/>
+        </a>
       </div>
       <div class="search">
-        <input
-          id="search_input"
-          class="search_bar"
-          type="search"
-          name="search"
-          placeholder="请输入想要搜索的电影，回车即可搜索…"
-          autofocus="autofocus"
-          onkeypress="saveSearchKey(event)"
-        />
+        <input id="search_input" class="search_bar" type="search" name="search" placeholder="请输入想要搜索的电影，回车即可搜索…" autofocus="autofocus" onkeypress="saveSearchKey(event)"/>
         <button class="search_btn" onclick="saveSearchKey(event)">
-          <div class="btn_icon"><img src="../images/search.svg" alt="" /></div>
+          <div class="btn_icon">
+            <img src="../images/search.svg" alt=""/>
+          </div>
         </button>
       </div>
     </div>
     <div class="content">
       <div class="main">
         <template id="star">
-          <img id="star_img" src="" alt="" />
+          <img id="star_img" src="" alt=""/>
         </template>
         <template id="user_infor">
           <div class="user_name" id="user_name"></div>
@@ -54,16 +43,15 @@
             <div class="movie_detail_title">
               <span class="translated_title" id="translated_title"></span>
               <span class="translated_title" id="original_title"></span>
-              <span class="year"> ( <span id="year"></span> ) </span>
+              <span class="year">
+                (
+                <span id="year"></span>
+                )
+              </span>
             </div>
             <div class="movie_infor">
               <div class="movie_poster">
-                <img
-                  id="movie_poster"
-                  src=""
-                  onerror="this.src='../images/image_load_error.png'"
-                  alt=""
-                />
+                <img id="movie_poster" src="" onerror="this.src='../images/image_load_error.png'" alt=""/>
               </div>
               <div class="infor">
                 <p>
@@ -121,12 +109,7 @@
             <template id="cast_member">
               <div class="member">
                 <div class="avatars">
-                  <img
-                    id="cast_img"
-                    src=""
-                    onerror="this.src='../images/image_load_error.png'"
-                    alt=""
-                  />
+                  <img id="cast_img" src="" onerror="this.src='../images/image_load_error.png'" alt=""/>
                 </div>
                 <div class="name" id="cast_name"></div>
               </div>
@@ -166,21 +149,16 @@
         <div class="recommendation" id="recommendation">
           <template id="movie_card">
             <div class="movie" movie_id="">
-              <a
-                href="./details_page.html"
-                onclick="storageSelectedMovieId(event)"
-              >
+              <a href="./details_page.html" onclick="storageSelectedMovieId(event)">
                 <div class="poster">
-                  <img
-                    id="poster"
-                    src=""
-                    onerror="this.src='../images/image_load_error.png'"
-                    alt=""
-                  />
+                  <img id="poster" src="" onerror="this.src='../images/image_load_error.png'" alt=""/>
                 </div>
                 <div class="movie_basic_infor">
                   <div class="movie_title" id="title"></div>
-                  <div class="rating">评分：<span id="rating"></span></div>
+                  <div class="rating">
+                    评分：
+                    <span id="rating"></span>
+                  </div>
                 </div>
               </a>
             </div>
