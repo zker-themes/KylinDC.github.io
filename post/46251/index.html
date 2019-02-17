@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang=zh>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta name="theme-color" content="#1d1f21">
    
@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="Upside Down">
 <meta property="og:description" content="基本类型的自动类型转换和强制类型转换自动类型转换赋值和方法调用中的类型转换转换原则：  从低位类型到高位类型自动转换。类型排序：byte &amp;lt; short &amp;lt; int &amp;lt; long &amp;lt; float &amp;lt; double boolean 类型不与其它类型的值发生转换。  运算中的类型转换 基本就是先转换为高位数据类型，再参加运算 byte short char 运算会转换为">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-01-28T13:25:53.468Z">
+<meta property="og:updated_time" content="2019-02-17T08:41:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的类型转换和自动拆装箱">
 <meta name="twitter:description" content="基本类型的自动类型转换和强制类型转换自动类型转换赋值和方法调用中的类型转换转换原则：  从低位类型到高位类型自动转换。类型排序：byte &amp;lt; short &amp;lt; int &amp;lt; long &amp;lt; float &amp;lt; double boolean 类型不与其它类型的值发生转换。  运算中的类型转换 基本就是先转换为高位数据类型，再参加运算 byte short char 运算会转换为">
@@ -74,14 +74,14 @@
         
       </ul>
     </span>
-    <br/>
+    <br>
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/post/43519/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/post/16025/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/post/57291/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/post/45281/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -91,7 +91,7 @@
       <span id="i-top" class="info" style="display:none;">Back to top</span>
       <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br>
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/post/46251/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
@@ -112,7 +112,7 @@
     
     <div class="content index width mx-auto px2 my4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -122,12 +122,12 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Upside Down</span>
       </span>
       
     <div class="postdate">
-        <time datetime="2019-01-28T12:48:06.000Z" itemprop="datePublished">2019-01-28</time>
+        <time datetime="2019-02-16T12:48:06.000Z" itemprop="datePublished">2019-02-16</time>
     </div>
 
 
@@ -138,14 +138,14 @@
   
 
   <div class="content" itemprop="articleBody">
-    <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="基本类型的自动类型转换和强制类型转换"><a href="#基本类型的自动类型转换和强制类型转换" class="headerlink" title="基本类型的自动类型转换和强制类型转换"></a>基本类型的自动类型转换和强制类型转换</h2><h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><h4 id="赋值和方法调用中的类型转换"><a href="#赋值和方法调用中的类型转换" class="headerlink" title="赋值和方法调用中的类型转换"></a>赋值和方法调用中的类型转换</h4><p>转换原则：</p>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="基本类型的自动类型转换和强制类型转换"><a href="#基本类型的自动类型转换和强制类型转换" class="headerlink" title="基本类型的自动类型转换和强制类型转换"></a>基本类型的自动类型转换和强制类型转换</h2><h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><h4 id="赋值和方法调用中的类型转换"><a href="#赋值和方法调用中的类型转换" class="headerlink" title="赋值和方法调用中的类型转换"></a>赋值和方法调用中的类型转换</h4><p>转换原则：</p>
 <ul>
 <li>从低位类型到高位类型自动转换。类型排序：byte &lt; short &lt; int &lt; long &lt; float &lt; double</li>
 <li>boolean 类型不与其它类型的值发生转换。</li>
 </ul>
 <h4 id="运算中的类型转换"><a href="#运算中的类型转换" class="headerlink" title="运算中的类型转换"></a>运算中的类型转换</h4><ul>
 <li>基本就是先转换为高位数据类型，再参加运算</li>
-<li>byte short char 运算会转换为 Int</li>
+<li>byte short char 运算会转换为 int</li>
 <li>使用赋值运算符时，系统会自动强制将运算结果转换为目标变量的类型</li>
 <li>运算符为自动递增运算符（++）或自动递减运算符（–）时，如果操作数为 byte，short 或 char 类型不发生改变；</li>
 </ul>

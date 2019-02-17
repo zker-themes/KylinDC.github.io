@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang=zh>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta name="theme-color" content="#1d1f21">
    
     <script src="https://use.typekit.net/zyz6dlh.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     
-    <meta name="description" content="Number常规类型JS 中不区分int和float，无论是整数还是小数，其类型均为Number，在程序内部，Number类型的实质是一个 64 位的浮点数，因此 JavaScript 所能表示的数值范围为±1.7976931348623157e+308，其最小所能表示的小数为±5e-324，这两个边界值可以分别通过访问 Number 对象的 MAX_VALUE 属性和 MIN_VALUE 属性">
+    <meta name="description" content="Number常规类型JS 中不区分int和float，无论是整数还是小数，其类型均为Number，在程序内部，Number类型的实质是一个 64 位的浮点数，因此 JavaScript 所能表示的数值范围为±1.7976931348623157e+308，其最小所能表示的小数为±5e-324，这两个边界值可以分别通过访问 Number 对象的 MAX_VALUE 属性和 MIN_VALUE 属性来">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript基本数据类型">
 <meta property="og:url" content="https://kylindc.github.io/post/438/index.html">
 <meta property="og:site_name" content="Upside Down">
-<meta property="og:description" content="Number常规类型JS 中不区分int和float，无论是整数还是小数，其类型均为Number，在程序内部，Number类型的实质是一个 64 位的浮点数，因此 JavaScript 所能表示的数值范围为±1.7976931348623157e+308，其最小所能表示的小数为±5e-324，这两个边界值可以分别通过访问 Number 对象的 MAX_VALUE 属性和 MIN_VALUE 属性">
+<meta property="og:description" content="Number常规类型JS 中不区分int和float，无论是整数还是小数，其类型均为Number，在程序内部，Number类型的实质是一个 64 位的浮点数，因此 JavaScript 所能表示的数值范围为±1.7976931348623157e+308，其最小所能表示的小数为±5e-324，这两个边界值可以分别通过访问 Number 对象的 MAX_VALUE 属性和 MIN_VALUE 属性来">
 <meta property="og:locale" content="zh">
 <meta property="og:updated_time" content="2018-11-20T16:39:23.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript基本数据类型">
-<meta name="twitter:description" content="Number常规类型JS 中不区分int和float，无论是整数还是小数，其类型均为Number，在程序内部，Number类型的实质是一个 64 位的浮点数，因此 JavaScript 所能表示的数值范围为±1.7976931348623157e+308，其最小所能表示的小数为±5e-324，这两个边界值可以分别通过访问 Number 对象的 MAX_VALUE 属性和 MIN_VALUE 属性">
+<meta name="twitter:description" content="Number常规类型JS 中不区分int和float，无论是整数还是小数，其类型均为Number，在程序内部，Number类型的实质是一个 64 位的浮点数，因此 JavaScript 所能表示的数值范围为±1.7976931348623157e+308，其最小所能表示的小数为±5e-324，这两个边界值可以分别通过访问 Number 对象的 MAX_VALUE 属性和 MIN_VALUE 属性来">
     
     
         
@@ -74,7 +74,7 @@
         
       </ul>
     </span>
-    <br/>
+    <br>
     <span id="actions">
       <ul>
         
@@ -91,7 +91,7 @@
       <span id="i-top" class="info" style="display:none;">Back to top</span>
       <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br>
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/post/438/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
@@ -112,7 +112,7 @@
     
     <div class="content index width mx-auto px2 my4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -122,7 +122,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Upside Down</span>
       </span>
       
@@ -138,7 +138,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><h3 id="常规类型"><a href="#常规类型" class="headerlink" title="常规类型"></a>常规类型</h3><p>JS 中不区分<code>int</code>和<code>float</code>，无论是整数还是小数，其类型均为<code>Number</code>，在程序内部，<code>Number</code>类型的实质是一个 64 位的浮点数，因此 JavaScript 所能表示的数值范围为<code>±1.7976931348623157e+308</code>，其最小所能表示的小数为<code>±5e-324</code>，这两个边界值可以分别通过访问 Number 对象的 MAX_VALUE 属性和 MIN_VALUE 属性来获取。</p>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><h3 id="常规类型"><a href="#常规类型" class="headerlink" title="常规类型"></a>常规类型</h3><p>JS 中不区分<code>int</code>和<code>float</code>，无论是整数还是小数，其类型均为<code>Number</code>，在程序内部，<code>Number</code>类型的实质是一个 64 位的浮点数，因此 JavaScript 所能表示的数值范围为<code>±1.7976931348623157e+308</code>，其最小所能表示的小数为<code>±5e-324</code>，这两个边界值可以分别通过访问 Number 对象的 MAX_VALUE 属性和 MIN_VALUE 属性来获取。</p>
 <p>参考：<a href="http://blog.shaochuancs.com/javascript-number-range/" target="_blank" rel="noopener">JavaScript 实验：数值范围</a></p>
 <h3 id="特殊类型"><a href="#特殊类型" class="headerlink" title="特殊类型"></a>特殊类型</h3><ul>
 <li><code>Infinity</code>：正无穷</li>

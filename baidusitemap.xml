@@ -1,572 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
   <url>
+    <loc>https://kylindc.github.io/post/16025/</loc>
+    <lastmod>2019-02-17</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/43519/</loc>
-    <lastmod>2019-01-29T13:37:40.049Z</lastmod>
-    <data>
-        <display>
-        <title>Java中的类、抽象类和借口之间的异同</title>
-        <pubTime>2019-01-29T11:41:22.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-02-17</lastmod>
+  </url>  <url>
+    <loc>https://kylindc.github.io/post/45281/</loc>
+    <lastmod>2019-02-17</lastmod>
+  </url>  <url>
+    <loc>https://kylindc.github.io/post/3868/</loc>
+    <lastmod>2019-02-17</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/46251/</loc>
-    <lastmod>2019-01-28T13:25:53.468Z</lastmod>
-    <data>
-        <display>
-        <title>Java中的类型转换和自动拆装箱</title>
-        <pubTime>2019-01-28T12:48:06.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-02-17</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/57291/</loc>
-    <lastmod>2019-01-24T11:56:10.000Z</lastmod>
-    <data>
-        <display>
-        <title>Java中的异常与错误</title>
-        <pubTime>2019-01-24T10:53:45.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-24</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/46716/</loc>
-    <lastmod>2019-01-20T15:34:54.365Z</lastmod>
-    <data>
-        <display>
-        <title>初识单一职责原则</title>
-        <pubTime>2019-01-19T15:32:38.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-20</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/37516/</loc>
-    <lastmod>2019-01-19T14:07:17.959Z</lastmod>
-    <data>
-        <display>
-        <title>IntelliJ IDEA初探</title>
-        <pubTime>2019-01-19T13:39:28.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-19</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/36121/</loc>
-    <lastmod>2019-01-19T08:35:23.681Z</lastmod>
-    <data>
-        <display>
-        <title>JVM、JRE与JDK</title>
-        <pubTime>2019-01-19T08:09:18.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-19</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/51724/</loc>
-    <lastmod>2019-01-01T14:07:15.236Z</lastmod>
-    <data>
-        <display>
-        <title>plan B</title>
-        <pubTime>2017-10-10T09:01:40.000Z</pubTime>
-        
-        <tag>杂</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-01</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/31128/</loc>
-    <lastmod>2018-12-06T07:52:28.809Z</lastmod>
-    <data>
-        <display>
-        <title>原生JavaScript常用的本地浏览器存储方法总结</title>
-        <pubTime>2018-12-06T07:51:24.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-12-06</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/58769/</loc>
-    <lastmod>2018-12-03T15:26:04.709Z</lastmod>
-    <data>
-        <display>
-        <title>JSON总结</title>
-        <pubTime>2018-12-03T15:25:28.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-12-03</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/63313/</loc>
-    <lastmod>2018-12-03T10:14:03.473Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript对象基础总结</title>
-        <pubTime>2018-12-03T01:30:32.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-12-03</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/20244/</loc>
-    <lastmod>2018-11-23T16:11:43.724Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript学习笔记</title>
-        <pubTime>2018-11-22T04:40:58.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-11-23</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/12102/</loc>
-    <lastmod>2018-11-21T14:45:57.573Z</lastmod>
-    <data>
-        <display>
-        <title>SublimeText3学习笔记</title>
-        <pubTime>2018-11-21T14:31:34.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-11-21</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/8520/</loc>
-    <lastmod>2018-11-21T14:14:53.556Z</lastmod>
-    <data>
-        <display>
-        <title>Git学习笔记</title>
-        <pubTime>2018-11-21T14:05:27.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-11-21</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/438/</loc>
-    <lastmod>2018-11-20T16:39:23.368Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript基本数据类型</title>
-        <pubTime>2018-11-20T11:54:52.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-11-20</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/18448/</loc>
-    <lastmod>2018-11-05T15:55:55.571Z</lastmod>
-    <data>
-        <display>
-        <title>羽毛球学习笔记</title>
-        <pubTime>2018-01-25T04:31:26.000Z</pubTime>
-        
-        <tag>羽毛球</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-11-05</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/13677/</loc>
-    <lastmod>2018-11-05T15:47:32.887Z</lastmod>
-    <data>
-        <display>
-        <title>《如何提问》阅读笔记</title>
-        <pubTime>2018-11-05T14:40:49.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-11-05</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/39979/</loc>
-    <lastmod>2018-11-05T09:30:41.099Z</lastmod>
-    <data>
-        <display>
-        <title>Markdown基本语法总结</title>
-        <pubTime>2018-11-05T08:34:09.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-11-05</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/31930/</loc>
-    <lastmod>2018-10-12T02:15:36.505Z</lastmod>
-    <data>
-        <display>
-        <title> Hexo 折腾手记其二：编辑器增强及推荐插件</title>
-        <pubTime>2017-08-12T10:05:21.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-10-12</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/63883/</loc>
-    <lastmod>2018-03-22T10:04:54.331Z</lastmod>
-    <data>
-        <display>
-        <title>Shadowsocks 服务器搭建比较全的纪录</title>
-        <pubTime>2017-05-11T08:19:31.000Z</pubTime>
-        
-        <tag>杂</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-03-22</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/54430/</loc>
-    <lastmod>2017-11-03T13:58:11.865Z</lastmod>
-    <data>
-        <display>
-        <title>特师文集</title>
-        <pubTime>2015-09-29T15:48:00.000Z</pubTime>
-        
-        <tag>杂</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-11-03</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/46471/</loc>
-    <lastmod>2017-09-30T16:52:55.889Z</lastmod>
-    <data>
-        <display>
-        <title>作画学习札记其五：新生力量篇</title>
-        <pubTime>2017-08-12T14:39:31.000Z</pubTime>
-        
-        <tag>动画</tag>
-         
-        <tag>作画</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-09-30</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/6919/</loc>
-    <lastmod>2017-09-29T16:32:53.308Z</lastmod>
-    <data>
-        <display>
-        <title>作画学习札记其二：暴强老害篇（1）</title>
-        <pubTime>2017-08-12T14:37:17.000Z</pubTime>
-        
-        <tag>动画</tag>
-         
-        <tag>作画</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-09-29</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/42892/</loc>
-    <lastmod>2017-09-20T07:59:06.000Z</lastmod>
-    <data>
-        <display>
-        <title>关于《西文排版》</title>
-        <pubTime>2017-08-28T11:23:48.000Z</pubTime>
-        
-        <tag>字体</tag>
-         
-        <tag>书</tag>
-         
-        <tag>设计</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-09-20</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/37763/</loc>
-    <lastmod>2017-09-01T10:42:22.776Z</lastmod>
-    <data>
-        <display>
-        <title>点亮你的 PPT 封面</title>
-        <pubTime>2017-09-01T09:37:10.000Z</pubTime>
-        
-        <tag>设计</tag>
-         
-        <tag>PPT</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-09-01</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/56037/</loc>
-    <lastmod>2017-08-29T11:17:37.000Z</lastmod>
-    <data>
-        <display>
-        <title>作画学习札记其三：暴强老害篇（2）</title>
-        <pubTime>2017-08-12T14:38:06.000Z</pubTime>
-        
-        <tag>动画</tag>
-         
-        <tag>作画</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-08-29</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/11378/</loc>
-    <lastmod>2017-08-28T11:34:12.266Z</lastmod>
-    <data>
-        <display>
-        <title>关于《柯P新政》</title>
-        <pubTime>2015-01-06T16:45:00.000Z</pubTime>
-        
-        <tag>政</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-08-28</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/63201/</loc>
-    <lastmod>2017-08-23T13:44:50.278Z</lastmod>
-    <data>
-        <display>
-        <title>作画学习札记其六：关于动画的一些讨论</title>
-        <pubTime>2017-08-12T14:56:54.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-08-23</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/16014/</loc>
-    <lastmod>2017-08-23T08:14:16.000Z</lastmod>
-    <data>
-        <display>
-        <title>作画学习札记其一：作画基本概念及开山始祖篇</title>
-        <pubTime>2017-08-12T14:15:54.000Z</pubTime>
-        
-        <tag>动画</tag>
-         
-        <tag>作画</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
+    <lastmod>2017-08-23</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/53723/</loc>
-    <lastmod>2017-08-13T13:02:23.057Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 折腾手记其三：多媒体及互联网资源插入博客</title>
-        <pubTime>2017-08-12T10:08:43.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-08-13</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/37189/</loc>
-    <lastmod>2017-08-13T09:26:36.697Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo 折腾手记其一：使用 Adobe Typekit 云字体 (Web Font)</title>
-        <pubTime>2017-08-12T10:00:32.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>字体</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-08-13</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/31648/</loc>
-    <lastmod>2017-08-12T15:20:54.442Z</lastmod>
-    <data>
-        <display>
-        <title>作画学习札记其四：中流砥柱篇</title>
-        <pubTime>2017-08-12T14:38:58.000Z</pubTime>
-        
-        <tag>动画</tag>
-         
-        <tag>作画</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-08-12</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/31171/</loc>
-    <lastmod>2017-08-12T12:22:00.038Z</lastmod>
-    <data>
-        <display>
-        <title>如何评价 IPN 出品的《無次元》节目？</title>
-        <pubTime>2015-03-07T15:01:00.000Z</pubTime>
-        
-        <tag>杂</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-08-12</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/37332/</loc>
-    <lastmod>2017-08-12T12:22:00.007Z</lastmod>
-    <data>
-        <display>
-        <title>关于白夜行中某些隐藏剧情的推断</title>
-        <pubTime>2016-06-29T02:14:00.000Z</pubTime>
-        
-        <tag>书</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2017-08-12</lastmod>
+  </url>  <url>
     <loc>https://kylindc.github.io/post/32259/</loc>
-    <lastmod>2017-08-12T12:21:59.960Z</lastmod>
-    <data>
-        <display>
-        <title>关于《蛤蟆的油》</title>
-        <pubTime>2015-07-09T15:51:00.000Z</pubTime>
-        
-        <tag>书</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
+    <lastmod>2017-08-12</lastmod>
+  </url>
 </urlset>

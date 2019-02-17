@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang=zh>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta name="theme-color" content="#1d1f21">
    
     <script src="https://use.typekit.net/zyz6dlh.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     
-    <meta name="description" content="异常（Exception）与错误（Error）的区别与联系 Error 类与 Exception 类都是继承于 Throwable 类。 Error 类一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢出等等。对于这类错误，Java 编译器不去检查他们，对于这类错误导致的程序中断，仅靠程序本身无法恢复和预防。 Exception 类表示程序可以处理的异常，可以捕获且可">
+    <meta name="description" content="异常（Exception）与错误（Error）的区别与联系 Error 类与 Exception 类都是继承于 Throwable 类。 Error 类一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢出等等。对于这类错误，Java 编译器不去检查他们，对于这类错误导致的程序中断，仅靠程序本身无法恢复和预防。 Exception 类表示程序可以处理的异常，可以捕获且可能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java中的异常与错误">
 <meta property="og:url" content="https://kylindc.github.io/post/57291/index.html">
 <meta property="og:site_name" content="Upside Down">
-<meta property="og:description" content="异常（Exception）与错误（Error）的区别与联系 Error 类与 Exception 类都是继承于 Throwable 类。 Error 类一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢出等等。对于这类错误，Java 编译器不去检查他们，对于这类错误导致的程序中断，仅靠程序本身无法恢复和预防。 Exception 类表示程序可以处理的异常，可以捕获且可">
+<meta property="og:description" content="异常（Exception）与错误（Error）的区别与联系 Error 类与 Exception 类都是继承于 Throwable 类。 Error 类一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢出等等。对于这类错误，Java 编译器不去检查他们，对于这类错误导致的程序中断，仅靠程序本身无法恢复和预防。 Exception 类表示程序可以处理的异常，可以捕获且可能">
 <meta property="og:locale" content="zh">
 <meta property="og:updated_time" content="2019-01-24T11:56:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的异常与错误">
-<meta name="twitter:description" content="异常（Exception）与错误（Error）的区别与联系 Error 类与 Exception 类都是继承于 Throwable 类。 Error 类一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢出等等。对于这类错误，Java 编译器不去检查他们，对于这类错误导致的程序中断，仅靠程序本身无法恢复和预防。 Exception 类表示程序可以处理的异常，可以捕获且可">
+<meta name="twitter:description" content="异常（Exception）与错误（Error）的区别与联系 Error 类与 Exception 类都是继承于 Throwable 类。 Error 类一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢出等等。对于这类错误，Java 编译器不去检查他们，对于这类错误导致的程序中断，仅靠程序本身无法恢复和预防。 Exception 类表示程序可以处理的异常，可以捕获且可能">
     
     
         
@@ -74,11 +74,11 @@
         
       </ul>
     </span>
-    <br/>
+    <br>
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/post/46251/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/post/43519/"><i class="fa fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
         <li><a class="icon" href="/post/46716/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
@@ -91,7 +91,7 @@
       <span id="i-top" class="info" style="display:none;">Back to top</span>
       <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br>
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/post/57291/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
@@ -112,7 +112,7 @@
     
     <div class="content index width mx-auto px2 my4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -122,7 +122,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Upside Down</span>
       </span>
       
@@ -138,7 +138,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="异常（Exception）与错误（Error）的区别与联系"><a href="#异常（Exception）与错误（Error）的区别与联系" class="headerlink" title="异常（Exception）与错误（Error）的区别与联系"></a>异常（Exception）与错误（Error）的区别与联系</h2><ul>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="异常（Exception）与错误（Error）的区别与联系"><a href="#异常（Exception）与错误（Error）的区别与联系" class="headerlink" title="异常（Exception）与错误（Error）的区别与联系"></a>异常（Exception）与错误（Error）的区别与联系</h2><ul>
 <li>Error 类与 Exception 类都是继承于 Throwable 类。</li>
 <li>Error 类一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢出等等。对于这类错误，Java 编译器不去检查他们，对于这类错误导致的程序中断，仅靠程序本身无法恢复和预防。</li>
 <li>Exception 类表示程序可以处理的异常，可以捕获且可能恢复。遇到这类异常，应该尽可能去处理异常，使程序恢复运行，而不应该随意终止异常。</li>

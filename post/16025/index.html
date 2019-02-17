@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="theme-color" content="#1d1f21">
+   
+    <script src="https://use.typekit.net/zyz6dlh.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    
+    <meta name="description" content="Object 类常用方法 equals()：返回是否相等，默认比较内存地址是否相等，一般需要根据情况重写，重写时需要满足以下原则：  自反性（reflexive）。对于任意不为 null 的引用值 x，x.equals(x) 一定是 true。 对称性（symmetric）。对于任意不为 null 的引用值 x 和 y ，当且仅当 x.equals(y)是 true 时，y.equals(x)也是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中的Object类、String类和数组的常用方法">
+<meta property="og:url" content="https://kylindc.github.io/post/16025/index.html">
+<meta property="og:site_name" content="Upside Down">
+<meta property="og:description" content="Object 类常用方法 equals()：返回是否相等，默认比较内存地址是否相等，一般需要根据情况重写，重写时需要满足以下原则：  自反性（reflexive）。对于任意不为 null 的引用值 x，x.equals(x) 一定是 true。 对称性（symmetric）。对于任意不为 null 的引用值 x 和 y ，当且仅当 x.equals(y)是 true 时，y.equals(x)也是">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-02-17T15:47:32.952Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java中的Object类、String类和数组的常用方法">
+<meta name="twitter:description" content="Object 类常用方法 equals()：返回是否相等，默认比较内存地址是否相等，一般需要根据情况重写，重写时需要满足以下原则：  自反性（reflexive）。对于任意不为 null 的引用值 x，x.equals(x) 一定是 true。 对称性（symmetric）。对于任意不为 null 的引用值 x 和 y ，当且仅当 x.equals(y)是 true 时，y.equals(x)也是">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Java中的Object类、String类和数组的常用方法</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="https://github.com/KylinDC">Projects</a></li>
+         
+          <li><a href="/homework/todolist/html">TodoList</a></li>
+         
+          <li><a href="/homework/NASA/html">NASA</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/post/46251/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/post/16025/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://kylindc.github.io/post/16025/&text=Java中的Object类、String类和数组的常用方法"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kylindc.github.io/post/16025/&is_video=false&description=Java中的Object类、String类和数组的常用方法"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://kylindc.github.io/post/16025/&title=Java中的Object类、String类和数组的常用方法"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://kylindc.github.io/post/16025/&title=Java中的Object类、String类和数组的常用方法"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://kylindc.github.io/post/16025/&name=Java中的Object类、String类和数组的常用方法&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-类常用方法"><span class="toc-number">1.</span> <span class="toc-text">Object 类常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-类常用方法"><span class="toc-number">2.</span> <span class="toc-text">String 类常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#静态方法"><span class="toc-number">2.1.</span> <span class="toc-text">静态方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例方法"><span class="toc-number">2.2.</span> <span class="toc-text">实例方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组"><span class="toc-number">3.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的定义"><span class="toc-number">3.1.</span> <span class="toc-text">数组的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二维数组的定义"><span class="toc-number">3.1.1.</span> <span class="toc-text">二维数组的定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的遍历"><span class="toc-number">3.2.</span> <span class="toc-text">数组的遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Arrays-类的静态方法"><span class="toc-number">3.3.</span> <span class="toc-text">Arrays 类的静态方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Java中的Object类、String类和数组的常用方法
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Upside Down</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-02-17T08:56:57.000Z" itemprop="datePublished">2019-02-17</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Object-类常用方法"><a href="#Object-类常用方法" class="headerlink" title="Object 类常用方法"></a>Object 类常用方法</h2><ul>
+<li><p>equals()：返回是否相等，默认比较内存地址是否相等，一般需要根据情况重写，重写时需要满足以下原则：</p>
+<ul>
+<li>自反性（reflexive）。对于任意不为 null 的引用值 x，x.equals(x) 一定是 true。</li>
+<li>对称性（symmetric）。对于任意不为 null 的引用值 x 和 y ，当且仅当 x.equals(y)是 true 时，y.equals(x)也是 true。</li>
+<li>传递性（transitive）。对于任意不为 null 的引用值 x、y 和 z，如果 x.equals(y) 是 true，同时 y.equals(z) 是 true，那么 x.equals(z)一定是 true。</li>
+<li>一致性（consistent）。对于任意不为 null 的引用值 x 和 y，如果用于 equals 比较的对象信息没有被修改的话，多次调用时 x.equals(y) 要么一致地返回 true 要么一致地返回 false。</li>
+</ul>
+</li>
+<li><p>hashCode()：返回对象的的 hash 值</p>
+<ul>
+<li>调用 equals 返回 true 的两个对象必须具有相等的哈希码。</li>
+<li>如果两个对象的 hashCode 返回值相同，调用它们 equals 方法不一返回 true 。</li>
+</ul>
+</li>
+<li><p>toString()：默认返回的字符串很像是 对象名+@+对象内存地址，需要根据特殊的情况进行重写</p>
+</li>
+<li>getClass()：返回实例运行时真正所指的对象所属的类的类型类</li>
+<li>clone()：默认调用 clone 方法的是一个对象的引用，而不是深拷贝，需要根据不同的情况进行改写</li>
+</ul>
+<h2 id="String-类常用方法"><a href="#String-类常用方法" class="headerlink" title="String 类常用方法"></a>String 类常用方法</h2><h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><ul>
+<li>String valueOf(): 将对象或者其他基本类型转换为字符串类型</li>
+</ul>
+<h3 id="实例方法"><a href="#实例方法" class="headerlink" title="实例方法"></a>实例方法</h3><ul>
+<li>charAt(int index): 根据对应的索引返回对应的字符</li>
+<li>compareTo(String anotherString): 将此字符串与字符串参数进行比较，若完全一致则返回 0，字典序大则返回正数，小则返回负数</li>
+<li>concat(String anotherString): 将两个字符串连接成一个字符串</li>
+<li>contains(CharSequence s): 检查是否包含相应的字符</li>
+<li>endsWith(String suffix)：是否以某字符结尾</li>
+<li>equals(Object anObject)：是否相等</li>
+<li>indexOf(String str)：返回字符或者字符串的位置，未找到则返回<code>-1</code></li>
+<li>length()：获取字符串的长度</li>
+<li>replace(char oldChar, char newChar)：修改替代字符串</li>
+<li>split(String regex)：分隔字符串</li>
+<li>toLowerCase()：转换为小写</li>
+<li>subString(): 截取字符串</li>
+</ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><h3 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h3><p>数组变量的声明和创建：</p>
+<ul>
+<li><code>dataType[] arrayName = new dataType[arraySize];</code></li>
+<li><code>dataType[] arrayName = {value0, value1, valuek};</code></li>
+</ul>
+<p>例如：<code>double[] myList = new double[size];</code></p>
+<h4 id="二维数组的定义"><a href="#二维数组的定义" class="headerlink" title="二维数组的定义"></a>二维数组的定义</h4><ul>
+<li><code>dataType[][] arrayName = new type[size1][size2];</code></li>
+<li><code>dataType[][] arrayName = { {value1}, {value2}, {value3} };</code></li>
+</ul>
+<p>例如： <code>int[][] myList = { {1,1,1,1,1}, {2,2,2,2,2}, {3,3,3,3,3} };</code><br>注意：定义二维数组必须指定其行数，列数可以指定，可以不指定。</p>
+<h3 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h3><ul>
+<li>利用索引进行循环</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestArray</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">double</span>[] myList = &#123;<span class="number">1.9</span>, <span class="number">2.9</span>, <span class="number">3.4</span>, <span class="number">3.5</span>&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 打印所有数组元素</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; myList.length; i++) &#123;</span><br><span class="line">         System.out.println(myList[i] + <span class="string">""</span>);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>For-Each 循环</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestArray</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">double</span>[] myList = &#123;<span class="number">1.9</span>, <span class="number">2.9</span>, <span class="number">3.4</span>, <span class="number">3.5</span>&#125;;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 打印所有数组元素</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">double</span> element: myList) &#123;</span><br><span class="line">         System.out.println(element);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Arrays-类的静态方法"><a href="#Arrays-类的静态方法" class="headerlink" title="Arrays 类的静态方法"></a>Arrays 类的静态方法</h3><ul>
+<li>给数组赋值：通过 fill 方法。</li>
+<li>对数组排序：通过 sort 方法,按升序。</li>
+<li>比较数组：通过 equals 方法比较数组中元素值是否相等。</li>
+<li>查找数组元素：通过 binarySearch 方法能对排序好的数组进行二分查找法操作，返回索引值。</li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="http://www.runoob.com/java/java-array.html" target="_blank" rel="noopener">Java 数组</a></li>
+<li><a href="http://www.cnblogs.com/felixzh/p/6021886.html" target="_blank" rel="noopener">java Clone 使用方法详解</a></li>
+</ul>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="https://github.com/KylinDC">Projects</a></li>
+         
+          <li><a href="/homework/todolist/html">TodoList</a></li>
+         
+          <li><a href="/homework/NASA/html">NASA</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-类常用方法"><span class="toc-number">1.</span> <span class="toc-text">Object 类常用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-类常用方法"><span class="toc-number">2.</span> <span class="toc-text">String 类常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#静态方法"><span class="toc-number">2.1.</span> <span class="toc-text">静态方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例方法"><span class="toc-number">2.2.</span> <span class="toc-text">实例方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组"><span class="toc-number">3.</span> <span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的定义"><span class="toc-number">3.1.</span> <span class="toc-text">数组的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#二维数组的定义"><span class="toc-number">3.1.1.</span> <span class="toc-text">二维数组的定义</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的遍历"><span class="toc-number">3.2.</span> <span class="toc-text">数组的遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Arrays-类的静态方法"><span class="toc-number">3.3.</span> <span class="toc-text">Arrays 类的静态方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-number">4.</span> <span class="toc-text">参考资料</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/post/16025/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://kylindc.github.io/post/16025/&text=Java中的Object类、String类和数组的常用方法"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kylindc.github.io/post/16025/&is_video=false&description=Java中的Object类、String类和数组的常用方法"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://kylindc.github.io/post/16025/&title=Java中的Object类、String类和数组的常用方法"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://kylindc.github.io/post/16025/&title=Java中的Object类、String类和数组的常用方法"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://kylindc.github.io/post/16025/&name=Java中的Object类、String类和数组的常用方法&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 KylinDC
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="https://github.com/KylinDC">Projects</a></li>
+         
+          <li><a href="/homework/todolist/html">TodoList</a></li>
+         
+          <li><a href="/homework/NASA/html">NASA</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- Google Analytics -->
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99034573-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+<!-- Disqus Comments -->
+
+

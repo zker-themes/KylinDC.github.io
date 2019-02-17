@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang=zh>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta name="theme-color" content="#1d1f21">
    
     <script src="https://use.typekit.net/zyz6dlh.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     
-    <meta name="description" content="JVM(Java Virtual Machine)Java 虚拟机JVM 是整个 java 实现跨平台的最核心的部分，所有的 java 程序会首先被编译为.class 的目标字节码，这种目标字节码文件在虚拟机上执行时，把字节码解释成具体平台上的机器指令执行，因此 Java 可以稳定安全的实现跨平台。 JRE(Java Runtime Environment) Java 运行环境JRE 包含了 J">
+    <meta name="description" content="JVM(Java Virtual Machine)Java 虚拟机JVM 是整个 java 实现跨平台的最核心的部分，所有的 java 程序会首先被编译为.class 的目标字节码，这种目标字节码文件在虚拟机上执行时，把字节码解释成具体平台上的机器指令执行，因此 Java 可以稳定安全的实现跨平台。 JRE(Java Runtime Environment) Java 运行环境JRE 包含了 JV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM、JRE与JDK">
 <meta property="og:url" content="https://kylindc.github.io/post/36121/index.html">
 <meta property="og:site_name" content="Upside Down">
-<meta property="og:description" content="JVM(Java Virtual Machine)Java 虚拟机JVM 是整个 java 实现跨平台的最核心的部分，所有的 java 程序会首先被编译为.class 的目标字节码，这种目标字节码文件在虚拟机上执行时，把字节码解释成具体平台上的机器指令执行，因此 Java 可以稳定安全的实现跨平台。 JRE(Java Runtime Environment) Java 运行环境JRE 包含了 J">
+<meta property="og:description" content="JVM(Java Virtual Machine)Java 虚拟机JVM 是整个 java 实现跨平台的最核心的部分，所有的 java 程序会首先被编译为.class 的目标字节码，这种目标字节码文件在虚拟机上执行时，把字节码解释成具体平台上的机器指令执行，因此 Java 可以稳定安全的实现跨平台。 JRE(Java Runtime Environment) Java 运行环境JRE 包含了 JV">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://kylindc.github.io/post/36121/java.jpg">
 <meta property="og:updated_time" content="2019-01-19T08:35:23.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM、JRE与JDK">
-<meta name="twitter:description" content="JVM(Java Virtual Machine)Java 虚拟机JVM 是整个 java 实现跨平台的最核心的部分，所有的 java 程序会首先被编译为.class 的目标字节码，这种目标字节码文件在虚拟机上执行时，把字节码解释成具体平台上的机器指令执行，因此 Java 可以稳定安全的实现跨平台。 JRE(Java Runtime Environment) Java 运行环境JRE 包含了 J">
+<meta name="twitter:description" content="JVM(Java Virtual Machine)Java 虚拟机JVM 是整个 java 实现跨平台的最核心的部分，所有的 java 程序会首先被编译为.class 的目标字节码，这种目标字节码文件在虚拟机上执行时，把字节码解释成具体平台上的机器指令执行，因此 Java 可以稳定安全的实现跨平台。 JRE(Java Runtime Environment) Java 运行环境JRE 包含了 JV">
 <meta name="twitter:image" content="https://kylindc.github.io/post/36121/java.jpg">
     
     
@@ -76,7 +76,7 @@
         
       </ul>
     </span>
-    <br/>
+    <br>
     <span id="actions">
       <ul>
         
@@ -93,7 +93,7 @@
       <span id="i-top" class="info" style="display:none;">Back to top</span>
       <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br>
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/post/36121/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
@@ -114,7 +114,7 @@
     
     <div class="content index width mx-auto px2 my4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -124,7 +124,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Upside Down</span>
       </span>
       
@@ -140,7 +140,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="JVM-Java-Virtual-Machine-Java-虚拟机"><a href="#JVM-Java-Virtual-Machine-Java-虚拟机" class="headerlink" title="JVM(Java Virtual Machine)Java 虚拟机"></a>JVM(Java Virtual Machine)Java 虚拟机</h2><p>JVM 是整个 java 实现跨平台的最核心的部分，所有的 java 程序会首先被编译为.class 的目标字节码，这种目标字节码文件在虚拟机上执行时，把字节码解释成具体平台上的机器指令执行，因此 Java 可以稳定安全的实现跨平台。</p>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="JVM-Java-Virtual-Machine-Java-虚拟机"><a href="#JVM-Java-Virtual-Machine-Java-虚拟机" class="headerlink" title="JVM(Java Virtual Machine)Java 虚拟机"></a>JVM(Java Virtual Machine)Java 虚拟机</h2><p>JVM 是整个 java 实现跨平台的最核心的部分，所有的 java 程序会首先被编译为.class 的目标字节码，这种目标字节码文件在虚拟机上执行时，把字节码解释成具体平台上的机器指令执行，因此 Java 可以稳定安全的实现跨平台。</p>
 <h2 id="JRE-Java-Runtime-Environment-Java-运行环境"><a href="#JRE-Java-Runtime-Environment-Java-运行环境" class="headerlink" title="JRE(Java Runtime Environment) Java 运行环境"></a>JRE(Java Runtime Environment) Java 运行环境</h2><p>JRE 包含了 JVM 与 java 基础类库，是使用 java 语言编写的程序运行所需要的软件环境，提供给想运行 java 程序的用户使用的。</p>
 <h2 id="JDK-Java-Development-Kit-Java-开发工具包"><a href="#JDK-Java-Development-Kit-Java-开发工具包" class="headerlink" title="JDK(Java Development Kit) Java 开发工具包"></a>JDK(Java Development Kit) Java 开发工具包</h2><p>是提供给开发人员开发 java 程序所需的开发工具包。JDK 包含了 JRE，同时还包含了编译 java 源码的编译器 javac 和打包器等工具，还包含了很多 java 程序调试和分析的工具：jconsole，jvisualvm 等工具软件，以及编写 java 程序所需的文档和 demo 例子程序。</p>
 <p><img src="/post/36121/java.jpg" alt=""></p>

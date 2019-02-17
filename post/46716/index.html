@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang=zh>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
     <!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <meta name="theme-color" content="#1d1f21">
    
     <script src="https://use.typekit.net/zyz6dlh.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
     
-    <meta name="description" content="单一职责基本概念 单一：单一意味着某些工作是独立的。比如，在类中，类方法仅完成某一件独立的事情。 职责：职责指软件系统中，每一个指派给特定方法、类、包和模块所完成的工作或者动作。  方法层面：类方法的单一职责是最单纯的，很具体的，不掺杂任何额外信息，只关心输入、输出、和职责。类层面：一个类只围绕与一个功能，并且引起其变化的原因只有一个。让一个类只负责一件事,将关联性强的内容聚合到一个类中。 单一">
+    <meta name="description" content="单一职责基本概念 单一：单一意味着某些工作是独立的。比如，在类中，类方法仅完成某一件独立的事情。 职责：职责指软件系统中，每一个指派给特定方法、类、包和模块所完成的工作或者动作。  方法层面：类方法的单一职责是最单纯的，很具体的，不掺杂任何额外信息，只关心输入、输出、和职责。类层面：一个类只围绕与一个功能，并且引起其变化的原因只有一个。让一个类只负责一件事,将关联性强的内容聚合到一个类中。 单一职">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初识单一职责原则">
 <meta property="og:url" content="https://kylindc.github.io/post/46716/index.html">
 <meta property="og:site_name" content="Upside Down">
-<meta property="og:description" content="单一职责基本概念 单一：单一意味着某些工作是独立的。比如，在类中，类方法仅完成某一件独立的事情。 职责：职责指软件系统中，每一个指派给特定方法、类、包和模块所完成的工作或者动作。  方法层面：类方法的单一职责是最单纯的，很具体的，不掺杂任何额外信息，只关心输入、输出、和职责。类层面：一个类只围绕与一个功能，并且引起其变化的原因只有一个。让一个类只负责一件事,将关联性强的内容聚合到一个类中。 单一">
+<meta property="og:description" content="单一职责基本概念 单一：单一意味着某些工作是独立的。比如，在类中，类方法仅完成某一件独立的事情。 职责：职责指软件系统中，每一个指派给特定方法、类、包和模块所完成的工作或者动作。  方法层面：类方法的单一职责是最单纯的，很具体的，不掺杂任何额外信息，只关心输入、输出、和职责。类层面：一个类只围绕与一个功能，并且引起其变化的原因只有一个。让一个类只负责一件事,将关联性强的内容聚合到一个类中。 单一职">
 <meta property="og:locale" content="zh">
 <meta property="og:updated_time" content="2019-01-20T15:34:54.365Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初识单一职责原则">
-<meta name="twitter:description" content="单一职责基本概念 单一：单一意味着某些工作是独立的。比如，在类中，类方法仅完成某一件独立的事情。 职责：职责指软件系统中，每一个指派给特定方法、类、包和模块所完成的工作或者动作。  方法层面：类方法的单一职责是最单纯的，很具体的，不掺杂任何额外信息，只关心输入、输出、和职责。类层面：一个类只围绕与一个功能，并且引起其变化的原因只有一个。让一个类只负责一件事,将关联性强的内容聚合到一个类中。 单一">
+<meta name="twitter:description" content="单一职责基本概念 单一：单一意味着某些工作是独立的。比如，在类中，类方法仅完成某一件独立的事情。 职责：职责指软件系统中，每一个指派给特定方法、类、包和模块所完成的工作或者动作。  方法层面：类方法的单一职责是最单纯的，很具体的，不掺杂任何额外信息，只关心输入、输出、和职责。类层面：一个类只围绕与一个功能，并且引起其变化的原因只有一个。让一个类只负责一件事,将关联性强的内容聚合到一个类中。 单一职">
     
     
         
@@ -74,7 +74,7 @@
         
       </ul>
     </span>
-    <br/>
+    <br>
     <span id="actions">
       <ul>
         
@@ -91,7 +91,7 @@
       <span id="i-top" class="info" style="display:none;">Back to top</span>
       <span id="i-share" class="info" style="display:none;">Share post</span>
     </span>
-    <br/>
+    <br>
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/post/46716/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
@@ -112,7 +112,7 @@
     
     <div class="content index width mx-auto px2 my4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
@@ -122,7 +122,7 @@
 
 
     <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
         <span itemprop="name">Upside Down</span>
       </span>
       
@@ -138,7 +138,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <script src="/assets/js/APlayer.min.js"> </script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="单一职责基本概念"><a href="#单一职责基本概念" class="headerlink" title="单一职责基本概念"></a>单一职责基本概念</h2><ul>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="单一职责基本概念"><a href="#单一职责基本概念" class="headerlink" title="单一职责基本概念"></a>单一职责基本概念</h2><ul>
 <li>单一：单一意味着某些工作是独立的。比如，在类中，类方法仅完成某一件独立的事情。</li>
 <li>职责：职责指软件系统中，每一个指派给特定方法、类、包和模块所完成的工作或者动作。</li>
 </ul>
