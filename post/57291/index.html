@@ -142,7 +142,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="异常（Exception）与错误（Error）的区别与联系"><a href="#异常（Exception）与错误（Error）的区别与联系" class="headerlink" title="异常（Exception）与错误（Error）的区别与联系"></a>异常（Exception）与错误（Error）的区别与联系</h2><ul>
+    <link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="异常（Exception）与错误（Error）的区别与联系"><a href="#异常（Exception）与错误（Error）的区别与联系" class="headerlink" title="异常（Exception）与错误（Error）的区别与联系"></a>异常（Exception）与错误（Error）的区别与联系</h2><ul>
 <li>Error 类与 Exception 类都是继承于 Throwable 类。</li>
 <li>Error 类一般是指与虚拟机相关的问题，如系统崩溃，虚拟机错误，内存空间不足，方法调用栈溢出等等。对于这类错误，Java 编译器不去检查他们，对于这类错误导致的程序中断，仅靠程序本身无法恢复和预防。</li>
 <li>Exception 类表示程序可以处理的异常，可以捕获且可能恢复。遇到这类异常，应该尽可能去处理异常，使程序恢复运行，而不应该随意终止异常。</li>
