@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://kylindc.github.io/"/>
-  <updated>2019-03-01T01:16:34.490Z</updated>
+  <updated>2019-03-04T10:43:18.977Z</updated>
   <id>https://kylindc.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java中的Lambda表达式</title>
+    <link href="https://kylindc.github.io/post/40701/"/>
+    <id>https://kylindc.github.io/post/40701/</id>
+    <published>2019-03-03T09:03:34.000Z</published>
+    <updated>2019-03-04T10:43:18.977Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Lambda-表达式的意义"><a href="#Lambda-表达式的意义" class="headerlink" title="Lambda 表达式的意义"></a>Lambda 表达式的意义</h2><p>Lambda 表达式为 Java 添加了缺失的函数式编程特点，使我们能将函数当做一等公民看待。使其独立存在，你可以将其赋值给一个变量，或将他们当做参数传给其他函数。不过，在 Java 中，Lambda 表达式是对象，他们必须依附于一类特别的对象类型——函数式接口(functional interface)。</p><h2 id="Lambda-表达式特征"><a href="#Lambda-表达式特征" class="headerlink" title="Lambda 表达式特征"></a>Lambda 表达式特征</h2><p>Lambda 表达式没有声明的方法，也即没有访问修饰符、返回值声明以及名字。</p><h2 id="Lambda-表达式的结构"><a href="#Lambda-表达式的结构" class="headerlink" title="Lambda 表达式的结构"></a>Lambda 表达式的结构</h2><ul><li>一个 Lambda 表达式可以有零个或多个参数</li><li>参数的类型既可以明确声明，也可以根据上下文来推断。例如：<code>(int a)</code>与<code>(a)</code>效果相同</li><li>所有参数需包含在圆括号内，参数之间用逗号相隔。例如：<code>(a, b)</code> 或 <code>(int a, int b)</code> 或 <code>(String a, int b, float c)</code></li><li>空圆括号代表参数集为空。例如：<code>() -&gt; 42</code></li><li>当只有一个参数，且其类型可推导时，圆括号（）可省略。例如：<code>a -&gt; return a*a</code></li><li>Lambda 表达式的主体可包含零条或多条语句</li><li>如果 Lambda 表达式的主体只有一条语句，花括号{}可省略，<code>return</code>关键字也可以省略，匿名函数的返回类型与该主体表达式一致</li><li>如果 Lambda 表达式的主体包含一条以上语句，则表达式必须包含在花括号{}中（形成代码块）。匿名函数的返回类型与代码块的返回类型一致，若没有返回则为空</li></ul><h2 id="Lambda-表达式举例"><a href="#Lambda-表达式举例" class="headerlink" title="Lambda 表达式举例"></a>Lambda 表达式举例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 不需要参数,返回值为 5</span></span><br><span class="line">()  -&gt;  <span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 接收一个参数(数字类型),返回其2倍的值</span></span><br><span class="line">x -&gt;  <span class="number">2</span>  * x</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 接受2个参数(数字),并返回他们的差值</span></span><br><span class="line">(x, y)  -&gt; x – y</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 接收2个int型整数,返回他们的和</span></span><br><span class="line">(<span class="keyword">int</span> x,  <span class="keyword">int</span> y)  -&gt; x + y</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. 接受一个 string 对象,并在控制台打印,不返回任何值(看起来像是返回void)</span></span><br><span class="line">(String s)  -&gt;  System.out.print(s)</span><br></pre></td></tr></table></figure><h2 id="Lambada-表达式的作用域"><a href="#Lambada-表达式的作用域" class="headerlink" title="Lambada 表达式的作用域"></a>Lambada 表达式的作用域</h2><h3 id="访问局部变量"><a href="#访问局部变量" class="headerlink" title="访问局部变量"></a>访问局部变量</h3><ul><li>可以直接在 lambda 表达式中访问外层中的<code>final</code>局部变量</li><li>lambda 表达式中访问的外层局部变量时必须不可被后面的代码修改（即隐性的具有 final 的语义），Lambda 表达式中也不能修改</li><li>在 Lambda 表达式当中被引用的变量的值不可以被更改。</li><li>在 Lambda 表达式当中不允许声明一个与局部变量同名的参数或者局部变量。</li></ul><h3 id="访问对象字段与静态变量"><a href="#访问对象字段与静态变量" class="headerlink" title="访问对象字段与静态变量"></a>访问对象字段与静态变量</h3><ul><li>和局部变量不同的是，Lambda 内部对于实例的字段（即：成员变量）以及静态变量是即可读又可写。</li><li>不能访问接口的默认方法</li></ul><h3 id="Lambda-表达式中的-this"><a href="#Lambda-表达式中的-this" class="headerlink" title="Lambda 表达式中的 this"></a>Lambda 表达式中的 this</h3><ul><li>Lambda 表达式中使用 this 会引用创建该 Lambda 表达式的方法的 this 参数。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Java中枚举和类的异同</title>
