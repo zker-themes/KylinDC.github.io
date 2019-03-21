@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Upside Down">
 <meta property="og:description" content="TreeMap 是一个通过红黑树实现的有序的key-value集合。该集合根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序。 构造函数12345678// 默认构造函数。使用该构造函数，TreeMap中的元素按照自然排序进行排列。TreeMap()// 创建的TreeMap包含MapTreeMap(Map&amp;lt;? extends K, ? extends V&amp;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-24T14:30:24.114Z">
+<meta property="og:updated_time" content="2019-02-24T14:30:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的TreeMap">
 <meta name="twitter:description" content="TreeMap 是一个通过红黑树实现的有序的key-value集合。该集合根据其键的自然顺序进行排序，或者根据创建映射时提供的 Comparator 进行排序。 构造函数12345678// 默认构造函数。使用该构造函数，TreeMap中的元素按照自然排序进行排列。TreeMap()// 创建的TreeMap包含MapTreeMap(Map&amp;lt;? extends K, ? extends V&amp;">
@@ -142,7 +142,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>TreeMap 是一个通过红黑树实现的<strong>有序</strong>的<strong>key-value</strong>集合。该集合根据其<strong>键的自然顺序</strong>进行排序，或者根据<strong>创建映射时提供的 Comparator </strong>进行排序。</p>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>TreeMap 是一个通过红黑树实现的<strong>有序</strong>的<strong>key-value</strong>集合。该集合根据其<strong>键的自然顺序</strong>进行排序，或者根据<strong>创建映射时提供的 Comparator </strong>进行排序。</p>
 <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 默认构造函数。使用该构造函数，TreeMap中的元素按照自然排序进行排列。</span></span><br><span class="line">TreeMap()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建的TreeMap包含Map</span></span><br><span class="line">TreeMap(Map&lt;? extends K, ? extends V&gt; copyFrom)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 指定Tree的比较器</span></span><br><span class="line">TreeMap(Comparator&lt;? <span class="keyword">super</span> K&gt; comparator)</span><br></pre></td></tr></table></figure>
 <h2 id="TreeMap-中的获取方法"><a href="#TreeMap-中的获取方法" class="headerlink" title="TreeMap 中的获取方法"></a>TreeMap 中的获取方法</h2><h3 id="TreeMap-的-Entry-相关函数"><a href="#TreeMap-的-Entry-相关函数" class="headerlink" title="TreeMap 的 Entry 相关函数"></a>TreeMap 的 Entry 相关函数</h3><p>返回一个 key-value 的映射对。</p>
 <p>firstEntry()/lastEntry()：获得第一个/最后一个<br>lowerEntry()/higherEntry()：获得刚好小于/大于的映射对，不存在则返回<code>null</code><br>floorEntry()/ceilingEntry()：获得刚好小于等于/大于等于的映射对，不存在则返回<code>null</code><br>pollFirstEntry()/pollLastEntry()：获得第一个/最后一个，并在元集合中删除这一个</p>

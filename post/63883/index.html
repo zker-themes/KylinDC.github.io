@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://kylindc.github.io/post/63883/8.jpg">
 <meta property="og:image" content="https://kylindc.github.io/post/63883/9.jpg">
 <meta property="og:image" content="https://kylindc.github.io/post/63883/10.jpg">
-<meta property="og:updated_time" content="2018-03-22T10:04:42.000Z">
+<meta property="og:updated_time" content="2018-03-22T10:04:54.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shadowsocks 服务器搭建比较全的纪录">
 <meta name="twitter:description" content="文章较长，先理理思路。首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的搭建以及优化，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。 Shadowsocks是什么？首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private network">
@@ -159,7 +159,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>文章较长，先理理思路。<br>首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的<strong>搭建</strong>以及<strong>优化</strong>，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。</p>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>文章较长，先理理思路。<br>首先介绍一下Shadowsocks是什么，然后讲一讲服务器段Shadowsocks的<strong>搭建</strong>以及<strong>优化</strong>，优化分为BBR加速和锐速加速两种方案，根据不同的加速方案选择不同的服务器端操作系统。最后讲一下Shadowsocks客户端的配置。</p>
 <h2 id="Shadowsocks是什么？"><a href="#Shadowsocks是什么？" class="headerlink" title="Shadowsocks是什么？"></a>Shadowsocks是什么？</h2><p>首先来弄清楚一下Shadowsocks和VPN的区别。在很久以前VPN（Virtual private network，虚拟专有网络）是用来翻墙的主要方式，但是随着GFW的不断升级，这种方式很容易被封，所以后来基本上没有人用这种技术方式来翻墙的了，但是’VPN’这个词就慢慢被指代为所有的翻墙方式。翻墙方式用很多种，不单单只有VPN一种，所以’VPN’这个词在不同的含义下有不同的意思。<br>Shadowsocks是<a href="https://github.com/clowwindy" target="_blank" rel="noopener">clowwindy</a>开发的一个开源代理加密协议，有很多用途，当然最常见的还是拿来翻墙。事实上现在所有的商业的翻墙代理（云梯，多态等）底层都是Shadowsocks技术。<br>如果想要知道Shadowsocks的具体技术细节可参考<a href="https://vc2tea.com/whats-shadowsocks/" target="_blank" rel="noopener">写给非专业人士看的 Shadowsocks 简介</a>。</p>
 <blockquote>
 <p><img src="/post/63883/1.jpg" alt="Shadowsocks组件"></p>

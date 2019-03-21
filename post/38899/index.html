@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Upside Down">
 <meta property="og:description" content="Serializable 序列化总结Serializable 序列化特点private static final long serialVersionUID = 1L：用来保证能够相互序列化与反序列化 静态变量不会被序列化，因为序列化保存的是对象的状态，而静态变量属于类的状态，因此序列化并不保存静态变量。 父类的序列化一个子类实现了 Serializable 接口，它的父类都没有实现 Serial">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-26T01:16:33.050Z">
+<meta property="og:updated_time" content="2019-02-26T01:16:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中的序列化使用总结">
 <meta name="twitter:description" content="Serializable 序列化总结Serializable 序列化特点private static final long serialVersionUID = 1L：用来保证能够相互序列化与反序列化 静态变量不会被序列化，因为序列化保存的是对象的状态，而静态变量属于类的状态，因此序列化并不保存静态变量。 父类的序列化一个子类实现了 Serializable 接口，它的父类都没有实现 Serial">
@@ -142,7 +142,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Serializable-序列化总结"><a href="#Serializable-序列化总结" class="headerlink" title="Serializable 序列化总结"></a>Serializable 序列化总结</h2><h3 id="Serializable-序列化特点"><a href="#Serializable-序列化特点" class="headerlink" title="Serializable 序列化特点"></a>Serializable 序列化特点</h3><p><code>private static final long serialVersionUID = 1L</code>：用来保证能够相互序列化与反序列化</p>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="Serializable-序列化总结"><a href="#Serializable-序列化总结" class="headerlink" title="Serializable 序列化总结"></a>Serializable 序列化总结</h2><h3 id="Serializable-序列化特点"><a href="#Serializable-序列化特点" class="headerlink" title="Serializable 序列化特点"></a>Serializable 序列化特点</h3><p><code>private static final long serialVersionUID = 1L</code>：用来保证能够相互序列化与反序列化</p>
 <p>静态变量不会被序列化，因为序列化保存的是<strong>对象的状态</strong>，而静态变量属于类的状态，因此<strong>序列化并不保存静态变量</strong>。</p>
 <h3 id="父类的序列化"><a href="#父类的序列化" class="headerlink" title="父类的序列化"></a>父类的序列化</h3><p>一个子类实现了 Serializable 接口，它的父类都没有实现 Serializable 接口，序列化该子类对象，然后反序列化后输出父类定义的某变量的数值，该变量数值与序列化时的数值不同。要想将父类对象也序列化，就需要让父类也实现 Serializable 接口。</p>
 <h3 id="Transient-关键字"><a href="#Transient-关键字" class="headerlink" title="Transient 关键字"></a>Transient 关键字</h3><p>Transient 关键字的作用是控制变量的序列化，在变量声明前加上该关键字，可以阻止该变量被序列化到文件中，在被反序列化后，transient 变量的值被设为初始值，如 int 型的是 0，对象型的是 null。</p>
