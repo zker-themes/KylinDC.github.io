@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang=zh>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><link rel=manifest href=/manifest.json><meta name="generator" content="Hexo 3.8.0"><link rel="manifest" href="/manifest.json">
   <!-- so meta -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -295,5 +295,10 @@
 <!-- Disqus Comments -->
 
 
-</body>
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1554123136523')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
 </html>
