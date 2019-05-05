@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head><link rel=manifest href=/manifest.json><meta name="generator" content="Hexo 3.8.0"><link rel="manifest" href="/manifest.json">
+  <!-- so meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Adobe WebFont support -->
+  <script src="https://use.typekit.net/zyz6dlh.js"></script>
+  <script>
+    try {
+      Typekit.load({ async: true });
+    } catch (e) {}
+  </script>
+
+  <!-- original -->
+  <meta name="description" content="CHAR 与 VARCHAR 的区别长度上 CHAR 类型使用固定长度进行存储，范围为 0~255，多余长度空间会被以空格补齐，检索是尾部空格会被去除 VARCHAR 类型保存可变的长度字符串，范围为 0~65535，除了实际的长度外，还有一个或两个额外的字节来标识字符串长度，  应用上 CHAR 经常用于保存长度相对固定的值，比如 IP 地址或者 MD5 之类的数据。 VARCHAR 用来保存保">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL中的JSON Data Type">
+<meta property="og:url" content="https://kylindc.github.io/post/48363/index.html">
+<meta property="og:site_name" content="Upside Down">
+<meta property="og:description" content="CHAR 与 VARCHAR 的区别长度上 CHAR 类型使用固定长度进行存储，范围为 0~255，多余长度空间会被以空格补齐，检索是尾部空格会被去除 VARCHAR 类型保存可变的长度字符串，范围为 0~65535，除了实际的长度外，还有一个或两个额外的字节来标识字符串长度，  应用上 CHAR 经常用于保存长度相对固定的值，比如 IP 地址或者 MD5 之类的数据。 VARCHAR 用来保存保">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-05-05T08:48:39.612Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL中的JSON Data Type">
+<meta name="twitter:description" content="CHAR 与 VARCHAR 的区别长度上 CHAR 类型使用固定长度进行存储，范围为 0~255，多余长度空间会被以空格补齐，检索是尾部空格会被去除 VARCHAR 类型保存可变的长度字符串，范围为 0~65535，除了实际的长度外，还有一个或两个额外的字节来标识字符串长度，  应用上 CHAR 经常用于保存长度相对固定的值，比如 IP 地址或者 MD5 之类的数据。 VARCHAR 用来保存保">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico">
+     
+  <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+     
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    
+  <!-- title -->
+  <title>MySQL中的JSON Data Type</title>
+  <!-- styles -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- persian styles -->
+   <link rel="stylesheet" href="/css/rtl.css"> 
+  <!-- rss -->
+   
+</head>
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="https://github.com/KylinDC">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/homework/todolist/html">TodoList</a></li>
+         
+          <li><a href="/homework/NASA/html">NASA</a></li>
+        
+      </ul>
+    </span>
+    <br>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/post/40701/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/post/48363/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://kylindc.github.io/post/48363/&text=MySQL中的JSON Data Type"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kylindc.github.io/post/48363/&is_video=false&description=MySQL中的JSON Data Type"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MySQL中的JSON Data Type&body=Check out this article: https://kylindc.github.io/post/48363/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://kylindc.github.io/post/48363/&name=MySQL中的JSON Data Type&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CHAR-与-VARCHAR-的区别"><span class="toc-number">1.</span> <span class="toc-text">CHAR 与 VARCHAR 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#长度上"><span class="toc-number">1.1.</span> <span class="toc-text">长度上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用上"><span class="toc-number">1.2.</span> <span class="toc-text">应用上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">1.3.</span> <span class="toc-text">参考</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-中的-JSON-Data-Type"><span class="toc-number">2.</span> <span class="toc-text">MySQL 中的 JSON Data Type</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#能够储存为的-JSON-值的格式"><span class="toc-number">2.1.</span> <span class="toc-text">能够储存为的 JSON 值的格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-值的查询"><span class="toc-number">3.</span> <span class="toc-text">JSON 值的查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-值的索引"><span class="toc-number">4.</span> <span class="toc-text">JSON 值的索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-值的修改"><span class="toc-number">5.</span> <span class="toc-text">JSON 值的修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-值的删除"><span class="toc-number">6.</span> <span class="toc-text">JSON 值的删除</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        MySQL中的JSON Data Type
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <span itemprop="name">Upside Down</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-05-05T06:50:00.000Z" itemprop="datePublished">2019-05-05</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="CHAR-与-VARCHAR-的区别"><a href="#CHAR-与-VARCHAR-的区别" class="headerlink" title="CHAR 与 VARCHAR 的区别"></a>CHAR 与 VARCHAR 的区别</h2><h3 id="长度上"><a href="#长度上" class="headerlink" title="长度上"></a>长度上</h3><ul>
+<li>CHAR 类型使用固定长度进行存储，范围为 0~255，多余长度空间会被以空格补齐，检索是尾部空格会被去除</li>
+<li>VARCHAR 类型保存可变的长度字符串，范围为 0~65535，除了实际的长度外，还有一个或两个额外的字节来标识字符串长度，</li>
+</ul>
+<h3 id="应用上"><a href="#应用上" class="headerlink" title="应用上"></a>应用上</h3><ul>
+<li>CHAR 经常用于保存长度相对固定的值，比如 IP 地址或者 MD5 之类的数据。</li>
+<li>VARCHAR 用来保存保存长短不一的列</li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://seanlook.com/2016/04/28/mysql-char-varchar-set/" target="_blank" rel="noopener">MySQL 字符数据类型 char 与 varchar 的区别</a><br><a href="https://www.jianshu.com/p/85ada7b1dbab" target="_blank" rel="noopener">MySQL 深入剖析 char varchar 类型，有了 VARCHAR，为什么还要有 CHAR？</a></p>
+<h2 id="MySQL-中的-JSON-Data-Type"><a href="#MySQL-中的-JSON-Data-Type" class="headerlink" title="MySQL 中的 JSON Data Type"></a>MySQL 中的 JSON Data Type</h2><h3 id="能够储存为的-JSON-值的格式"><a href="#能够储存为的-JSON-值的格式" class="headerlink" title="能够储存为的 JSON 值的格式"></a>能够储存为的 JSON 值的格式</h3><ul>
+<li>JSON 数组：被 <code>[]</code> 框住，由逗号分隔的值的列表；</li>
+<li>JSON 对象：被<code>{}</code>框住，由逗号分隔的键值对的列表，键的类型必须为字符串。</li>
+</ul>
+<p>能够储存的类型包括字符串，数字，时间，布尔值。同时，两种类型的还可以嵌套，比如：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">99</span>, &#123;<span class="attr">"id"</span>: <span class="string">"HK500"</span>, <span class="attr">"cost"</span>: <span class="number">75.99</span>&#125;, [<span class="string">"hot"</span>, <span class="string">"cold"</span>]]</span><br><span class="line">&#123;<span class="attr">"k1"</span>: <span class="string">"value"</span>, <span class="attr">"k2"</span>: [<span class="number">10</span>, <span class="number">20</span>]&#125;</span><br></pre></td></tr></table></figure>
+<p>可以使用 JSON_OBJECT，JSON_ARRAY 来生成 JSON 格式的数据。</p>
+<h2 id="JSON-值的查询"><a href="#JSON-值的查询" class="headerlink" title="JSON 值的查询"></a>JSON 值的查询</h2><p>使用<code>JSON_EXTRACT</code>函数来查询 JSON，第一个参数为要查询的值，第二个参数中使用前导\$字符代替要查询的值。JSON_EXTRACT 函数还有别名 -&gt;。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> JSON_EXTRACT(<span class="string">'&#123;"id": 14, "name": "Aztalan"&#125;'</span>, <span class="string">'$.name'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="JSON-值的索引"><a href="#JSON-值的索引" class="headerlink" title="JSON 值的索引"></a>JSON 值的索引</h2><ul>
+<li>JSON 数组：使用<code>[]</code>与序号下标的组合，<code>last</code>代表最后一个值的索引位置</li>
+<li>JSON 对象：使用<code>.</code>操作符</li>
+</ul>
+<h2 id="JSON-值的修改"><a href="#JSON-值的修改" class="headerlink" title="JSON 值的修改"></a>JSON 值的修改</h2><ul>
+<li>JSON_INSERT 函数只会把属性添加到对象中，前提是需要添加的属性在对象中还不存在。</li>
+<li>JSON_REPLACE 函数只会更新对象中已经存在的属性。</li>
+<li>JSON_SET 函数在属性存在时对属性进行更新，否则就将属性添加到对象中。</li>
+</ul>
+<h2 id="JSON-值的删除"><a href="#JSON-值的删除" class="headerlink" title="JSON 值的删除"></a>JSON 值的删除</h2><p>JSON_REMOVE 函数指定在输出某个 JSON 属性</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="https://github.com/KylinDC">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/homework/todolist/html">TodoList</a></li>
+         
+          <li><a href="/homework/NASA/html">NASA</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CHAR-与-VARCHAR-的区别"><span class="toc-number">1.</span> <span class="toc-text">CHAR 与 VARCHAR 的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#长度上"><span class="toc-number">1.1.</span> <span class="toc-text">长度上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用上"><span class="toc-number">1.2.</span> <span class="toc-text">应用上</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考"><span class="toc-number">1.3.</span> <span class="toc-text">参考</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MySQL-中的-JSON-Data-Type"><span class="toc-number">2.</span> <span class="toc-text">MySQL 中的 JSON Data Type</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#能够储存为的-JSON-值的格式"><span class="toc-number">2.1.</span> <span class="toc-text">能够储存为的 JSON 值的格式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-值的查询"><span class="toc-number">3.</span> <span class="toc-text">JSON 值的查询</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-值的索引"><span class="toc-number">4.</span> <span class="toc-text">JSON 值的索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-值的修改"><span class="toc-number">5.</span> <span class="toc-text">JSON 值的修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JSON-值的删除"><span class="toc-number">6.</span> <span class="toc-text">JSON 值的删除</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://kylindc.github.io/post/48363/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://kylindc.github.io/post/48363/&text=MySQL中的JSON Data Type"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://kylindc.github.io/post/48363/&is_video=false&description=MySQL中的JSON Data Type"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=MySQL中的JSON Data Type&body=Check out this article: https://kylindc.github.io/post/48363/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://kylindc.github.io/post/48363/&title=MySQL中的JSON Data Type"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://kylindc.github.io/post/48363/&name=MySQL中的JSON Data Type&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 KylinDC
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/archives/">Archives</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="https://github.com/KylinDC">Projects</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+         
+          <li><a href="/homework/todolist/html">TodoList</a></li>
+         
+          <li><a href="/homework/NASA/html">NASA</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+    <!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script> <script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script> <script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<script type="text/javascript">
+  (function(i, s, o, g, r, a, m) {
+    i["GoogleAnalyticsObject"] = r;
+    (i[r] =
+      i[r] ||
+      function() {
+        (i[r].q = i[r].q || []).push(arguments);
+      }),
+      (i[r].l = 1 * new Date());
+    (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m);
+  })(
+    window,
+    document,
+    "script",
+    "//www.google-analytics.com/analytics.js",
+    "ga"
+  );
+  ga("create", "UA-99034573-1", "auto");
+  ga("send", "pageview");
+</script>
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1557046141952')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body>
+</html>

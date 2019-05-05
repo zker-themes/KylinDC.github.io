@@ -24,7 +24,7 @@ var precacheUrls = [];
 
   precacheUrls.push('/');
 
-  precacheUrls.push('/post/6919/');
+  precacheUrls.push('/post/45281/');
 
   precacheUrls.push('/post/8520/');
 
